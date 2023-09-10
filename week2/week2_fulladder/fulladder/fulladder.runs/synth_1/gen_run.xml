@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7s75fgga484-1" LaunchTime="1694248788" LaunchIncrCheckpoint="$PSRCDIR/utils_1/imports/synth_1/halfadder.dcp">
+<GenRun Id="synth_1" LaunchPart="xc7s75fgga484-1" LaunchTime="1694338738" LaunchIncrCheckpoint="$PSRCDIR/utils_1/imports/synth_1/halfadder.dcp">
   <File Type="PA-TCL" Name="fulladder.tcl"/>
   <File Type="RDS-PROPCONSTRS" Name="fulladder_drc_synth.rpt"/>
   <File Type="REPORTS-TCL" Name="fulladder_reports.tcl"/>

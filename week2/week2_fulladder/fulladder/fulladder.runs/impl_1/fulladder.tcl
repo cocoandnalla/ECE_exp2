@@ -115,6 +115,7 @@ proc step_failed { step } {
 OPTRACE "impl_1" END { }
 }
 
+set_msg_config -id {Common 17-41} -limit 10000000
 set_msg_config -id {Synth 8-256} -limit 10000
 set_msg_config -id {Synth 8-638} -limit 10000
 
@@ -126,28 +127,12 @@ set rc [catch {
   create_msg_db init_design.pb
   set_param checkpoint.writeSynthRtdsInDcp 1
   set_param chipscope.maxJobs 2
-OPTRACE "create in-memory project" START { }
-  create_project -in_memory -part xc7s75fgga484-1
-  set_property design_mode GateLvl [current_fileset]
-  set_param project.singleFileAddWarning.threshold 0
-OPTRACE "create in-memory project" END { }
-OPTRACE "set parameters" START { }
+  reset_param project.defaultXPMLibraries 
+  open_checkpoint C:/Users/82106/Documents/GitHub/ECE_exp2/week2/week2_fulladder/fulladder/fulladder.runs/impl_1/fulladder.dcp
   set_property webtalk.parent_dir C:/Users/82106/Documents/GitHub/ECE_exp2/week2/week2_fulladder/fulladder/fulladder.cache/wt [current_project]
   set_property parent.project_path C:/Users/82106/Documents/GitHub/ECE_exp2/week2/week2_fulladder/fulladder/fulladder.xpr [current_project]
   set_property ip_output_repo C:/Users/82106/Documents/GitHub/ECE_exp2/week2/week2_fulladder/fulladder/fulladder.cache/ip [current_project]
   set_property ip_cache_permissions {read write} [current_project]
-OPTRACE "set parameters" END { }
-OPTRACE "add files" START { }
-  add_files -quiet C:/Users/82106/Documents/GitHub/ECE_exp2/week2/week2_fulladder/fulladder/fulladder.runs/synth_1/fulladder.dcp
-OPTRACE "read constraints: implementation" START { }
-  read_xdc C:/Users/82106/Documents/GitHub/ECE_exp2/week2/week2_fulladder/fulladder/fulladder.srcs/constrs_1/new/fulladder.xdc
-OPTRACE "read constraints: implementation" END { }
-OPTRACE "add files" END { }
-OPTRACE "link_design" START { }
-  link_design -top fulladder -part xc7s75fgga484-1 
-OPTRACE "link_design" END { }
-OPTRACE "gray box cells" START { }
-OPTRACE "gray box cells" END { }
 OPTRACE "init_design_reports" START { REPORT }
 OPTRACE "init_design_reports" END { }
 OPTRACE "init_design_write_hwdef" START { }

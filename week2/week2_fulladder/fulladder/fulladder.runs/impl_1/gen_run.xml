@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="impl_1" LaunchPart="xc7s75fgga484-1" LaunchTime="1694248788">
+<GenRun Id="impl_1" LaunchPart="xc7s75fgga484-1" LaunchTime="1694338902">
+  <File Type="OPT-HWDEF" Name="fulladder.hwdef"/>
+  <File Type="ROUTE-BUS-SKEW" Name="fulladder_bus_skew_routed.rpt"/>
+  <File Type="PA-DCP" Name="fulladder.dcp"/>
   <File Type="ROUTE-PWR" Name="fulladder_power_routed.rpt"/>
   <File Type="PA-TCL" Name="fulladder.tcl"/>
   <File Type="BITSTR-MMI" Name="fulladder.mmi"/>
@@ -10,7 +13,6 @@
   <File Type="OPT-TIMING" Name="fulladder_timing_summary_opted.rpt"/>
   <File Type="OPT-DCP" Name="fulladder_opt.dcp"/>
   <File Type="OPT-DRC" Name="fulladder_drc_opted.rpt"/>
-  <File Type="OPT-HWDEF" Name="fulladder.hwdef"/>
   <File Type="PWROPT-DCP" Name="fulladder_pwropt.dcp"/>
   <File Type="PWROPT-DRC" Name="fulladder_drc_pwropted.rpt"/>
   <File Type="PWROPT-TIMING" Name="fulladder_timing_summary_pwropted.rpt"/>
@@ -48,7 +50,6 @@
   <File Type="ROUTE-TIMING-RPX" Name="fulladder_timing_summary_routed.rpx"/>
   <File Type="ROUTE-SIMILARITY" Name="fulladder_incremental_reuse_routed.rpt"/>
   <File Type="ROUTE-CLK" Name="fulladder_clock_utilization_routed.rpt"/>
-  <File Type="ROUTE-BUS-SKEW" Name="fulladder_bus_skew_routed.rpt"/>
   <File Type="ROUTE-BUS-SKEW-PB" Name="fulladder_bus_skew_routed.pb"/>
   <File Type="ROUTE-BUS-SKEW-RPX" Name="fulladder_bus_skew_routed.rpx"/>
   <File Type="POSTROUTE-PHYSOPT-DCP" Name="fulladder_postroute_physopt.dcp"/>
