@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="impl_1" LaunchPart="xc7s75fgga484-1" LaunchTime="1694141457">
+<GenRun Id="impl_1" LaunchPart="xc7s75fgga484-1" LaunchTime="1694391582">
+  <File Type="POSTROUTE-PHYSOPT-RQS-RPT" Name="postroute_physopt_report_qor_suggestions_0.rpt"/>
   <File Type="ROUTE-PWR" Name="logicgate_power_routed.rpt"/>
   <File Type="PA-TCL" Name="logicgate.tcl"/>
   <File Type="ROUTE-PWR-SUM" Name="logicgate_power_summary_routed.pb"/>
@@ -7,8 +8,6 @@
   <File Type="BITSTR-MSK" Name="logicgate.msk"/>
   <File Type="ROUTE-CLK" Name="logicgate_clock_utilization_routed.rpt"/>
   <File Type="RDI-RDI" Name="logicgate.vdi"/>
-  <File Type="ROUTE-BUS-SKEW" Name="logicgate_bus_skew_routed.rpt"/>
-  <File Type="PA-DCP" Name="logicgate.dcp"/>
   <File Type="BG-BIT" Name="logicgate.bit"/>
   <File Type="BG-DRC" Name="logicgate.drc"/>
   <File Type="BG-BGN" Name="logicgate.bgn"/>
@@ -23,17 +22,19 @@
   <File Type="BITSTR-LTX" Name="debug_nets.ltx"/>
   <File Type="BITSTR-LTX" Name="logicgate.ltx"/>
   <File Type="WBT-USG" Name="usage_statistics_webtalk.html"/>
+  <File Type="NPI_FILE" Name="logicgate.npi"/>
   <File Type="OPT-DRC" Name="logicgate_drc_opted.rpt"/>
+  <File Type="RBD_FILE" Name="logicgate.rbd"/>
   <File Type="OPT-HWDEF" Name="logicgate.hwdef"/>
   <File Type="PLACE-IO" Name="logicgate_io_placed.rpt"/>
   <File Type="PLACE-UTIL" Name="logicgate_utilization_placed.rpt"/>
   <File Type="PLACE-UTIL-PB" Name="logicgate_utilization_placed.pb"/>
-  <File Type="ROUTE-RQS" Name="logicgate_routed.rqs"/>
   <File Type="PLACE-CTRL" Name="logicgate_control_sets_placed.rpt"/>
-  <File Type="ROUTE-RQS-RPT" Name="route_report_qor_suggestions_0.rpt"/>
+  <File Type="ROUTE-RQS" Name="logicgate_routed.rqs"/>
   <File Type="PLACE-PRE-SIMILARITY" Name="logicgate_incremental_reuse_pre_placed.rpt"/>
-  <File Type="POSTROUTE-PHYSOPT-RQS-RPT" Name="postroute_physopt_report_qor_suggestions_0.rpt"/>
+  <File Type="POSTROUTE-PHYSOPT-RQS" Name="logicgate_postroute_physopted.rqs"/>
   <File Type="ROUTE-DRC" Name="logicgate_drc_routed.rpt"/>
+  <File Type="ROUTE-RQS-RPT" Name="route_report_qor_suggestions_0.rpt"/>
   <File Type="ROUTE-DRC-PB" Name="logicgate_drc_routed.pb"/>
   <File Type="ROUTE-PWR-RPX" Name="logicgate_power_routed.rpx"/>
   <File Type="ROUTE-STATUS" Name="logicgate_route_status.rpt"/>
@@ -44,6 +45,7 @@
   <File Type="ROUTE-TIMINGSUMMARY" Name="logicgate_timing_summary_routed.rpt"/>
   <File Type="ROUTE-TIMING-PB" Name="logicgate_timing_summary_routed.pb"/>
   <File Type="ROUTE-TIMING-RPX" Name="logicgate_timing_summary_routed.rpx"/>
+  <File Type="ROUTE-BUS-SKEW" Name="logicgate_bus_skew_routed.rpt"/>
   <File Type="ROUTE-BUS-SKEW-PB" Name="logicgate_bus_skew_routed.pb"/>
   <File Type="ROUTE-BUS-SKEW-RPX" Name="logicgate_bus_skew_routed.rpx"/>
   <File Type="OPT-DCP" Name="logicgate_opt.dcp"/>
@@ -59,9 +61,13 @@
   <File Type="RCFI_FILE" Name="logicgate.rcfi"/>
   <File Type="CFI_FILE" Name="logicgate.cfi"/>
   <File Type="RNPI_FILE" Name="logicgate.rnpi"/>
-  <File Type="NPI_FILE" Name="logicgate.npi"/>
-  <File Type="RBD_FILE" Name="logicgate.rbd"/>
-  <File Type="POSTROUTE-PHYSOPT-RQS" Name="logicgate_postroute_physopted.rqs"/>
+  <File Type="ROUTE-SIMILARITY" Name="logicgate_incremental_reuse_routed.rpt"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING" Name="logicgate_timing_summary_postroute_physopted.rpt"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING-RPX" Name="logicgate_timing_summary_postroute_physopted.rpx"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING-PB" Name="logicgate_timing_summary_postroute_physopted.pb"/>
+  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW" Name="logicgate_bus_skew_postroute_physopted.rpt"/>
+  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW-RPX" Name="logicgate_bus_skew_postroute_physopted.rpx"/>
+  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW-PB" Name="logicgate_bus_skew_postroute_physopted.pb"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1" RelGenDir="$PGENDIR/sources_1">
     <Filter Type="Srcs"/>
     <File Path="$PSRCDIR/sources_1/new/logicgate.v">
@@ -92,6 +98,14 @@
   </FileSet>
   <FileSet Name="utils" Type="Utils" RelSrcDir="$PSRCDIR/utils_1">
     <Filter Type="Utils"/>
+    <File Path="$PSRCDIR/utils_1/imports/synth_1/logicgate.dcp">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedInSteps" Val="synth_1"/>
+        <Attr Name="AutoDcp" Val="1"/>
+      </FileInfo>
+    </File>
     <Config>
       <Option Name="TopAutoSet" Val="TRUE"/>
     </Config>

@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
 ------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2022.2 (win64) Build 3671981 Fri Oct 14 05:00:03 MDT 2022
-| Date         : Fri Sep  8 11:52:13 2023
+| Date         : Mon Sep 11 09:21:30 2023
 | Host         : BAYERNchampions running 64-bit major release  (build 9200)
 | Command      : report_drc -file logicgate_drc_opted.rpt -pb logicgate_drc_opted.pb -rpx logicgate_drc_opted.rpx
 | Design       : logicgate
@@ -20,7 +20,7 @@ Table of Contents
 1. REPORT SUMMARY
 -----------------
             Netlist: netlist
-          Floorplan: checkpoint_logicgate
+          Floorplan: design_1
       Design limits: <entire design considered>
            Ruledeck: default
              Max violations: <unlimited>

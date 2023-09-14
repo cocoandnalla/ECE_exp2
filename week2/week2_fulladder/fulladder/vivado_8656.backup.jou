@@ -1,0 +1,42 @@
+#-----------------------------------------------------------
+# Vivado v2022.2 (64-bit)
+# SW Build 3671981 on Fri Oct 14 05:00:03 MDT 2022
+# IP Build 3669848 on Fri Oct 14 08:30:02 MDT 2022
+# Start of session at: Sun Sep 10 18:35:02 2023
+# Process ID: 8656
+# Current directory: C:/Users/82106/Documents/GitHub/ECE_exp2/week2/week2_fulladder/fulladder
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent4532 C:\Users\82106\Documents\GitHub\ECE_exp2\week2\week2_fulladder\fulladder\fulladder.xpr
+# Log file: C:/Users/82106/Documents/GitHub/ECE_exp2/week2/week2_fulladder/fulladder/vivado.log
+# Journal file: C:/Users/82106/Documents/GitHub/ECE_exp2/week2/week2_fulladder/fulladder\vivado.jou
+# Running On: BAYERNchampions, OS: Windows, CPU Frequency: 2496 MHz, CPU Physical cores: 4, Host memory: 16873 MB
+#-----------------------------------------------------------
+start_gui
+open_project C:/Users/82106/Documents/GitHub/ECE_exp2/week2/week2_fulladder/fulladder/fulladder.xpr
+update_compile_order -fileset sources_1
+synth_design -rtl -rtl_skip_mlo -name rtl_1
+set_property IOSTANDARD LVCMOS33 [get_ports [list Cin]]
+set_property IOSTANDARD LVCMOS33 [get_ports [list Cout]]
+set_property IOSTANDARD LVCMOS33 [get_ports [list S]]
+set_property IOSTANDARD LVCMOS33 [get_ports [list x]]
+set_property IOSTANDARD LVCMOS33 [get_ports [list y]]
+place_ports x Y1
+place_ports y W3
+place_ports Cin U2
+set_property package_pin "" [get_ports [list  S]]
+place_ports Cout L4
+place_ports S M4
+save_constraints
+close_design
+open_run impl_1
+reset_run synth_1
+launch_runs synth_1 -jobs 4
+wait_on_run synth_1
+close_design
+open_run synth_1 -name synth_1
+launch_runs impl_1 -jobs 4
+wait_on_run impl_1
+close_design
+open_run impl_1
+launch_simulation
+source fulladder_tb.tcl
+close_sim

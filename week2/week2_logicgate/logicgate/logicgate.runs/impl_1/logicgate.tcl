@@ -115,8 +115,6 @@ proc step_failed { step } {
 OPTRACE "impl_1" END { }
 }
 
-set_msg_config -id {Synth 8-256} -limit 10000
-set_msg_config -id {Synth 8-638} -limit 10000
 
 OPTRACE "impl_1" START { ROLLUP_1 }
 OPTRACE "Phase: Init Design" START { ROLLUP_AUTO }
@@ -124,14 +122,29 @@ start_step init_design
 set ACTIVE_STEP init_design
 set rc [catch {
   create_msg_db init_design.pb
-  set_param checkpoint.writeSynthRtdsInDcp 1
   set_param chipscope.maxJobs 2
-  reset_param project.defaultXPMLibraries 
-  open_checkpoint C:/Users/82106/Documents/GitHub/ECE_exp2/week2/week2_logicgate/logicgate/logicgate.runs/impl_1/logicgate.dcp
+OPTRACE "create in-memory project" START { }
+  create_project -in_memory -part xc7s75fgga484-1
+  set_property design_mode GateLvl [current_fileset]
+  set_param project.singleFileAddWarning.threshold 0
+OPTRACE "create in-memory project" END { }
+OPTRACE "set parameters" START { }
   set_property webtalk.parent_dir C:/Users/82106/Documents/GitHub/ECE_exp2/week2/week2_logicgate/logicgate/logicgate.cache/wt [current_project]
   set_property parent.project_path C:/Users/82106/Documents/GitHub/ECE_exp2/week2/week2_logicgate/logicgate/logicgate.xpr [current_project]
   set_property ip_output_repo C:/Users/82106/Documents/GitHub/ECE_exp2/week2/week2_logicgate/logicgate/logicgate.cache/ip [current_project]
   set_property ip_cache_permissions {read write} [current_project]
+OPTRACE "set parameters" END { }
+OPTRACE "add files" START { }
+  add_files -quiet C:/Users/82106/Documents/GitHub/ECE_exp2/week2/week2_logicgate/logicgate/logicgate.runs/synth_1/logicgate.dcp
+OPTRACE "read constraints: implementation" START { }
+  read_xdc C:/Users/82106/Documents/GitHub/ECE_exp2/week2/week2_logicgate/logicgate/logicgate.srcs/constrs_1/new/logicgate.xdc
+OPTRACE "read constraints: implementation" END { }
+OPTRACE "add files" END { }
+OPTRACE "link_design" START { }
+  link_design -top logicgate -part xc7s75fgga484-1 
+OPTRACE "link_design" END { }
+OPTRACE "gray box cells" START { }
+OPTRACE "gray box cells" END { }
 OPTRACE "init_design_reports" START { REPORT }
 OPTRACE "init_design_reports" END { }
 OPTRACE "init_design_write_hwdef" START { }
@@ -281,4 +294,34 @@ OPTRACE "route_design write_checkpoint" END { }
 
 OPTRACE "route_design misc" END { }
 OPTRACE "Phase: Route Design" END { }
+OPTRACE "Phase: Write Bitstream" START { ROLLUP_AUTO }
+OPTRACE "write_bitstream setup" START { }
+start_step write_bitstream
+set ACTIVE_STEP write_bitstream
+set rc [catch {
+  create_msg_db write_bitstream.pb
+OPTRACE "read constraints: write_bitstream" START { }
+OPTRACE "read constraints: write_bitstream" END { }
+  catch { write_mem_info -force -no_partial_mmi logicgate.mmi }
+OPTRACE "write_bitstream setup" END { }
+OPTRACE "write_bitstream" START { }
+  write_bitstream -force logicgate.bit 
+OPTRACE "write_bitstream" END { }
+OPTRACE "write_bitstream misc" START { }
+OPTRACE "read constraints: write_bitstream_post" START { }
+OPTRACE "read constraints: write_bitstream_post" END { }
+  catch {write_debug_probes -quiet -force logicgate}
+  catch {file copy -force logicgate.ltx debug_nets.ltx}
+  close_msg_db -file write_bitstream.pb
+} RESULT]
+if {$rc} {
+  step_failed write_bitstream
+  return -code error $RESULT
+} else {
+  end_step write_bitstream
+  unset ACTIVE_STEP 
+}
+
+OPTRACE "write_bitstream misc" END { }
+OPTRACE "Phase: Write Bitstream" END { }
 OPTRACE "impl_1" END { }
