@@ -37,3 +37,8 @@ set_property IOSTANDARD LVCMOS33 [get_ports {I3[0]}]
 set_property IOSTANDARD LVCMOS33 [get_ports {I2[0]}]
 set_property IOSTANDARD LVCMOS33 [get_ports {I2[1]}]
 set_property IOSTANDARD LVCMOS33 [get_ports {I2[2]}]
+
+set_property IOSTANDARD LVCMOS33 [get_ports {OUT[2]}]
+set_property IOSTANDARD LVCMOS33 [get_ports {OUT[1]}]
+set_property IOSTANDARD LVCMOS33 [get_ports {OUT[0]}]
+set_property IOSTANDARD LVCMOS33 [get_ports {OUT[3]}]

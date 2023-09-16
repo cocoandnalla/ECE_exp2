@@ -24,7 +24,13 @@ module mux2to1(in0, in1, control, out);
 input [3:0] in0, in1;
 input control;
 output [3:0] out;
-wire [3:0] out;
+reg [3:0] out;
 
-assign out = (in0 & (~control)) | (in1 & control);  
+always @(*) begin
+case (control)
+1'b0 : out = in0;
+1'b1 : out = in1; 
+endcase
+end
+ 
 endmodule
