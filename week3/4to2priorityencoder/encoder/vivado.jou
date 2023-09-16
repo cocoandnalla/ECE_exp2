@@ -1,0 +1,29 @@
+#-----------------------------------------------------------
+# Vivado v2023.1 (64-bit)
+# SW Build 3865809 on Sun May  7 15:05:29 MDT 2023
+# IP Build 3864474 on Sun May  7 20:36:21 MDT 2023
+# SharedData Build 3865790 on Sun May 07 13:33:03 MDT 2023
+# Start of session at: Sat Sep 16 17:33:16 2023
+# Process ID: 14808
+# Current directory: C:/Users/82106/Documents/GitHub/ECE_exp2/week3/4to2priorityencoder/encoder
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent12068 C:\Users\82106\Documents\GitHub\ECE_exp2\week3\4to2priorityencoder\encoder\encoder.xpr
+# Log file: C:/Users/82106/Documents/GitHub/ECE_exp2/week3/4to2priorityencoder/encoder/vivado.log
+# Journal file: C:/Users/82106/Documents/GitHub/ECE_exp2/week3/4to2priorityencoder/encoder\vivado.jou
+# Running On: BAYERNchampions, OS: Windows, CPU Frequency: 2496 MHz, CPU Physical cores: 4, Host memory: 16873 MB
+#-----------------------------------------------------------
+start_gui
+open_project C:/Users/82106/Documents/GitHub/ECE_exp2/week3/4to2priorityencoder/encoder/encoder.xpr
+update_compile_order -fileset sources_1
+launch_simulation
+open_run impl_1
+launch_simulation
+reset_run synth_1
+launch_runs impl_1 -jobs 4
+wait_on_run impl_1
+reset_run synth_1
+launch_runs impl_1 -jobs 4
+wait_on_run impl_1
+refresh_design
+launch_simulation
+source encoder_tb.tcl
+close_sim
