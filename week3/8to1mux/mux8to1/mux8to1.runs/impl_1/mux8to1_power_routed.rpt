@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2023.1 (win64) Build 3865809 Sun May  7 15:05:29 MDT 2023
-| Date             : Sat Sep 16 17:35:55 2023
+| Date             : Sun Sep 17 01:25:06 2023
 | Host             : BAYERNchampions running 64-bit major release  (build 9200)
 | Command          : report_power -file mux8to1_power_routed.rpt -pb mux8to1_power_summary_routed.pb -rpx mux8to1_power_routed.rpx
 | Design           : mux8to1
@@ -30,14 +30,14 @@ Table of Contents
 ----------
 
 +--------------------------+--------------+
-| Total On-Chip Power (W)  | 1.647        |
+| Total On-Chip Power (W)  | 2.023        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
-| Dynamic (W)              | 1.541        |
-| Device Static (W)        | 0.106        |
+| Dynamic (W)              | 1.922        |
+| Device Static (W)        | 0.101        |
 | Effective TJA (C/W)      | 2.7          |
-| Max Ambient (C)          | 80.5         |
-| Junction Temperature (C) | 29.5         |
+| Max Ambient (C)          | 79.5         |
+| Junction Temperature (C) | 30.5         |
 | Confidence Level         | Low          |
 | Setting File             | ---          |
 | Simulation Activity File | ---          |
@@ -52,14 +52,13 @@ Table of Contents
 +----------------+-----------+----------+-----------+-----------------+
 | On-Chip        | Power (W) | Used     | Available | Utilization (%) |
 +----------------+-----------+----------+-----------+-----------------+
-| Slice Logic    |     0.009 |        4 |       --- |             --- |
-|   LUT as Logic |     0.008 |        2 |     48000 |           <0.01 |
+| Slice Logic    |     0.021 |        6 |       --- |             --- |
+|   LUT as Logic |     0.020 |        5 |     48000 |            0.01 |
 |   F7/F8 Muxes  |    <0.001 |        1 |     64000 |           <0.01 |
-|   Others       |     0.000 |        1 |       --- |             --- |
-| Signals        |     0.038 |       12 |       --- |             --- |
-| I/O            |     1.494 |       15 |       338 |            4.44 |
-| Static Power   |     0.106 |          |           |                 |
-| Total          |     1.647 |          |           |                 |
+| Signals        |     0.123 |       27 |       --- |             --- |
+| I/O            |     1.778 |       27 |       338 |            7.99 |
+| Static Power   |     0.101 |          |           |                 |
+| Total          |     2.023 |          |           |                 |
 +----------------+-----------+----------+-----------+-----------------+
 
 
@@ -69,11 +68,11 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+-------------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) | Powerup (A) | Budget (A)  | Margin (A) |
 +-----------+-------------+-----------+-------------+------------+-------------+-------------+------------+
-| Vccint    |       1.000 |     0.108 |       0.091 |      0.017 |       NA    | Unspecified | NA         |
-| Vccaux    |       1.800 |     0.075 |       0.053 |      0.022 |       NA    | Unspecified | NA         |
-| Vcco33    |       3.300 |     0.414 |       0.410 |      0.004 |       NA    | Unspecified | NA         |
+| Vccint    |       1.000 |     0.254 |       0.236 |      0.018 |       NA    | Unspecified | NA         |
+| Vccaux    |       1.800 |     0.160 |       0.138 |      0.022 |       NA    | Unspecified | NA         |
+| Vcco33    |       3.300 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
-| Vcco18    |       1.800 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
+| Vcco18    |       1.800 |     0.803 |       0.799 |      0.004 |       NA    | Unspecified | NA         |
 | Vcco15    |       1.500 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
 | Vcco135   |       1.350 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
 | Vcco12    |       1.200 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
@@ -92,7 +91,7 @@ Table of Contents
 | Design implementation state | High       | Design is routed                                       |                                                                                                            |
 | Clock nodes activity        | High       | User specified more than 95% of clocks                 |                                                                                                            |
 | I/O nodes activity          | Low        | More than 75% of inputs are missing user specification | Provide missing input activity with simulation results or by editing the "By Resource Type -> I/Os" view   |
-| Internal nodes activity     | Medium     | User specified more than 25% of internal nodes         | Provide missing internal nodes activity with simulation results or by editing the "By Resource Type" views |
+| Internal nodes activity     | Medium     | User specified less than 25% of internal nodes         | Provide missing internal nodes activity with simulation results or by editing the "By Resource Type" views |
 | Device models               | High       | Device models are Production                           |                                                                                                            |
 |                             |            |                                                        |                                                                                                            |
 | Overall confidence level    | Low        |                                                        |                                                                                                            |
@@ -134,7 +133,7 @@ Table of Contents
 +---------+-----------+
 | Name    | Power (W) |
 +---------+-----------+
-| mux8to1 |     1.541 |
+| mux8to1 |     1.922 |
 +---------+-----------+
 
 

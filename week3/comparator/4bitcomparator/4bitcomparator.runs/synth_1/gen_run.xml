@@ -1,14 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <GenRun Id="synth_1" LaunchPart="xc7s75fgga484-1" LaunchTime="1694689818" LaunchIncrCheckpoint="$PSRCDIR/utils_1/imports/synth_1/comparator.dcp">
   <File Type="PA-TCL" Name="comparator.tcl"/>
-  <File Type="RDS-PROPCONSTRS" Name="comparator_drc_synth.rpt"/>
   <File Type="REPORTS-TCL" Name="comparator_reports.tcl"/>
   <File Type="RDS-RDS" Name="comparator.vds"/>
   <File Type="RDS-UTIL" Name="comparator_utilization_synth.rpt"/>
   <File Type="RDS-UTIL-PB" Name="comparator_utilization_synth.pb"/>
   <File Type="RDS-DCP" Name="comparator.dcp"/>
-  <File Type="VDS-TIMINGSUMMARY" Name="comparator_timing_summary_synth.rpt"/>
-  <File Type="VDS-TIMING-PB" Name="comparator_timing_summary_synth.pb"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1" RelGenDir="$PGENDIR/sources_1">
     <Filter Type="Srcs"/>
     <File Path="$PSRCDIR/sources_1/new/comparator.v">

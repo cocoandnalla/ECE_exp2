@@ -20,18 +20,18 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 
-module mux4to1(I0, I1, I2, I3, x, y, outcome);
-input [3:0] I0, I1, I2, I3;
+module mux4to1(IN0, IN1, IN2, IN3, x, y, outcome);
+input [3:0] IN0, IN1, IN2, IN3;
 input x, y;
 output [3:0] outcome;
 reg [3:0] outcome;
 
 always @(*) begin
 case({x, y})
-2'b00 : outcome = I0;
-2'b01 : outcome = I1; 
-2'b10 : outcome = I2; 
-2'b11 : outcome = I3; 
+2'b00 : outcome = IN0;
+2'b01 : outcome = IN1; 
+2'b10 : outcome = IN2; 
+2'b11 : outcome = IN3; 
 
 endcase
 end

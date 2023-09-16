@@ -71,7 +71,8 @@ proc create_report { reportName command } {
 }
 OPTRACE "synth_1" START { ROLLUP_AUTO }
 set_param checkpoint.writeSynthRtdsInDcp 1
-set_param synth.incrementalSynthesisCache C:/Users/82106/Documents/GitHub/ECE_exp2/week3/8to1mux/mux8to1/.Xil/Vivado-7684-BAYERNchampions/incrSyn
+set_param chipscope.maxJobs 2
+set_param synth.incrementalSynthesisCache C:/Users/82106/Documents/GitHub/ECE_exp2/week3/8to1mux/mux8to1/.Xil/Vivado-15920-BAYERNchampions/incrSyn
 set_msg_config -id {Synth 8-256} -limit 10000
 set_msg_config -id {Synth 8-638} -limit 10000
 OPTRACE "Creating in-memory project" START { }

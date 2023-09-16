@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7s75fgga484-1" LaunchTime="1694853183" LaunchIncrCheckpoint="$PSRCDIR/utils_1/imports/synth_1/mux8to1.dcp">
+<GenRun Id="synth_1" LaunchPart="xc7s75fgga484-1" LaunchTime="1694881390" LaunchIncrCheckpoint="$PSRCDIR/utils_1/imports/synth_1/mux8to1.dcp">
   <File Type="PA-TCL" Name="mux8to1.tcl"/>
   <File Type="RDS-PROPCONSTRS" Name="mux8to1_drc_synth.rpt"/>
   <File Type="REPORTS-TCL" Name="mux8to1_reports.tcl"/>

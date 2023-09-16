@@ -3,10 +3,10 @@
 # SW Build 3865809 on Sun May  7 15:05:29 MDT 2023
 # IP Build 3864474 on Sun May  7 20:36:21 MDT 2023
 # SharedData Build 3865790 on Sun May 07 13:33:03 MDT 2023
-# Start of session at: Sat Sep 16 16:55:22 2023
-# Process ID: 7684
+# Start of session at: Sun Sep 17 00:50:39 2023
+# Process ID: 15920
 # Current directory: C:/Users/82106/Documents/GitHub/ECE_exp2/week3/8to1mux/mux8to1
-# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent16604 C:\Users\82106\Documents\GitHub\ECE_exp2\week3\8to1mux\mux8to1\mux8to1.xpr
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent5008 C:\Users\82106\Documents\GitHub\ECE_exp2\week3\8to1mux\mux8to1\mux8to1.xpr
 # Log file: C:/Users/82106/Documents/GitHub/ECE_exp2/week3/8to1mux/mux8to1/vivado.log
 # Journal file: C:/Users/82106/Documents/GitHub/ECE_exp2/week3/8to1mux/mux8to1\vivado.jou
 # Running On: BAYERNchampions, OS: Windows, CPU Frequency: 2496 MHz, CPU Physical cores: 4, Host memory: 16873 MB
@@ -78,8 +78,52 @@ Finished scanning sources
 INFO: [IP_Flow 19-234] Refreshing IP repositories
 INFO: [IP_Flow 19-1704] No user IP repositories specified
 INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2023.1/data/ip'.
-open_project: Time (s): cpu = 00:00:22 ; elapsed = 00:00:22 . Memory (MB): peak = 1492.145 ; gain = 388.086
+open_project: Time (s): cpu = 00:00:12 ; elapsed = 00:00:11 . Memory (MB): peak = 1488.578 ; gain = 374.945
 update_compile_order -fileset sources_1
+synth_design -rtl -rtl_skip_mlo -name rtl_1
+Command: synth_design -rtl -rtl_skip_mlo -name rtl_1
+Starting synth_design
+Using part: xc7s75fgga484-1
+Top: mux8to1
+INFO: [Device 21-403] Loading part xc7s75fgga484-1
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 2239.691 ; gain = 399.965
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'mux8to1' [C:/Users/82106/Documents/GitHub/ECE_exp2/week3/8to1mux/mux8to1/mux8to1.srcs/sources_1/new/mux8to1.v:23]
+INFO: [Synth 8-6157] synthesizing module 'mux4to1' [C:/Users/82106/Documents/GitHub/ECE_exp2/week3/8to1mux/mux8to1/mux8to1.srcs/sources_1/new/mux4to1.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'mux4to1' (0#1) [C:/Users/82106/Documents/GitHub/ECE_exp2/week3/8to1mux/mux8to1/mux8to1.srcs/sources_1/new/mux4to1.v:23]
+INFO: [Synth 8-6157] synthesizing module 'mux2to1' [C:/Users/82106/Documents/GitHub/ECE_exp2/week3/8to1mux/mux8to1/mux8to1.srcs/sources_1/new/mux2to1.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'mux2to1' (0#1) [C:/Users/82106/Documents/GitHub/ECE_exp2/week3/8to1mux/mux8to1/mux8to1.srcs/sources_1/new/mux2to1.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'mux8to1' (0#1) [C:/Users/82106/Documents/GitHub/ECE_exp2/week3/8to1mux/mux8to1/mux8to1.srcs/sources_1/new/mux8to1.v:23]
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:07 . Memory (MB): peak = 2331.746 ; gain = 492.020
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:05 ; elapsed = 00:00:07 . Memory (MB): peak = 2343.793 ; gain = 504.066
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:05 ; elapsed = 00:00:07 . Memory (MB): peak = 2343.793 ; gain = 504.066
+---------------------------------------------------------------------------------
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2343.793 ; gain = 0.000
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [C:/Users/82106/Documents/GitHub/ECE_exp2/week3/8to1mux/mux8to1/mux8to1.srcs/constrs_1/new/mux.xdc]
+Finished Parsing XDC File [C:/Users/82106/Documents/GitHub/ECE_exp2/week3/8to1mux/mux8to1/mux8to1.srcs/constrs_1/new/mux.xdc]
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2397.910 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+RTL Elaboration Complete:  : Time (s): cpu = 00:00:08 ; elapsed = 00:00:11 . Memory (MB): peak = 2410.789 ; gain = 571.062
+9 Infos, 0 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:11 ; elapsed = 00:00:15 . Memory (MB): peak = 2410.789 ; gain = 922.133
 launch_simulation
 Command: launch_simulation 
 INFO: [Vivado 12-12493] Simulation top is 'mux_tb'
@@ -116,9 +160,6 @@ Running: C:/Xilinx/Vivado/2023.1/bin/unwrapped/win64.o/xelab.exe --incr --debug 
 Using 2 slave threads.
 Starting static elaboration
 Pass Through NonSizing Optimizer
-WARNING: [VRFC 10-3091] actual bit length 1 differs from formal bit length 4 for port 'outcome' [C:/Users/82106/Documents/GitHub/ECE_exp2/week3/8to1mux/mux8to1/mux8to1.srcs/sources_1/new/mux8to1.v:30]
-WARNING: [VRFC 10-3091] actual bit length 1 differs from formal bit length 4 for port 'in0' [C:/Users/82106/Documents/GitHub/ECE_exp2/week3/8to1mux/mux8to1/mux8to1.srcs/sources_1/new/mux8to1.v:33]
-WARNING: [VRFC 10-3091] actual bit length 1 differs from formal bit length 4 for port 'outcome' [C:/Users/82106/Documents/GitHub/ECE_exp2/week3/8to1mux/mux8to1/mux8to1.srcs/sources_1/new/mux8to1.v:31]
 Completed static elaboration
 Starting simulation data flow analysis
 Completed simulation data flow analysis
@@ -149,132 +190,19 @@ source mux_tb.tcl
 # run 1000ns
 INFO: [USF-XSim-96] XSim completed. Design snapshot 'mux_tb_behav' loaded.
 INFO: [USF-XSim-97] XSim simulation ran for 1000ns
-launch_simulation: Time (s): cpu = 00:00:02 ; elapsed = 00:00:08 . Memory (MB): peak = 1535.605 ; gain = 29.480
-close_sim
-INFO: [Simtcl 6-16] Simulation closed
-launch_simulation
-Command: launch_simulation 
-INFO: [Vivado 12-12493] Simulation top is 'mux_tb'
-WARNING: [Vivado 12-13340] Unable to auto find GCC executables from simulator install path! (path not set)
-INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/82106/Documents/GitHub/ECE_exp2/week3/8to1mux/mux8to1/mux8to1.sim/sim_1/behav/xsim'
-INFO: [SIM-utils-51] Simulation object is 'sim_1'
-INFO: [SIM-utils-72] Using boost library from 'C:/Xilinx/Vivado/2023.1/tps/boost_1_72_0'
-INFO: [SIM-utils-54] Inspecting design source files for 'mux_tb' in fileset 'sim_1'...
-INFO: [USF-XSim-97] Finding global include files...
-INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
-INFO: [USF-XSim-2] XSim::Compile design
-INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/82106/Documents/GitHub/ECE_exp2/week3/8to1mux/mux8to1/mux8to1.sim/sim_1/behav/xsim'
-"xvlog --incr --relax -prj mux_tb_vlog.prj"
-ECHO가 설정되어 있지 않습니다.
-ECHO가 설정되어 있지 않습니다.
-INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/82106/Documents/GitHub/ECE_exp2/week3/8to1mux/mux8to1/mux8to1.srcs/sim_1/new/mux_tb.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module mux_tb
-INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
-INFO: [USF-XSim-3] XSim::Elaborate design
-INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/82106/Documents/GitHub/ECE_exp2/week3/8to1mux/mux8to1/mux8to1.sim/sim_1/behav/xsim'
-"xelab --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot mux_tb_behav xil_defaultlib.mux_tb xil_defaultlib.glbl -log elaborate.log"
-ECHO가 설정되어 있지 않습니다.
-ECHO가 설정되어 있지 않습니다.
-Vivado Simulator v2023.1
-Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
-Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
-Running: C:/Xilinx/Vivado/2023.1/bin/unwrapped/win64.o/xelab.exe --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot mux_tb_behav xil_defaultlib.mux_tb xil_defaultlib.glbl -log elaborate.log 
-Using 2 slave threads.
-Starting static elaboration
-Pass Through NonSizing Optimizer
-WARNING: [VRFC 10-3091] actual bit length 1 differs from formal bit length 4 for port 'outcome' [C:/Users/82106/Documents/GitHub/ECE_exp2/week3/8to1mux/mux8to1/mux8to1.srcs/sources_1/new/mux8to1.v:30]
-WARNING: [VRFC 10-3091] actual bit length 1 differs from formal bit length 4 for port 'in0' [C:/Users/82106/Documents/GitHub/ECE_exp2/week3/8to1mux/mux8to1/mux8to1.srcs/sources_1/new/mux8to1.v:33]
-WARNING: [VRFC 10-3091] actual bit length 1 differs from formal bit length 4 for port 'outcome' [C:/Users/82106/Documents/GitHub/ECE_exp2/week3/8to1mux/mux8to1/mux8to1.srcs/sources_1/new/mux8to1.v:31]
-Completed static elaboration
-Starting simulation data flow analysis
-Completed simulation data flow analysis
-Time Resolution for simulation is 1ps
-Compiling module xil_defaultlib.mux4to1
-Compiling module xil_defaultlib.mux2to1
-Compiling module xil_defaultlib.mux8to1
-Compiling module xil_defaultlib.mux_tb
-Compiling module xil_defaultlib.glbl
-Built simulation snapshot mux_tb_behav
-INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
-INFO: [USF-XSim-4] XSim::Simulate design
-INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'C:/Users/82106/Documents/GitHub/ECE_exp2/week3/8to1mux/mux8to1/mux8to1.sim/sim_1/behav/xsim'
-INFO: [USF-XSim-98] *** Running xsim
-   with args "mux_tb_behav -key {Behavioral:sim_1:Functional:mux_tb} -tclbatch {mux_tb.tcl} -log {simulate.log}"
-INFO: [USF-XSim-8] Loading simulator feature
-Time resolution is 1 ps
-source mux_tb.tcl
-# set curr_wave [current_wave_config]
-# if { [string length $curr_wave] == 0 } {
-#   if { [llength [get_objects]] > 0} {
-#     add_wave /
-#     set_property needs_save false [current_wave_config]
-#   } else {
-#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
-#   }
-# }
-# run 1000ns
-INFO: [USF-XSim-96] XSim completed. Design snapshot 'mux_tb_behav' loaded.
-INFO: [USF-XSim-97] XSim simulation ran for 1000ns
-launch_simulation: Time (s): cpu = 00:00:01 ; elapsed = 00:00:07 . Memory (MB): peak = 2585.176 ; gain = 0.000
-synth_design -rtl -rtl_skip_mlo -name rtl_1
-Command: synth_design -rtl -rtl_skip_mlo -name rtl_1
-Starting synth_design
-Using part: xc7s75fgga484-1
-Top: mux8to1
-INFO: [Device 21-403] Loading part xc7s75fgga484-1
----------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:05 . Memory (MB): peak = 2601.613 ; gain = 0.000
----------------------------------------------------------------------------------
-INFO: [Synth 8-6157] synthesizing module 'mux8to1' [C:/Users/82106/Documents/GitHub/ECE_exp2/week3/8to1mux/mux8to1/mux8to1.srcs/sources_1/new/mux8to1.v:23]
-INFO: [Synth 8-6157] synthesizing module 'mux4to1' [C:/Users/82106/Documents/GitHub/ECE_exp2/week3/8to1mux/mux8to1/mux8to1.srcs/sources_1/new/mux4to1.v:23]
-INFO: [Synth 8-6155] done synthesizing module 'mux4to1' (0#1) [C:/Users/82106/Documents/GitHub/ECE_exp2/week3/8to1mux/mux8to1/mux8to1.srcs/sources_1/new/mux4to1.v:23]
-WARNING: [Synth 8-689] width (1) of port connection 'outcome' does not match port width (4) of module 'mux4to1' [C:/Users/82106/Documents/GitHub/ECE_exp2/week3/8to1mux/mux8to1/mux8to1.srcs/sources_1/new/mux8to1.v:30]
-WARNING: [Synth 8-689] width (1) of port connection 'outcome' does not match port width (4) of module 'mux4to1' [C:/Users/82106/Documents/GitHub/ECE_exp2/week3/8to1mux/mux8to1/mux8to1.srcs/sources_1/new/mux8to1.v:31]
-INFO: [Synth 8-6157] synthesizing module 'mux2to1' [C:/Users/82106/Documents/GitHub/ECE_exp2/week3/8to1mux/mux8to1/mux8to1.srcs/sources_1/new/mux2to1.v:23]
-INFO: [Synth 8-6155] done synthesizing module 'mux2to1' (0#1) [C:/Users/82106/Documents/GitHub/ECE_exp2/week3/8to1mux/mux8to1/mux8to1.srcs/sources_1/new/mux2to1.v:23]
-INFO: [Synth 8-6155] done synthesizing module 'mux8to1' (0#1) [C:/Users/82106/Documents/GitHub/ECE_exp2/week3/8to1mux/mux8to1/mux8to1.srcs/sources_1/new/mux8to1.v:23]
----------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:07 . Memory (MB): peak = 2601.613 ; gain = 0.000
----------------------------------------------------------------------------------
----------------------------------------------------------------------------------
-Start Handling Custom Attributes
----------------------------------------------------------------------------------
----------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:04 ; elapsed = 00:00:07 . Memory (MB): peak = 2601.613 ; gain = 0.000
----------------------------------------------------------------------------------
----------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:04 ; elapsed = 00:00:07 . Memory (MB): peak = 2601.613 ; gain = 0.000
----------------------------------------------------------------------------------
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 2601.613 ; gain = 0.000
-INFO: [Project 1-570] Preparing netlist for logic optimization
-
-Processing XDC Constraints
-Initializing timing engine
-Parsing XDC File [C:/Users/82106/Documents/GitHub/ECE_exp2/week3/8to1mux/mux8to1/mux8to1.srcs/constrs_1/new/mux.xdc]
-Finished Parsing XDC File [C:/Users/82106/Documents/GitHub/ECE_exp2/week3/8to1mux/mux8to1/mux8to1.srcs/constrs_1/new/mux.xdc]
-Completed Processing XDC Constraints
-
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2601.613 ; gain = 0.000
-INFO: [Project 1-111] Unisim Transformation Summary:
-No Unisim elements were transformed.
-
-RTL Elaboration Complete:  : Time (s): cpu = 00:00:06 ; elapsed = 00:00:11 . Memory (MB): peak = 2601.613 ; gain = 0.000
-9 Infos, 2 Warnings, 0 Critical Warnings and 0 Errors encountered.
-synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:08 ; elapsed = 00:00:15 . Memory (MB): peak = 2601.613 ; gain = 0.000
+launch_simulation: Time (s): cpu = 00:00:02 ; elapsed = 00:00:07 . Memory (MB): peak = 2448.027 ; gain = 35.164
 reset_run synth_1
 INFO: [Project 1-1161] Replacing file C:/Users/82106/Documents/GitHub/ECE_exp2/week3/8to1mux/mux8to1/mux8to1.srcs/utils_1/imports/synth_1/mux8to1.dcp with file C:/Users/82106/Documents/GitHub/ECE_exp2/week3/8to1mux/mux8to1/mux8to1.runs/synth_1/mux8to1.dcp
 WARNING: [Vivado 12-1017] Problems encountered:
 1. Failed to delete one or more files in run directory C:/Users/82106/Documents/GitHub/ECE_exp2/week3/8to1mux/mux8to1/mux8to1.runs/synth_1
 
 launch_runs impl_1 -jobs 4
-[Sat Sep 16 17:33:03 2023] Launched synth_1...
+[Sun Sep 17 01:04:38 2023] Launched synth_1...
 Run output will be captured here: C:/Users/82106/Documents/GitHub/ECE_exp2/week3/8to1mux/mux8to1/mux8to1.runs/synth_1/runme.log
-[Sat Sep 16 17:33:03 2023] Launched impl_1...
+[Sun Sep 17 01:04:38 2023] Launched impl_1...
 Run output will be captured here: C:/Users/82106/Documents/GitHub/ECE_exp2/week3/8to1mux/mux8to1/mux8to1.runs/impl_1/runme.log
-close_design
 open_run impl_1
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2601.613 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 3513.324 ; gain = 0.000
 INFO: [Netlist 29-17] Analyzing 1 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-479] Netlist was created with Vivado 2023.1
@@ -286,14 +214,14 @@ INFO: [Project 1-853] Binary constraint restore complete.
 Reading XDEF placement.
 Reading placer database...
 Reading XDEF routing.
-Read XDEF Files: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.022 . Memory (MB): peak = 2783.590 ; gain = 0.000
+Read XDEF Files: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.025 . Memory (MB): peak = 3513.324 ; gain = 0.000
 Restored from archive | CPU: 0.000000 secs | Memory: 0.000000 MB |
-Finished XDEF File Restore: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.023 . Memory (MB): peak = 2783.590 ; gain = 0.000
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2783.590 ; gain = 0.000
+Finished XDEF File Restore: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.025 . Memory (MB): peak = 3513.324 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3513.324 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-open_run: Time (s): cpu = 00:00:08 ; elapsed = 00:00:10 . Memory (MB): peak = 2864.359 ; gain = 262.746
+open_run: Time (s): cpu = 00:00:09 ; elapsed = 00:00:10 . Memory (MB): peak = 3513.324 ; gain = 0.000
 WARNING: [Timing 38-313] There are no user specified timing constraints. Timing constraints are needed for proper timing analysis.
 close_sim
 INFO: [Simtcl 6-16] Simulation closed
@@ -333,9 +261,6 @@ Running: C:/Xilinx/Vivado/2023.1/bin/unwrapped/win64.o/xelab.exe --incr --debug 
 Using 2 slave threads.
 Starting static elaboration
 Pass Through NonSizing Optimizer
-WARNING: [VRFC 10-3091] actual bit length 1 differs from formal bit length 4 for port 'outcome' [C:/Users/82106/Documents/GitHub/ECE_exp2/week3/8to1mux/mux8to1/mux8to1.srcs/sources_1/new/mux8to1.v:30]
-WARNING: [VRFC 10-3091] actual bit length 1 differs from formal bit length 4 for port 'in0' [C:/Users/82106/Documents/GitHub/ECE_exp2/week3/8to1mux/mux8to1/mux8to1.srcs/sources_1/new/mux8to1.v:33]
-WARNING: [VRFC 10-3091] actual bit length 1 differs from formal bit length 4 for port 'outcome' [C:/Users/82106/Documents/GitHub/ECE_exp2/week3/8to1mux/mux8to1/mux8to1.srcs/sources_1/new/mux8to1.v:31]
 Completed static elaboration
 Starting simulation data flow analysis
 Completed simulation data flow analysis
@@ -366,7 +291,34 @@ source mux_tb.tcl
 # run 1000ns
 INFO: [USF-XSim-96] XSim completed. Design snapshot 'mux_tb_behav' loaded.
 INFO: [USF-XSim-97] XSim simulation ran for 1000ns
-launch_simulation: Time (s): cpu = 00:00:01 ; elapsed = 00:00:07 . Memory (MB): peak = 2884.062 ; gain = 7.883
+launch_simulation: Time (s): cpu = 00:00:02 ; elapsed = 00:00:07 . Memory (MB): peak = 3513.324 ; gain = 0.000
+reset_run synth_1
+INFO: [Project 1-1161] Replacing file C:/Users/82106/Documents/GitHub/ECE_exp2/week3/8to1mux/mux8to1/mux8to1.srcs/utils_1/imports/synth_1/mux8to1.dcp with file C:/Users/82106/Documents/GitHub/ECE_exp2/week3/8to1mux/mux8to1/mux8to1.runs/synth_1/mux8to1.dcp
+WARNING: [Vivado 12-1017] Problems encountered:
+1. Failed to delete one or more files in run directory C:/Users/82106/Documents/GitHub/ECE_exp2/week3/8to1mux/mux8to1/mux8to1.runs/synth_1
+
+launch_runs impl_1 -jobs 4
+[Sun Sep 17 01:23:10 2023] Launched synth_1...
+Run output will be captured here: C:/Users/82106/Documents/GitHub/ECE_exp2/week3/8to1mux/mux8to1/mux8to1.runs/synth_1/runme.log
+[Sun Sep 17 01:23:10 2023] Launched impl_1...
+Run output will be captured here: C:/Users/82106/Documents/GitHub/ECE_exp2/week3/8to1mux/mux8to1/mux8to1.runs/impl_1/runme.log
+refresh_design
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3513.324 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 1 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2023.1
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Timing 38-478] Restoring timing data from binary archive.
+INFO: [Timing 38-479] Binary timing data restore complete.
+INFO: [Project 1-856] Restoring constraints from binary archive.
+INFO: [Project 1-853] Binary constraint restore complete.
+Reading XDEF placement.
+Reading placer database...
+Reading XDEF routing.
+Read XDEF Files: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.023 . Memory (MB): peak = 3513.324 ; gain = 0.000
+Restored from archive | CPU: 0.000000 secs | Memory: 0.000000 MB |
+Finished XDEF File Restore: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.023 . Memory (MB): peak = 3513.324 ; gain = 0.000
+WARNING: [Timing 38-313] There are no user specified timing constraints. Timing constraints are needed for proper timing analysis.
 close_sim
 INFO: [Simtcl 6-16] Simulation closed
 launch_simulation
@@ -392,7 +344,7 @@ INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/82106/Documents/GitHub/ECE
 INFO: [VRFC 10-311] analyzing module mux8to1
 INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/82106/Documents/GitHub/ECE_exp2/week3/8to1mux/mux8to1/mux8to1.srcs/sim_1/new/mux_tb.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module mux_tb
-INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
 INFO: [USF-XSim-3] XSim::Elaborate design
 INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/82106/Documents/GitHub/ECE_exp2/week3/8to1mux/mux8to1/mux8to1.sim/sim_1/behav/xsim'
 "xelab --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot mux_tb_behav xil_defaultlib.mux_tb xil_defaultlib.glbl -log elaborate.log"
@@ -405,9 +357,6 @@ Running: C:/Xilinx/Vivado/2023.1/bin/unwrapped/win64.o/xelab.exe --incr --debug 
 Using 2 slave threads.
 Starting static elaboration
 Pass Through NonSizing Optimizer
-WARNING: [VRFC 10-3091] actual bit length 1 differs from formal bit length 4 for port 'outcome' [C:/Users/82106/Documents/GitHub/ECE_exp2/week3/8to1mux/mux8to1/mux8to1.srcs/sources_1/new/mux8to1.v:30]
-WARNING: [VRFC 10-3091] actual bit length 1 differs from formal bit length 4 for port 'in0' [C:/Users/82106/Documents/GitHub/ECE_exp2/week3/8to1mux/mux8to1/mux8to1.srcs/sources_1/new/mux8to1.v:33]
-WARNING: [VRFC 10-3091] actual bit length 1 differs from formal bit length 4 for port 'outcome' [C:/Users/82106/Documents/GitHub/ECE_exp2/week3/8to1mux/mux8to1/mux8to1.srcs/sources_1/new/mux8to1.v:31]
 Completed static elaboration
 Starting simulation data flow analysis
 Completed simulation data flow analysis
@@ -418,7 +367,7 @@ Compiling module xil_defaultlib.mux8to1
 Compiling module xil_defaultlib.mux_tb
 Compiling module xil_defaultlib.glbl
 Built simulation snapshot mux_tb_behav
-INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
+INFO: [USF-XSim-69] 'elaborate' step finished in '1' seconds
 INFO: [USF-XSim-4] XSim::Simulate design
 INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'C:/Users/82106/Documents/GitHub/ECE_exp2/week3/8to1mux/mux8to1/mux8to1.sim/sim_1/behav/xsim'
 INFO: [USF-XSim-98] *** Running xsim
@@ -438,4 +387,8 @@ source mux_tb.tcl
 # run 1000ns
 INFO: [USF-XSim-96] XSim completed. Design snapshot 'mux_tb_behav' loaded.
 INFO: [USF-XSim-97] XSim simulation ran for 1000ns
-launch_simulation: Time (s): cpu = 00:00:01 ; elapsed = 00:00:07 . Memory (MB): peak = 3955.402 ; gain = 0.000
+launch_simulation: Time (s): cpu = 00:00:01 ; elapsed = 00:00:07 . Memory (MB): peak = 3636.461 ; gain = 20.629
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+exit
+INFO: [Common 17-206] Exiting Vivado at Sun Sep 17 01:25:49 2023...

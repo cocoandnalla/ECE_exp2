@@ -17,7 +17,7 @@ proc create_report { reportName command } {
   }
 }
 namespace eval ::optrace {
-  variable script "C:/Users/82106/Documents/GitHub/ECE_exp2/week3/4bitcomparator/4bitcomparator/4bitcomparator.runs/impl_1/comparator.tcl"
+  variable script "C:/Users/82106/Documents/GitHub/ECE_exp2/week3/comparator/4bitcomparator/4bitcomparator.runs/impl_1/comparator.tcl"
   variable category "vivado_impl"
 }
 
@@ -126,7 +126,7 @@ set rc [catch {
   set_param chipscope.maxJobs 2
   set_param runs.launchOptions { -jobs 4  }
   open_checkpoint comparator_routed.dcp
-  set_property webtalk.parent_dir C:/Users/82106/Documents/GitHub/ECE_exp2/week3/4bitcomparator/4bitcomparator/4bitcomparator.cache/wt [current_project]
+  set_property webtalk.parent_dir C:/Users/82106/Documents/GitHub/ECE_exp2/week3/comparator/4bitcomparator/4bitcomparator.cache/wt [current_project]
 set_property TOP comparator [current_fileset]
 OPTRACE "read constraints: write_bitstream" START { }
 OPTRACE "read constraints: write_bitstream" END { }

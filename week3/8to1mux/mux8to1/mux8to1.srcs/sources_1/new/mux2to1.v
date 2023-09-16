@@ -24,6 +24,7 @@ module mux2to1(in0, in1, control, out);
 input [3:0] in0, in1;
 input control;
 output [3:0] out;
+wire [3:0] out;
 
 assign out = (in0 & (~control)) | (in1 & control);  
 endmodule

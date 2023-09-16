@@ -1,0 +1,63 @@
+#-----------------------------------------------------------
+# Vivado v2023.1 (64-bit)
+# SW Build 3865809 on Sun May  7 15:05:29 MDT 2023
+# IP Build 3864474 on Sun May  7 20:36:21 MDT 2023
+# SharedData Build 3865790 on Sun May 07 13:33:03 MDT 2023
+# Start of session at: Sat Sep 16 23:58:33 2023
+# Process ID: 11572
+# Current directory: C:/Users/82106/Documents/GitHub/ECE_exp2/week3/8to1mux/mux8to1
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent11704 C:\Users\82106\Documents\GitHub\ECE_exp2\week3\8to1mux\mux8to1\mux8to1.xpr
+# Log file: C:/Users/82106/Documents/GitHub/ECE_exp2/week3/8to1mux/mux8to1/vivado.log
+# Journal file: C:/Users/82106/Documents/GitHub/ECE_exp2/week3/8to1mux/mux8to1\vivado.jou
+# Running On: BAYERNchampions, OS: Windows, CPU Frequency: 2496 MHz, CPU Physical cores: 4, Host memory: 16873 MB
+#-----------------------------------------------------------
+start_gui
+open_project C:/Users/82106/Documents/GitHub/ECE_exp2/week3/8to1mux/mux8to1/mux8to1.xpr
+update_compile_order -fileset sources_1
+launch_simulation
+source mux_tb.tcl
+close_sim
+launch_simulation
+source mux_tb.tcl
+close_sim
+launch_simulation
+source mux_tb.tcl
+synth_design -rtl -rtl_skip_mlo -name rtl_1
+close_design
+open_run impl_1
+reset_run synth_1
+launch_runs impl_1 -jobs 4
+wait_on_run impl_1
+open_run impl_1
+close_sim
+launch_simulation
+source mux_tb.tcl
+reset_run synth_1
+launch_runs impl_1 -jobs 4
+wait_on_run impl_1
+reset_run synth_1
+launch_runs impl_1 -jobs 4
+wait_on_run impl_1
+refresh_design
+close_sim
+launch_simulation
+source mux_tb.tcl
+reset_run synth_1
+launch_runs impl_1 -jobs 4
+wait_on_run impl_1
+refresh_design
+close_sim
+launch_simulation
+source mux_tb.tcl
+reset_run synth_1
+launch_runs impl_1 -jobs 4
+wait_on_run impl_1
+refresh_design
+close_sim
+launch_simulation
+source mux_tb.tcl
+open_run synth_1 -name synth_1
+close_design
+synth_design -rtl -rtl_skip_mlo -name rtl_1
+synth_design -top mux8to1 -part xc7s75fgga484-1 -lint 
+close_sim

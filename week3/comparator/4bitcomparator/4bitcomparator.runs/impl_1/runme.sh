@@ -25,7 +25,7 @@ else
 fi
 export LD_LIBRARY_PATH
 
-HD_PWD='C:/Users/82106/Documents/GitHub/ECE_exp2/week3/4bitcomparator/4bitcomparator/4bitcomparator.runs/impl_1'
+HD_PWD='C:/Users/82106/Documents/GitHub/ECE_exp2/week3/comparator/4bitcomparator/4bitcomparator.runs/impl_1'
 cd "$HD_PWD"
 
 HD_LOG=runme.log
