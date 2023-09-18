@@ -18,10 +18,14 @@
   <File Type="BITSTR-MMI" Name="comparator.mmi"/>
   <File Type="ROUTE-METHODOLOGY-DRC" Name="comparator_methodology_drc_routed.rpt"/>
   <File Type="BITSTR-SYSDEF" Name="comparator.sysdef"/>
+  <File Type="ROUTE-METHODOLOGY-DRC-PB" Name="comparator_methodology_drc_routed.pb"/>
   <File Type="BITSTR-LTX" Name="debug_nets.ltx"/>
   <File Type="BITSTR-LTX" Name="comparator.ltx"/>
+  <File Type="BOOT-PDI-FILE" Name="comparator_soc.pdi"/>
   <File Type="WBT-USG" Name="usage_statistics_webtalk.html"/>
+  <File Type="NPI_FILE" Name="comparator.npi"/>
   <File Type="OPT-DRC" Name="comparator_drc_opted.rpt"/>
+  <File Type="RBD_FILE" Name="comparator.rbd"/>
   <File Type="OPT-HWDEF" Name="comparator.hwdef"/>
   <File Type="PLACE-IO" Name="comparator_io_placed.rpt"/>
   <File Type="PLACE-UTIL" Name="comparator_utilization_placed.rpt"/>
@@ -55,17 +59,13 @@
   <File Type="POSTROUTE-PHYSOPT-TIMING-RPX" Name="comparator_timing_summary_postroute_physopted.rpx"/>
   <File Type="POSTROUTE-PHYSOPT-BUS-SKEW" Name="comparator_bus_skew_postroute_physopted.rpt"/>
   <File Type="POSTROUTE-PHYSOPT-BUS-SKEW-RPX" Name="comparator_bus_skew_postroute_physopted.rpx"/>
-  <File Type="ROUTE-METHODOLOGY-DRC-PB" Name="comparator_methodology_drc_routed.pb"/>
   <File Type="ROUTE-DRC-RPX" Name="comparator_drc_routed.rpx"/>
   <File Type="ROUTE-METHODOLOGY-DRC-RPX" Name="comparator_methodology_drc_routed.rpx"/>
   <File Type="PDI-FILE" Name="comparator.pdi"/>
-  <File Type="BOOT-PDI-FILE" Name="comparator_soc.pdi"/>
   <File Type="PL-PDI-FILE" Name="comparator_pld.pdi"/>
   <File Type="RCFI_FILE" Name="comparator.rcfi"/>
   <File Type="CFI_FILE" Name="comparator.cfi"/>
   <File Type="RNPI_FILE" Name="comparator.rnpi"/>
-  <File Type="NPI_FILE" Name="comparator.npi"/>
-  <File Type="RBD_FILE" Name="comparator.rbd"/>
   <File Type="ROUTE-RQS" Name="comparator_routed.rqs"/>
   <File Type="POSTROUTE-PHYSOPT-RQS" Name="comparator_postroute_physopted.rqs"/>
   <File Type="ROUTE-RQS-RPT" Name="route_report_qor_suggestions_0.rpt"/>
@@ -123,5 +123,6 @@
     <Step Id="route_design"/>
     <Step Id="post_route_phys_opt_design"/>
     <Step Id="write_bitstream"/>
+    <Step Id="write_device_image"/>
   </Strategy>
 </GenRun>

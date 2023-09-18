@@ -3,10 +3,10 @@
 # SW Build 3865809 on Sun May  7 15:05:29 MDT 2023
 # IP Build 3864474 on Sun May  7 20:36:21 MDT 2023
 # SharedData Build 3865790 on Sun May 07 13:33:03 MDT 2023
-# Start of session at: Sun Sep 17 00:26:11 2023
-# Process ID: 17184
+# Start of session at: Mon Sep 18 09:27:17 2023
+# Process ID: 14484
 # Current directory: C:/Users/82106/Documents/GitHub/ECE_exp2/week3/4to2priorityencoder/encoder
-# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent8864 C:\Users\82106\Documents\GitHub\ECE_exp2\week3\4to2priorityencoder\encoder\encoder.xpr
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent8512 C:\Users\82106\Documents\GitHub\ECE_exp2\week3\4to2priorityencoder\encoder\encoder.xpr
 # Log file: C:/Users/82106/Documents/GitHub/ECE_exp2/week3/4to2priorityencoder/encoder/vivado.log
 # Journal file: C:/Users/82106/Documents/GitHub/ECE_exp2/week3/4to2priorityencoder/encoder\vivado.jou
 # Running On: BAYERNchampions, OS: Windows, CPU Frequency: 2496 MHz, CPU Physical cores: 4, Host memory: 16873 MB
@@ -14,5 +14,38 @@
 start_gui
 open_project C:/Users/82106/Documents/GitHub/ECE_exp2/week3/4to2priorityencoder/encoder/encoder.xpr
 update_compile_order -fileset sources_1
+reset_run impl_1 -prev_step 
 launch_runs impl_1 -to_step write_bitstream -jobs 4
 wait_on_run impl_1
+synth_design -rtl -rtl_skip_mlo -name rtl_1
+set_property IOSTANDARD LVCMOS33 [get_ports [list {a[3]}]]
+set_property IOSTANDARD LVCMOS33 [get_ports [list valid]]
+place_ports {a[3]} Y1
+place_ports {a[2]} W3
+place_ports {a[1]} U2
+place_ports {a[0]} T1
+place_ports {x[1]} L4
+place_ports {x[0]} M4
+place_ports valid M2
+save_constraints
+reset_run synth_1
+launch_runs impl_1 -jobs 4
+wait_on_run impl_1
+close_design
+open_run impl_1
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+wait_on_run impl_1
+open_hw_manager
+connect_hw_server -allow_non_jtag
+open_hw_target
+set_property PROGRAM.FILE {C:/Users/82106/Documents/GitHub/ECE_exp2/week3/4to2priorityencoder/encoder/encoder.runs/impl_1/encoder.bit} [get_hw_devices xc7s75_0]
+current_hw_device [get_hw_devices xc7s75_0]
+refresh_hw_device -update_hw_probes false [lindex [get_hw_devices xc7s75_0] 0]
+set_property PROBES.FILE {} [get_hw_devices xc7s75_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7s75_0]
+set_property PROGRAM.FILE {C:/Users/82106/Documents/GitHub/ECE_exp2/week3/4to2priorityencoder/encoder/encoder.runs/impl_1/encoder.bit} [get_hw_devices xc7s75_0]
+program_hw_devices [get_hw_devices xc7s75_0]
+refresh_hw_device [lindex [get_hw_devices xc7s75_0] 0]
+launch_simulation
+source encoder_tb.tcl
+close_sim

@@ -3,10 +3,10 @@
 # SW Build 3865809 on Sun May  7 15:05:29 MDT 2023
 # IP Build 3864474 on Sun May  7 20:36:21 MDT 2023
 # SharedData Build 3865790 on Sun May 07 13:33:03 MDT 2023
-# Start of session at: Sun Sep 17 00:32:56 2023
-# Process ID: 15632
+# Start of session at: Mon Sep 18 09:40:05 2023
+# Process ID: 7012
 # Current directory: C:/Users/82106/Documents/GitHub/ECE_exp2/week3/mux4to1/mux4
-# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent4896 C:\Users\82106\Documents\GitHub\ECE_exp2\week3\mux4to1\mux4\mux4.xpr
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent3420 C:\Users\82106\Documents\GitHub\ECE_exp2\week3\mux4to1\mux4\mux4.xpr
 # Log file: C:/Users/82106/Documents/GitHub/ECE_exp2/week3/mux4to1/mux4/vivado.log
 # Journal file: C:/Users/82106/Documents/GitHub/ECE_exp2/week3/mux4to1/mux4\vivado.jou
 # Running On: BAYERNchampions, OS: Windows, CPU Frequency: 2496 MHz, CPU Physical cores: 4, Host memory: 16873 MB
@@ -14,6 +14,19 @@
 start_gui
 open_project C:/Users/82106/Documents/GitHub/ECE_exp2/week3/mux4to1/mux4/mux4.xpr
 update_compile_order -fileset sources_1
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+wait_on_run impl_1
+open_hw_manager
+connect_hw_server -allow_non_jtag
+open_hw_target
+set_property PROGRAM.FILE {C:/Users/82106/Documents/GitHub/ECE_exp2/week3/mux4to1/mux4/mux4.runs/impl_1/mux4to1.bit} [get_hw_devices xc7s75_0]
+current_hw_device [get_hw_devices xc7s75_0]
+refresh_hw_device -update_hw_probes false [lindex [get_hw_devices xc7s75_0] 0]
+set_property PROBES.FILE {} [get_hw_devices xc7s75_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7s75_0]
+set_property PROGRAM.FILE {C:/Users/82106/Documents/GitHub/ECE_exp2/week3/mux4to1/mux4/mux4.runs/impl_1/mux4to1.bit} [get_hw_devices xc7s75_0]
+program_hw_devices [get_hw_devices xc7s75_0]
+refresh_hw_device [lindex [get_hw_devices xc7s75_0] 0]
 launch_simulation
 source mux4to1_tb.tcl
 close_sim

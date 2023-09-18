@@ -24,7 +24,7 @@ eval( EAInclude(ISEJScriptLib) );
 
 
 // pre-commands:
-ISETouchFile( "init_design", "begin" );
+ISETouchFile( "write_bitstream", "begin" );
 ISEStep( "vivado",
          "-log mux4to1.vdi -applog -m64 -product Vivado -messageDb vivado.pb -mode batch -source mux4to1.tcl -notrace" );
 

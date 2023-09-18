@@ -3,8 +3,8 @@
 # SW Build 3865809 on Sun May  7 15:05:29 MDT 2023
 # IP Build 3864474 on Sun May  7 20:36:21 MDT 2023
 # SharedData Build 3865790 on Sun May 07 13:33:03 MDT 2023
-# Start of session at: Sat Sep 16 17:55:37 2023
-# Process ID: 14244
+# Start of session at: Mon Sep 18 09:32:33 2023
+# Process ID: 15180
 # Current directory: C:/Users/82106/Documents/GitHub/ECE_exp2/week3/4to2priorityencoder/encoder/encoder.runs/impl_1
 # Command line: vivado.exe -log encoder.vdi -applog -product Vivado -messageDb vivado.pb -mode batch -source encoder.tcl -notrace
 # Log file: C:/Users/82106/Documents/GitHub/ECE_exp2/week3/4to2priorityencoder/encoder/encoder.runs/impl_1/encoder.vdi

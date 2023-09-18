@@ -3,8 +3,8 @@
 # SW Build 3865809 on Sun May  7 15:05:29 MDT 2023
 # IP Build 3864474 on Sun May  7 20:36:21 MDT 2023
 # SharedData Build 3865790 on Sun May 07 13:33:03 MDT 2023
-# Start of session at: Sat Sep 16 17:54:44 2023
-# Process ID: 14648
+# Start of session at: Mon Sep 18 09:31:43 2023
+# Process ID: 5572
 # Current directory: C:/Users/82106/Documents/GitHub/ECE_exp2/week3/4to2priorityencoder/encoder/encoder.runs/synth_1
 # Command line: vivado.exe -log encoder.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source encoder.tcl
 # Log file: C:/Users/82106/Documents/GitHub/ECE_exp2/week3/4to2priorityencoder/encoder/encoder.runs/synth_1/encoder.vds
@@ -12,7 +12,7 @@
 # Running On: BAYERNchampions, OS: Windows, CPU Frequency: 2496 MHz, CPU Physical cores: 4, Host memory: 16873 MB
 #-----------------------------------------------------------
 source encoder.tcl -notrace
-create_project: Time (s): cpu = 00:00:04 ; elapsed = 00:00:07 . Memory (MB): peak = 448.797 ; gain = 163.047
+create_project: Time (s): cpu = 00:00:04 ; elapsed = 00:00:07 . Memory (MB): peak = 449.766 ; gain = 161.883
 Command: read_checkpoint -auto_incremental -incremental C:/Users/82106/Documents/GitHub/ECE_exp2/week3/4to2priorityencoder/encoder/encoder.srcs/utils_1/imports/synth_1/encoder.dcp
 INFO: [Vivado 12-5825] Read reference checkpoint from C:/Users/82106/Documents/GitHub/ECE_exp2/week3/4to2priorityencoder/encoder/encoder.srcs/utils_1/imports/synth_1/encoder.dcp for incremental synthesis
 INFO: [Vivado 12-7989] Please ensure there are no constraint changes
@@ -25,90 +25,75 @@ INFO: [Designutils 20-5440] No compile time benefit to using incremental synthes
 INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
 INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
 INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
-INFO: [Synth 8-7075] Helper process launched with PID 14488
+INFO: [Synth 8-7075] Helper process launched with PID 7196
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:06 . Memory (MB): peak = 1270.355 ; gain = 411.699
+Starting RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:06 . Memory (MB): peak = 1270.961 ; gain = 411.336
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-6157] synthesizing module 'encoder' [C:/Users/82106/Documents/GitHub/ECE_exp2/week3/4to2priorityencoder/encoder/encoder.srcs/sources_1/new/encoder.v:23]
 INFO: [Synth 8-6155] done synthesizing module 'encoder' (0#1) [C:/Users/82106/Documents/GitHub/ECE_exp2/week3/4to2priorityencoder/encoder/encoder.srcs/sources_1/new/encoder.v:23]
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:08 . Memory (MB): peak = 1359.605 ; gain = 500.949
+Finished RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:07 . Memory (MB): peak = 1360.941 ; gain = 501.316
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:05 ; elapsed = 00:00:08 . Memory (MB): peak = 1359.605 ; gain = 500.949
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:04 ; elapsed = 00:00:07 . Memory (MB): peak = 1360.941 ; gain = 501.316
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:05 ; elapsed = 00:00:08 . Memory (MB): peak = 1359.605 ; gain = 500.949
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:04 ; elapsed = 00:00:07 . Memory (MB): peak = 1360.941 ; gain = 501.316
 ---------------------------------------------------------------------------------
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1359.605 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1360.941 ; gain = 0.000
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
 Initializing timing engine
 Parsing XDC File [C:/Users/82106/Documents/GitHub/ECE_exp2/week3/4to2priorityencoder/encoder/encoder.srcs/constrs_1/new/encoder.xdc]
-WARNING: [Vivado 12-584] No ports matched 'b'. [C:/Users/82106/Documents/GitHub/ECE_exp2/week3/4to2priorityencoder/encoder/encoder.srcs/constrs_1/new/encoder.xdc:2]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/82106/Documents/GitHub/ECE_exp2/week3/4to2priorityencoder/encoder/encoder.srcs/constrs_1/new/encoder.xdc:2]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'c'. [C:/Users/82106/Documents/GitHub/ECE_exp2/week3/4to2priorityencoder/encoder/encoder.srcs/constrs_1/new/encoder.xdc:3]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/82106/Documents/GitHub/ECE_exp2/week3/4to2priorityencoder/encoder/encoder.srcs/constrs_1/new/encoder.xdc:3]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'v'. [C:/Users/82106/Documents/GitHub/ECE_exp2/week3/4to2priorityencoder/encoder/encoder.srcs/constrs_1/new/encoder.xdc:5]
+WARNING: [Vivado 12-584] No ports matched 'b'. [C:/Users/82106/Documents/GitHub/ECE_exp2/week3/4to2priorityencoder/encoder/encoder.srcs/constrs_1/new/encoder.xdc:5]
 CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/82106/Documents/GitHub/ECE_exp2/week3/4to2priorityencoder/encoder/encoder.srcs/constrs_1/new/encoder.xdc:5]
 Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'd'. [C:/Users/82106/Documents/GitHub/ECE_exp2/week3/4to2priorityencoder/encoder/encoder.srcs/constrs_1/new/encoder.xdc:6]
+WARNING: [Vivado 12-584] No ports matched 'c'. [C:/Users/82106/Documents/GitHub/ECE_exp2/week3/4to2priorityencoder/encoder/encoder.srcs/constrs_1/new/encoder.xdc:6]
 CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/82106/Documents/GitHub/ECE_exp2/week3/4to2priorityencoder/encoder/encoder.srcs/constrs_1/new/encoder.xdc:6]
 Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'y'. [C:/Users/82106/Documents/GitHub/ECE_exp2/week3/4to2priorityencoder/encoder/encoder.srcs/constrs_1/new/encoder.xdc:7]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/82106/Documents/GitHub/ECE_exp2/week3/4to2priorityencoder/encoder/encoder.srcs/constrs_1/new/encoder.xdc:7]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'b'. [C:/Users/82106/Documents/GitHub/ECE_exp2/week3/4to2priorityencoder/encoder/encoder.srcs/constrs_1/new/encoder.xdc:9]
+WARNING: [Vivado 12-584] No ports matched 'v'. [C:/Users/82106/Documents/GitHub/ECE_exp2/week3/4to2priorityencoder/encoder/encoder.srcs/constrs_1/new/encoder.xdc:9]
 CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/82106/Documents/GitHub/ECE_exp2/week3/4to2priorityencoder/encoder/encoder.srcs/constrs_1/new/encoder.xdc:9]
 Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'c'. [C:/Users/82106/Documents/GitHub/ECE_exp2/week3/4to2priorityencoder/encoder/encoder.srcs/constrs_1/new/encoder.xdc:10]
+WARNING: [Vivado 12-584] No ports matched 'd'. [C:/Users/82106/Documents/GitHub/ECE_exp2/week3/4to2priorityencoder/encoder/encoder.srcs/constrs_1/new/encoder.xdc:10]
 CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/82106/Documents/GitHub/ECE_exp2/week3/4to2priorityencoder/encoder/encoder.srcs/constrs_1/new/encoder.xdc:10]
 Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'd'. [C:/Users/82106/Documents/GitHub/ECE_exp2/week3/4to2priorityencoder/encoder/encoder.srcs/constrs_1/new/encoder.xdc:11]
+WARNING: [Vivado 12-584] No ports matched 'y'. [C:/Users/82106/Documents/GitHub/ECE_exp2/week3/4to2priorityencoder/encoder/encoder.srcs/constrs_1/new/encoder.xdc:11]
 CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/82106/Documents/GitHub/ECE_exp2/week3/4to2priorityencoder/encoder/encoder.srcs/constrs_1/new/encoder.xdc:11]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'y'. [C:/Users/82106/Documents/GitHub/ECE_exp2/week3/4to2priorityencoder/encoder/encoder.srcs/constrs_1/new/encoder.xdc:13]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/82106/Documents/GitHub/ECE_exp2/week3/4to2priorityencoder/encoder/encoder.srcs/constrs_1/new/encoder.xdc:13]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'v'. [C:/Users/82106/Documents/GitHub/ECE_exp2/week3/4to2priorityencoder/encoder/encoder.srcs/constrs_1/new/encoder.xdc:14]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/82106/Documents/GitHub/ECE_exp2/week3/4to2priorityencoder/encoder/encoder.srcs/constrs_1/new/encoder.xdc:14]
 Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
 Finished Parsing XDC File [C:/Users/82106/Documents/GitHub/ECE_exp2/week3/4to2priorityencoder/encoder/encoder.srcs/constrs_1/new/encoder.xdc]
 INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [C:/Users/82106/Documents/GitHub/ECE_exp2/week3/4to2priorityencoder/encoder/encoder.srcs/constrs_1/new/encoder.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/encoder_propImpl.xdc].
 Resolution: To avoid this warning, move constraints listed in [.Xil/encoder_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1377.402 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1385.027 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 1377.402 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 1385.027 ; gain = 0.000
 INFO: [Designutils 20-5440] No compile time benefit to using incremental synthesis; A full resynthesis will be run
 INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:09 ; elapsed = 00:00:16 . Memory (MB): peak = 1377.402 ; gain = 518.746
+Finished Constraint Validation : Time (s): cpu = 00:00:10 ; elapsed = 00:00:15 . Memory (MB): peak = 1385.027 ; gain = 525.402
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7s75fgga484-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:09 ; elapsed = 00:00:16 . Memory (MB): peak = 1377.402 ; gain = 518.746
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:10 ; elapsed = 00:00:15 . Memory (MB): peak = 1385.027 ; gain = 525.402
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:09 ; elapsed = 00:00:16 . Memory (MB): peak = 1377.402 ; gain = 518.746
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:10 ; elapsed = 00:00:15 . Memory (MB): peak = 1385.027 ; gain = 525.402
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:09 ; elapsed = 00:00:16 . Memory (MB): peak = 1377.402 ; gain = 518.746
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:10 ; elapsed = 00:00:15 . Memory (MB): peak = 1385.027 ; gain = 525.402
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start RTL Component Statistics 
@@ -134,25 +119,25 @@ Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
 WARNING: [Synth 8-7080] Parallel synthesis criteria is not met
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:10 ; elapsed = 00:00:18 . Memory (MB): peak = 1377.402 ; gain = 518.746
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:12 ; elapsed = 00:00:17 . Memory (MB): peak = 1385.027 ; gain = 525.402
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:14 ; elapsed = 00:00:24 . Memory (MB): peak = 1377.402 ; gain = 518.746
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:16 ; elapsed = 00:00:22 . Memory (MB): peak = 1385.027 ; gain = 525.402
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:14 ; elapsed = 00:00:24 . Memory (MB): peak = 1377.402 ; gain = 518.746
+Finished Timing Optimization : Time (s): cpu = 00:00:16 ; elapsed = 00:00:22 . Memory (MB): peak = 1385.027 ; gain = 525.402
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:14 ; elapsed = 00:00:24 . Memory (MB): peak = 1377.402 ; gain = 518.746
+Finished Technology Mapping : Time (s): cpu = 00:00:16 ; elapsed = 00:00:22 . Memory (MB): peak = 1385.027 ; gain = 525.402
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start IO Insertion
@@ -170,37 +155,37 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:18 ; elapsed = 00:00:29 . Memory (MB): peak = 1386.105 ; gain = 527.449
+Finished IO Insertion : Time (s): cpu = 00:00:19 ; elapsed = 00:00:27 . Memory (MB): peak = 1389.551 ; gain = 529.926
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:18 ; elapsed = 00:00:29 . Memory (MB): peak = 1386.105 ; gain = 527.449
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:19 ; elapsed = 00:00:27 . Memory (MB): peak = 1389.551 ; gain = 529.926
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:18 ; elapsed = 00:00:29 . Memory (MB): peak = 1386.105 ; gain = 527.449
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:19 ; elapsed = 00:00:27 . Memory (MB): peak = 1389.551 ; gain = 529.926
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:18 ; elapsed = 00:00:29 . Memory (MB): peak = 1386.105 ; gain = 527.449
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:19 ; elapsed = 00:00:27 . Memory (MB): peak = 1389.551 ; gain = 529.926
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:18 ; elapsed = 00:00:29 . Memory (MB): peak = 1386.105 ; gain = 527.449
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:19 ; elapsed = 00:00:27 . Memory (MB): peak = 1389.551 ; gain = 529.926
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:18 ; elapsed = 00:00:29 . Memory (MB): peak = 1386.105 ; gain = 527.449
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:19 ; elapsed = 00:00:27 . Memory (MB): peak = 1389.551 ; gain = 529.926
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -223,25 +208,25 @@ Report Cell Usage:
 |5     |OBUF |     3|
 +------+-----+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:18 ; elapsed = 00:00:29 . Memory (MB): peak = 1386.105 ; gain = 527.449
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:19 ; elapsed = 00:00:27 . Memory (MB): peak = 1389.551 ; gain = 529.926
 ---------------------------------------------------------------------------------
 Synthesis finished with 0 errors, 0 critical warnings and 1 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:12 ; elapsed = 00:00:28 . Memory (MB): peak = 1386.105 ; gain = 509.652
-Synthesis Optimization Complete : Time (s): cpu = 00:00:18 ; elapsed = 00:00:29 . Memory (MB): peak = 1386.105 ; gain = 527.449
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:13 ; elapsed = 00:00:25 . Memory (MB): peak = 1389.551 ; gain = 505.840
+Synthesis Optimization Complete : Time (s): cpu = 00:00:19 ; elapsed = 00:00:27 . Memory (MB): peak = 1389.551 ; gain = 529.926
 INFO: [Project 1-571] Translating synthesized netlist
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1398.188 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1401.598 ; gain = 0.000
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1402.879 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1408.223 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
 Synth Design complete | Checksum: 7d5c1b0f
 INFO: [Common 17-83] Releasing license: Synthesis
-21 Infos, 11 Warnings, 10 Critical Warnings and 0 Errors encountered.
+21 Infos, 6 Warnings, 5 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:21 ; elapsed = 00:00:34 . Memory (MB): peak = 1402.879 ; gain = 930.242
+synth_design: Time (s): cpu = 00:00:23 ; elapsed = 00:00:32 . Memory (MB): peak = 1408.223 ; gain = 934.609
 INFO: [runtcl-6] Synthesis results are not added to the cache due to CRITICAL_WARNING
 INFO: [Common 17-1381] The checkpoint 'C:/Users/82106/Documents/GitHub/ECE_exp2/week3/4to2priorityencoder/encoder/encoder.runs/synth_1/encoder.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file encoder_utilization_synth.rpt -pb encoder_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Sat Sep 16 17:55:29 2023...
+INFO: [Common 17-206] Exiting Vivado at Mon Sep 18 09:32:24 2023...
