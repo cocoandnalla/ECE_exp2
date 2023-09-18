@@ -3,10 +3,10 @@
 # SW Build 3865809 on Sun May  7 15:05:29 MDT 2023
 # IP Build 3864474 on Sun May  7 20:36:21 MDT 2023
 # SharedData Build 3865790 on Sun May 07 13:33:03 MDT 2023
-# Start of session at: Mon Sep 18 09:48:07 2023
-# Process ID: 14972
+# Start of session at: Mon Sep 18 09:01:23 2023
+# Process ID: 14940
 # Current directory: C:/Users/82106/Documents/GitHub/ECE_exp2/week3/comparator/4bitcomparator
-# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent7896 C:\Users\82106\Documents\GitHub\ECE_exp2\week3\comparator\4bitcomparator\4bitcomparator.xpr
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent10656 C:\Users\82106\Documents\GitHub\ECE_exp2\week3\comparator\4bitcomparator\4bitcomparator.xpr
 # Log file: C:/Users/82106/Documents/GitHub/ECE_exp2/week3/comparator/4bitcomparator/vivado.log
 # Journal file: C:/Users/82106/Documents/GitHub/ECE_exp2/week3/comparator/4bitcomparator\vivado.jou
 # Running On: BAYERNchampions, OS: Windows, CPU Frequency: 2496 MHz, CPU Physical cores: 4, Host memory: 16873 MB
@@ -14,30 +14,6 @@
 start_gui
 open_project C:/Users/82106/Documents/GitHub/ECE_exp2/week3/comparator/4bitcomparator/4bitcomparator.xpr
 update_compile_order -fileset sources_1
-synth_design -rtl -rtl_skip_mlo -name rtl_1
-set_property package_pin "" [get_ports [list  {a[0]}]]
-set_property package_pin "" [get_ports [list  {a[1]}]]
-set_property package_pin "" [get_ports [list  {a[2]}]]
-place_ports {a[3]} Y1
-place_ports {a[2]} W3
-place_ports {a[1]} U2
-place_ports {a[0]} T1
-set_property package_pin "" [get_ports [list  {b[3]}]]
-set_property package_pin "" [get_ports [list  {b[2]}]]
-set_property package_pin "" [get_ports [list  {b[1]}]]
-set_property package_pin "" [get_ports [list  {b[0]}]]
-place_ports {b[3]} W4
-place_ports {b[2]} W1
-place_ports {b[1]} V4
-place_ports {b[0]} U4
-save_constraints
-reset_run impl_1
-launch_runs impl_1 -jobs 4
-wait_on_run impl_1
-launch_runs impl_1 -to_step write_bitstream -jobs 4
-wait_on_run impl_1
-launch_simulation
-source comparator_tb.tcl
 open_hw_manager
 connect_hw_server -allow_non_jtag
 open_hw_target
@@ -49,4 +25,18 @@ set_property FULL_PROBES.FILE {} [get_hw_devices xc7s75_0]
 set_property PROGRAM.FILE {C:/Users/82106/Documents/GitHub/ECE_exp2/week3/comparator/4bitcomparator/4bitcomparator.runs/impl_1/comparator.bit} [get_hw_devices xc7s75_0]
 program_hw_devices [get_hw_devices xc7s75_0]
 refresh_hw_device [lindex [get_hw_devices xc7s75_0] 0]
+close_hw_manager
+open_hw_manager
+connect_hw_server -allow_non_jtag
+open_hw_target
+set_property PROGRAM.FILE {C:/Users/82106/Documents/GitHub/ECE_exp2/week3/comparator/4bitcomparator/4bitcomparator.runs/impl_1/comparator.bit} [get_hw_devices xc7s75_0]
+current_hw_device [get_hw_devices xc7s75_0]
+refresh_hw_device -update_hw_probes false [lindex [get_hw_devices xc7s75_0] 0]
+set_property PROBES.FILE {} [get_hw_devices xc7s75_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7s75_0]
+set_property PROGRAM.FILE {C:/Users/82106/Documents/GitHub/ECE_exp2/week3/comparator/4bitcomparator/4bitcomparator.runs/impl_1/comparator.bit} [get_hw_devices xc7s75_0]
+program_hw_devices [get_hw_devices xc7s75_0]
+refresh_hw_device [lindex [get_hw_devices xc7s75_0] 0]
+launch_simulation
+source comparator_tb.tcl
 close_sim
