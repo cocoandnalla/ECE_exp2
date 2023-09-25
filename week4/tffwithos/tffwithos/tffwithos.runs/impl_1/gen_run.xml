@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="impl_1" LaunchPart="xc7s75fgga484-1" LaunchTime="1695549595">
+<GenRun Id="impl_1" LaunchPart="xc7s75fgga484-1" LaunchTime="1695605886">
   <File Type="ROUTE-PWR" Name="TFF_oneshot_power_routed.rpt"/>
   <File Type="PA-TCL" Name="TFF_oneshot.tcl"/>
   <File Type="ROUTE-PWR-SUM" Name="TFF_oneshot_power_summary_routed.pb"/>
@@ -56,13 +56,13 @@
   <File Type="ROUTE-BUS-SKEW-RPX" Name="TFF_oneshot_bus_skew_routed.rpx"/>
   <File Type="POSTROUTE-PHYSOPT-DCP" Name="TFF_oneshot_postroute_physopt.dcp"/>
   <File Type="POSTROUTE-PHYSOPT-BLACKBOX-DCP" Name="TFF_oneshot_postroute_physopt_bb.dcp"/>
-  <File Type="POSTROUTE-PHYSOPT-TIMING" Name="tffwithos_timing_summary_postroute_physopted.rpt"/>
-  <File Type="POSTROUTE-PHYSOPT-TIMING-PB" Name="tffwithos_timing_summary_postroute_physopted.pb"/>
-  <File Type="POSTROUTE-PHYSOPT-TIMING-RPX" Name="tffwithos_timing_summary_postroute_physopted.rpx"/>
-  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW" Name="tffwithos_bus_skew_postroute_physopted.rpt"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING" Name="TFF_oneshot_timing_summary_postroute_physopted.rpt"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING-PB" Name="TFF_oneshot_timing_summary_postroute_physopted.pb"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING-RPX" Name="TFF_oneshot_timing_summary_postroute_physopted.rpx"/>
+  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW" Name="TFF_oneshot_bus_skew_postroute_physopted.rpt"/>
   <File Type="BG-BIT" Name="TFF_oneshot.bit"/>
-  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW-PB" Name="tffwithos_bus_skew_postroute_physopted.pb"/>
-  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW-RPX" Name="tffwithos_bus_skew_postroute_physopted.rpx"/>
+  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW-PB" Name="TFF_oneshot_bus_skew_postroute_physopted.pb"/>
+  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW-RPX" Name="TFF_oneshot_bus_skew_postroute_physopted.rpx"/>
   <File Type="BITSTR-NKY" Name="TFF_oneshot.nky"/>
   <File Type="BITSTR-BMM" Name="TFF_oneshot_bd.bmm"/>
   <File Type="PDI-FILE" Name="TFF_oneshot.pdi"/>
