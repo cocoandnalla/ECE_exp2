@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="impl_1" LaunchPart="xc7s75fgga484-1" LaunchTime="1698423576">
+<GenRun Id="impl_1" LaunchPart="xc7s75fgga484-1" LaunchTime="1698491561">
   <File Type="ROUTE-PWR" Name="SM2_power_routed.rpt"/>
   <File Type="PA-TCL" Name="SM2.tcl"/>
   <File Type="ROUTE-PWR-SUM" Name="SM2_power_summary_routed.pb"/>
