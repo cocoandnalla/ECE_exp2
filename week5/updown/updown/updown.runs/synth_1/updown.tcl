@@ -71,7 +71,7 @@ proc create_report { reportName command } {
 }
 OPTRACE "synth_1" START { ROLLUP_AUTO }
 set_param checkpoint.writeSynthRtdsInDcp 1
-set_param synth.incrementalSynthesisCache C:/Users/82106/AppData/Roaming/Xilinx/Vivado/.Xil/Vivado-4812-BAYERNchampions/incrSyn
+set_param synth.incrementalSynthesisCache C:/Users/82106/Documents/GitHub/ECE_exp2/week5/updown/updown/.Xil/Vivado-3980-BAYERNchampions/incrSyn
 set_msg_config -id {Synth 8-256} -limit 10000
 set_msg_config -id {Synth 8-638} -limit 10000
 OPTRACE "Creating in-memory project" START { }
@@ -102,6 +102,8 @@ read_xdc C:/Users/82106/Documents/GitHub/ECE_exp2/week5/updown/updown/updown.src
 set_property used_in_implementation false [get_files C:/Users/82106/Documents/GitHub/ECE_exp2/week5/updown/updown/updown.srcs/constrs_1/new/updown.xdc]
 
 set_param ips.enableIPCacheLiteLoad 1
+
+read_checkpoint -auto_incremental -incremental C:/Users/82106/Documents/GitHub/ECE_exp2/week5/updown/updown/updown.srcs/utils_1/imports/synth_1/updown.dcp
 close [open __synthesis_is_running__ w]
 
 OPTRACE "synth_design" START { }

@@ -24,8 +24,9 @@ module updown(clk, rst, x, state);
 input clk, rst;
 input x;
 reg x_reg, x_trig;
-reg [3:0] a=0;
 output reg [2:0] state;
+reg up_count_enable; 
+reg down_count_enable; 
 
 always @(negedge rst or posedge clk)begin
 if(!rst) begin
@@ -38,16 +39,26 @@ end
 end
 
 always @(negedge rst or posedge clk)begin
-if(!rst) state <= 3'b000;
-else begin
-if(x_trig)
-a <= a + 1;
-if(a <= 7)
-state <= state+1;
-else if(a>7 && a <= 14)
-state <= state-1;
-else
-a <= 0;
+if (!rst) begin
+state <= 3'b000; 
+up_count_enable <= 1'b1; 
+down_count_enable <= 1'b0;
+end else begin
+if (x_trig)
+if (up_count_enable) begin
+state <= state + 1; 
+if (state == 3'b110) begin
+up_count_enable <= 1'b0; 
+down_count_enable <= 1'b1; 
+end
+end else if (down_count_enable) begin
+state <= state - 1; 
+if (state == 3'b001) begin
+up_count_enable <= 1'b1; 
+down_count_enable <= 1'b0; 
 end
 end
+end
+end
+
 endmodule
