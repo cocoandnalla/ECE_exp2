@@ -1,0 +1,14 @@
+#-----------------------------------------------------------
+# Vivado v2023.1 (64-bit)
+# SW Build 3865809 on Sun May  7 15:05:29 MDT 2023
+# IP Build 3864474 on Sun May  7 20:36:21 MDT 2023
+# SharedData Build 3865790 on Sun May 07 13:33:03 MDT 2023
+# Start of session at: Sun Nov  5 18:59:39 2023
+# Process ID: 12596
+# Current directory: C:/Users/82106/Documents/GitHub/ECE_exp2/week6/piezo/piezo/piezo.runs/synth_1
+# Command line: vivado.exe -log piezo_basic.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source piezo_basic.tcl
+# Log file: C:/Users/82106/Documents/GitHub/ECE_exp2/week6/piezo/piezo/piezo.runs/synth_1/piezo_basic.vds
+# Journal file: C:/Users/82106/Documents/GitHub/ECE_exp2/week6/piezo/piezo/piezo.runs/synth_1\vivado.jou
+# Running On: BAYERNchampions, OS: Windows, CPU Frequency: 2496 MHz, CPU Physical cores: 4, Host memory: 16873 MB
+#-----------------------------------------------------------
+source piezo_basic.tcl -notrace
