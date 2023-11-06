@@ -1,4 +1,0 @@
-INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/82106/Documents/GitHub/ECE_exp2/week6/piezo/piezo/piezo.srcs/sources_1/new/piezo_basic.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module piezo_basic
-INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/82106/Documents/GitHub/ECE_exp2/week6/piezo/piezo/piezo.srcs/sim_1/new/piezo_tb.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module piezo_tb

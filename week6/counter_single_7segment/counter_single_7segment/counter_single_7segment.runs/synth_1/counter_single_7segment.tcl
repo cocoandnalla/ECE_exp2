@@ -70,10 +70,8 @@ proc create_report { reportName command } {
   }
 }
 OPTRACE "synth_1" START { ROLLUP_AUTO }
-set_param checkpoint.writeSynthRtdsInDcp 1
-set_param synth.incrementalSynthesisCache C:/Users/82106/AppData/Roaming/Xilinx/Vivado/.Xil/Vivado-9776-BAYERNchampions/incrSyn
-set_msg_config -id {Synth 8-256} -limit 10000
-set_msg_config -id {Synth 8-638} -limit 10000
+set_param chipscope.maxJobs 2
+set_param xicom.use_bs_reader 1
 OPTRACE "Creating in-memory project" START { }
 create_project -in_memory -part xc7s75fgga484-1
 
@@ -105,6 +103,8 @@ read_xdc C:/Users/82106/Documents/GitHub/ECE_exp2/week6/counter_single_7segment/
 set_property used_in_implementation false [get_files C:/Users/82106/Documents/GitHub/ECE_exp2/week6/counter_single_7segment/counter_single_7segment/counter_single_7segment.srcs/constrs_1/new/single.xdc]
 
 set_param ips.enableIPCacheLiteLoad 1
+
+read_checkpoint -auto_incremental -incremental C:/Users/82106/Documents/GitHub/ECE_exp2/week6/counter_single_7segment/counter_single_7segment/counter_single_7segment.srcs/utils_1/imports/synth_1/counter_single_7segment.dcp
 close [open __synthesis_is_running__ w]
 
 OPTRACE "synth_design" START { }

@@ -35,21 +35,21 @@ parameter si = 12'd2028;
 parameter high_do = 12'd1912;
 
 reg [11:0] cnt;
-reg [11:0] state;
+reg [11:0] cnt_limit;
 
 always @(btn) begin
-if(!rst) state = 0;
+if(!rst) cnt_limit = 0;
 else begin
 case(btn) // btn이 무엇인지에 따라서 state의 음계 결정
-8'b00000001 : state = do;
-8'b00000010 : state = re;
-8'b00000100 : state = mi;
-8'b00001000 : state = pa;
-8'b00010000 : state = sol;
-8'b00100000 : state = ra;
-8'b01000000 : state = si;
-8'b10000000 : state = high_do;
-default : state = 0;
+8'b00000001 : cnt_limit = do;
+8'b00000010 : cnt_limit = re;
+8'b00000100 : cnt_limit = mi;
+8'b00001000 : cnt_limit = pa;
+8'b00010000 : cnt_limit = sol;
+8'b00100000 : cnt_limit = ra;
+8'b01000000 : cnt_limit = si;
+8'b10000000 : cnt_limit = high_do;
+default : cnt_limit = 0;
 endcase
 end
 end
@@ -59,7 +59,7 @@ if(!rst) begin // just 초기화
 cnt = 0;
 piezo = 0;
 end
-else if (cnt > state/2) begin // 일단 cnt는 0 state/2 (ex btn '레' 눌렀다고 가정) = 1700 까지 계속해서 piezo 출력 반전하고 66번째 줄에서 cnt가 계속해서 +1씩 해줌, 1700보다 커지면 cnt 초기화 
+else if (cnt > cnt_limit/2) begin // 일단 cnt는 0 state/2 (ex btn '레' 눌렀다고 가정) = 1700 까지 계속해서 piezo 출력 반전하고 66번째 줄에서 cnt가 계속해서 +1씩 해줌, 1700보다 커지면 cnt 초기화 
 piezo = ~piezo; // piezo 출력 반전
 cnt = 0; // cnt 초기화 
 end

@@ -20,17 +20,17 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 
-module counter_single_7segment(clk, rst, x, seg);
+module counter_single_7segment(clk, rst, btn, seg);
 input clk, rst;
-input x;
-wire x_trig;
+input btn;
+wire btn_trig;
 reg [3:0] state;
 output reg [7:0] seg;
 
-oneshot O1(clk, rst, x, x_trig);
+oneshot O1(clk, rst, btn, btn_trig);
 
 always @(negedge rst or posedge clk) begin
-if (!rst) seg <= 8'b11111100;
+if (!rst) seg <= 8'b00000000;
 else begin 
 case (state)
 0 : seg <= 8'b11111100;
@@ -50,7 +50,7 @@ end
 
 always @(negedge rst or posedge clk) begin
 if (!rst) state <= 4'b0000;
-else if(state == 4'b1001 && x_trig == 1) state <=4'b0000;
-else if (x_trig == 1) state <= state +1;
+else if(state == 4'b1001 && btn_trig == 1) state <=4'b0000;
+else if (btn_trig == 1) state <= state +1;
 end
 endmodule

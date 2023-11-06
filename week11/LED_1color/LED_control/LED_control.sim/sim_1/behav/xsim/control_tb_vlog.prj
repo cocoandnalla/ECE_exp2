@@ -1,0 +1,13 @@
+# compile verilog/system verilog design source files
+verilog xil_defaultlib  \
+"../../../../LED_control.srcs/sources_1/new/LED_control.v" \
+"../../../../LED_control.srcs/sources_1/new/bin2bcd.v" \
+"../../../../LED_control.srcs/sources_1/new/counter8.v" \
+"../../../../LED_control.srcs/sources_1/new/seg7_controller.v" \
+"../../../../LED_control.srcs/sim_1/new/control_tb.v" \
+
+# compile glbl module
+verilog xil_defaultlib "glbl.v"
+
+# Do not sort compile order
+nosort

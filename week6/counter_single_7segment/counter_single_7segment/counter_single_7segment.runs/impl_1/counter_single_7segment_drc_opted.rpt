@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
 ------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2023.1 (win64) Build 3865809 Sun May  7 15:05:29 MDT 2023
-| Date         : Sat Nov  4 01:13:17 2023
+| Date         : Mon Nov  6 09:24:08 2023
 | Host         : BAYERNchampions running 64-bit major release  (build 9200)
 | Command      : report_drc -file counter_single_7segment_drc_opted.rpt -pb counter_single_7segment_drc_opted.pb -rpx counter_single_7segment_drc_opted.rpx
 | Design       : counter_single_7segment

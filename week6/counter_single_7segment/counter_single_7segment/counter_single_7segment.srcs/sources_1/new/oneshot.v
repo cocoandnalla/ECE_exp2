@@ -19,19 +19,20 @@
 // 
 //////////////////////////////////////////////////////////////////////////////////
 
-module oneshot (clk, rst, x, x_trig);
+module oneshot (clk, rst, btn, btn_trig);
 input clk, rst;
-input x;
-reg x_reg;
-output reg x_trig;
+input btn;
+reg btn_reg;
+output reg btn_trig;
 
 always @(negedge rst or posedge clk) begin
 if(!rst) begin
-{x_reg, x_trig} <= 2'b00;
+btn_reg <= 0;
+btn_trig <= 0;
 end
 else begin
-x_reg <= x;
-x_trig <= x & ~x_reg;
+btn_reg <= btn;
+btn_trig <= btn & ~btn_reg;
 end
 end
 endmodule

@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2023.1 (win64) Build 3865809 Sun May  7 15:05:29 MDT 2023
-| Date         : Sat Nov  4 01:13:53 2023
+| Date         : Mon Nov  6 09:24:45 2023
 | Host         : BAYERNchampions running 64-bit major release  (build 9200)
 | Command      : report_methodology -file counter_single_7segment_methodology_drc_routed.rpt -pb counter_single_7segment_methodology_drc_routed.pb -rpx counter_single_7segment_methodology_drc_routed.rpx
 | Design       : counter_single_7segment
@@ -34,12 +34,12 @@ Table of Contents
 -----------------
 TIMING-17#1 Critical Warning
 Non-clocked sequential cell  
-The clock pin O1/x_reg_reg/C is not reached by a timing clock
+The clock pin O1/btn_reg_reg/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#2 Critical Warning
 Non-clocked sequential cell  
-The clock pin O1/x_trig_reg/C is not reached by a timing clock
+The clock pin O1/btn_trig_reg/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#3 Critical Warning

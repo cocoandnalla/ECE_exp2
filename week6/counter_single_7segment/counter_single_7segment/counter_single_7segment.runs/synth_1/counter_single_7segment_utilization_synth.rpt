@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2023.1 (win64) Build 3865809 Sun May  7 15:05:29 MDT 2023
-| Date         : Sat Nov  4 01:12:42 2023
+| Date         : Mon Nov  6 09:23:31 2023
 | Host         : BAYERNchampions running 64-bit major release  (build 9200)
 | Command      : report_utilization -file counter_single_7segment_utilization_synth.rpt -pb counter_single_7segment_utilization_synth.pb
 | Design       : counter_single_7segment
@@ -56,8 +56,8 @@ Warning! LUT value is adjusted to account for LUT combining.
 | 0     |            _ |         Set |            - |
 | 0     |            _ |       Reset |            - |
 | 0     |          Yes |           - |            - |
-| 6     |          Yes |           - |          Set |
-| 7     |          Yes |           - |        Reset |
+| 0     |          Yes |           - |          Set |
+| 13    |          Yes |           - |        Reset |
 | 0     |          Yes |         Set |            - |
 | 0     |          Yes |       Reset |            - |
 +-------+--------------+-------------+--------------+
@@ -147,10 +147,9 @@ Warning! LUT value is adjusted to account for LUT combining.
 +----------+------+---------------------+
 | Ref Name | Used | Functional Category |
 +----------+------+---------------------+
+| FDCE     |   13 |        Flop & Latch |
 | LUT4     |    9 |                 LUT |
 | OBUF     |    8 |                  IO |
-| FDCE     |    7 |        Flop & Latch |
-| FDPE     |    6 |        Flop & Latch |
 | IBUF     |    3 |                  IO |
 | LUT1     |    2 |                 LUT |
 | LUT3     |    1 |                 LUT |

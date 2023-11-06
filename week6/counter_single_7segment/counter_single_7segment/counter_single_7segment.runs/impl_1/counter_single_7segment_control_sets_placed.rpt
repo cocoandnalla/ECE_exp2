@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2023.1 (win64) Build 3865809 Sun May  7 15:05:29 MDT 2023
-| Date         : Sat Nov  4 01:13:20 2023
+| Date         : Mon Nov  6 09:24:11 2023
 | Host         : BAYERNchampions running 64-bit major release  (build 9200)
 | Command      : report_control_sets -verbose -file counter_single_7segment_control_sets_placed.rpt
 | Design       : counter_single_7segment
@@ -73,7 +73,7 @@ Table of Contents
 +----------------+---------------+------------------+------------------+----------------+--------------+
 |  Clock Signal  | Enable Signal | Set/Reset Signal | Slice Load Count | Bel Load Count | Bels / Slice |
 +----------------+---------------+------------------+------------------+----------------+--------------+
-|  clk_IBUF_BUFG | O1/x_trig     | O1/rst           |                1 |              4 |         4.00 |
+|  clk_IBUF_BUFG | O1/btn_trig   | O1/rst           |                1 |              4 |         4.00 |
 |  clk_IBUF_BUFG |               | O1/rst           |                2 |              9 |         4.50 |
 +----------------+---------------+------------------+------------------+----------------+--------------+
 
