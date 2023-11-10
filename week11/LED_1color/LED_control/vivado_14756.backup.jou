@@ -1,0 +1,127 @@
+#-----------------------------------------------------------
+# Vivado v2023.1 (64-bit)
+# SW Build 3865809 on Sun May  7 15:05:29 MDT 2023
+# IP Build 3864474 on Sun May  7 20:36:21 MDT 2023
+# SharedData Build 3865790 on Sun May 07 13:33:03 MDT 2023
+# Start of session at: Thu Nov  9 10:53:01 2023
+# Process ID: 14756
+# Current directory: C:/Users/82106/Documents/GitHub/ECE_exp2/week11/LED_1color/LED_control
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent15464 C:\Users\82106\Documents\GitHub\ECE_exp2\week11\LED_1color\LED_control\LED_control.xpr
+# Log file: C:/Users/82106/Documents/GitHub/ECE_exp2/week11/LED_1color/LED_control/vivado.log
+# Journal file: C:/Users/82106/Documents/GitHub/ECE_exp2/week11/LED_1color/LED_control\vivado.jou
+# Running On: BAYERNchampions, OS: Windows, CPU Frequency: 2496 MHz, CPU Physical cores: 4, Host memory: 16873 MB
+#-----------------------------------------------------------
+start_gui
+open_project C:/Users/82106/Documents/GitHub/ECE_exp2/week11/LED_1color/LED_control/LED_control.xpr
+update_compile_order -fileset sources_1
+launch_simulation
+source control_tb.tcl
+close_sim
+launch_simulation
+source control_tb.tcl
+run 6 s
+run 500 us
+relaunch_sim
+run 500 us
+close_sim
+launch_simulation
+source control_tb.tcl
+run 500 us
+relaunch_sim
+run 500 us
+close_sim
+launch_simulation
+source control_tb.tcl
+relaunch_sim
+run 500 us
+run 1 s
+close_sim
+launch_simulation
+source control_tb.tcl
+relaunch_sim
+run 1 s
+run 15355 us
+run 15355 us
+step
+step
+close_sim
+launch_simulation
+source control_tb.tcl
+relaunch_sim
+run 15355 us
+synth_design -rtl -rtl_skip_mlo -name rtl_1
+set_property IOSTANDARD LVCMOS33 [get_ports [list clk]]
+set_property IOSTANDARD LVCMOS33 [get_ports [list clk]]
+set_property IOSTANDARD LVCMOS33 [get_ports [list led_signal]]
+set_property IOSTANDARD LVCMOS33 [get_ports [list rst]]
+set_property IOSTANDARD LVCMOS33 [get_ports [list {bin[7]}]]
+set_property IOSTANDARD LVCMOS33 [get_ports [list {bin[6]}]]
+set_property IOSTANDARD LVCMOS33 [get_ports [list {bin[5]}]]
+set_property IOSTANDARD LVCMOS33 [get_ports [list {bin[4]}]]
+set_property IOSTANDARD LVCMOS33 [get_ports [list {bin[3]}]]
+set_property IOSTANDARD LVCMOS33 [get_ports [list {bin[2]}]]
+set_property IOSTANDARD LVCMOS33 [get_ports [list {bin[1]}]]
+set_property IOSTANDARD LVCMOS33 [get_ports [list {bin[0]}]]
+set_property IOSTANDARD LVCMOS33 [get_ports [list {seg_data[7]}]]
+set_property IOSTANDARD LVCMOS33 [get_ports [list {seg_data[6]}]]
+set_property IOSTANDARD LVCMOS33 [get_ports [list {seg_data[5]}]]
+set_property IOSTANDARD LVCMOS33 [get_ports [list {seg_data[4]}]]
+set_property IOSTANDARD LVCMOS33 [get_ports [list {seg_data[3]}]]
+set_property IOSTANDARD LVCMOS33 [get_ports [list {seg_data[2]}]]
+set_property IOSTANDARD LVCMOS33 [get_ports [list {seg_data[1]}]]
+set_property IOSTANDARD LVCMOS33 [get_ports [list {seg_data[0]}]]
+set_property IOSTANDARD LVCMOS33 [get_ports [list {seg_sel[7]}]]
+set_property IOSTANDARD LVCMOS33 [get_ports [list {seg_sel[6]}]]
+set_property IOSTANDARD LVCMOS33 [get_ports [list {seg_sel[5]}]]
+set_property IOSTANDARD LVCMOS33 [get_ports [list {seg_sel[4]}]]
+set_property IOSTANDARD LVCMOS33 [get_ports [list {seg_sel[3]}]]
+set_property IOSTANDARD LVCMOS33 [get_ports [list {seg_sel[2]}]]
+set_property IOSTANDARD LVCMOS33 [get_ports [list {seg_sel[1]}]]
+set_property IOSTANDARD LVCMOS33 [get_ports [list {seg_sel[0]}]]
+set_property package_pin "" [get_ports [list  {bin[0]}]]
+place_ports clk B6
+place_ports led_signal L4
+place_ports rst Y1
+set_property package_pin "" [get_ports [list  {bin[7]}]]
+set_property package_pin "" [get_ports [list  rst]]
+place_ports {bin[7]} Y1
+place_ports {bin[6]} W3
+place_ports {bin[5]} U2
+place_ports {bin[4]} T1
+place_ports {bin[3]} W4
+place_ports {bin[2]} W1
+place_ports {bin[1]} V4
+place_ports {bin[0]} U4
+place_ports {seg_sel[7]} F1
+place_ports {seg_sel[6]} F5
+place_ports {seg_sel[5]} E2
+place_ports {seg_sel[4]} E4
+place_ports {seg_sel[7]} H4
+place_ports {seg_sel[6]} H6
+place_ports {seg_sel[5]} G1
+place_ports {seg_sel[4]} G3
+place_ports {seg_sel[3]} L6
+place_ports {seg_sel[2]} K1
+place_ports {seg_sel[1]} K3
+place_ports {seg_sel[0]} K5
+place_ports {seg_data[7]} F1
+place_ports {seg_data[6]} F5
+place_ports {seg_data[5]} E2
+place_ports {seg_data[4]} E4
+place_ports {seg_data[3]} J1
+place_ports {seg_data[2]} J3
+place_ports {seg_data[1]} J7
+place_ports {seg_data[0]} H2
+place_ports rst K4
+file mkdir C:/Users/82106/Documents/GitHub/ECE_exp2/week11/LED_1color/LED_control/LED_control.srcs/constrs_1/new
+close [ open C:/Users/82106/Documents/GitHub/ECE_exp2/week11/LED_1color/LED_control/LED_control.srcs/constrs_1/new/led_control.xdc w ]
+add_files -fileset constrs_1 C:/Users/82106/Documents/GitHub/ECE_exp2/week11/LED_1color/LED_control/LED_control.srcs/constrs_1/new/led_control.xdc
+set_property target_constrs_file C:/Users/82106/Documents/GitHub/ECE_exp2/week11/LED_1color/LED_control/LED_control.srcs/constrs_1/new/led_control.xdc [current_fileset -constrset]
+save_constraints -force
+launch_runs impl_1 -jobs 4
+wait_on_run impl_1
+close_design
+open_run impl_1
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+wait_on_run impl_1
+close_sim
