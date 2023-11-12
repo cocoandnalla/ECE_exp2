@@ -3,9 +3,9 @@
 // Company: 
 // Engineer: 
 // 
-// Create Date: 2023/11/09 13:46:01
+// Create Date: 2023/11/11 22:26:29
 // Design Name: 
-// Module Name: text_LCD_basic
+// Module Name: text_LCD_shift
 // Project Name: 
 // Target Devices: 
 // Tool Versions: 
@@ -17,11 +17,9 @@
 // Revision 0.01 - File Created
 // Additional Comments:
 // 
-//////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
 
-
-module text_LCD_basic(clk, rst, LCD_E, LCD_RS, LCD_RW, LCD_DATA, LED_out);
-
+module text_LCD_shift(clk, rst, LCD_E, LCD_RS, LCD_RW, LCD_DATA, LED_out);
 input clk, rst;
 
 output LCD_E, LCD_RS, LCD_RW;
@@ -39,15 +37,16 @@ parameter DISP_ONOFF   = 3'b011;
 parameter LINE1        = 3'b100;
 parameter LINE2        = 3'b101;
 parameter DELAY_T      = 3'b110;
-parameter CLEAR_DISP   = 3'b111;
+parameter SHIFT        = 3'b111; // difference
 
 integer cnt;
+integer can_shift; 
 
 always @(posedge clk or negedge rst) 
 begin
     if(!rst) begin
-    state <= DELAY; 
-    cnt <= 0;
+    state = DELAY; 
+    cnt = 0;
     end
     else begin
         case(state)
@@ -77,27 +76,26 @@ begin
     end
         LINE1 : begin
             LED_out = 8'b0000_1000;
-            if(cnt >= 20) cnt = 0;
+            if(cnt >= 40) cnt = 0;
             else cnt = cnt + 1;
-            if(cnt == 20) state = LINE2;
+            if(cnt == 40) state = LINE2;
     end
         LINE2 : begin
             LED_out = 8'b0000_0100;
-            if(cnt >= 20) cnt = 0;
+            if(cnt >= 40) cnt = 0;
             else cnt = cnt + 1;
-            if(cnt == 20) state = DELAY_T;
+            if(cnt == 40) state = DELAY_T;
     end
         DELAY_T : begin
             LED_out = 8'b0000_0010;
             if(cnt >= 5) cnt = 0;
             else cnt = cnt + 1;
-            if(cnt == 5) state = CLEAR_DISP;
+            if(cnt == 5) state = SHIFT;
     end
-        CLEAR_DISP : begin
+        SHIFT : begin
             LED_out = 8'b0000_0001;
-            if(cnt >= 5) cnt = 0;
-            else cnt = cnt + 1;
-            if(cnt == 5) state = LINE1;
+            cnt = 0;
+            if(cnt == 0) state = SHIFT;
     end
     default : state = DELAY;
         endcase
@@ -106,23 +104,25 @@ end
 
 always @(posedge clk or negedge rst) 
 begin
-    if(!rst)
+    if(!rst) begin
     {LCD_RS, LCD_RW, LCD_DATA} = 10'b1_1_00000000;
+    can_shift = 0;
+    end
     else begin
         case(state)
-        FUNCTION_SET : // 4bit(0) / 8bit(1) (DL) , 1LINE(0) or 2LINE(1) (N) 
-        {LCD_RS, LCD_RW, LCD_DATA} = 10'b0_0_0011_1000; // 1LINE (10'b0_0_0011_0000)
+        FUNCTION_SET :
+        {LCD_RS, LCD_RW, LCD_DATA} = 10'b0_0_0011_1100; 
 
-        DISP_ONOFF : // display on/off (D), cursor ON/OFF (C), cursor blink (B)
+        DISP_ONOFF : 
         {LCD_RS, LCD_RW, LCD_DATA} = 10'b0_0_0000_1100;
 
-        ENTRY_MODE : // cursor up(1) / down(0) (I/D), display shift(1) (S)
-        {LCD_RS, LCD_RW, LCD_DATA} = 10'b0_0_0000_0110;
+        ENTRY_MODE : 
+        {LCD_RS, LCD_RW, LCD_DATA} = 10'b0_0_0000_0111; // cursor right // display shift -> shift enable
 
         LINE1 :
         begin
             case(cnt)
-            00 : {LCD_RS, LCD_RW, LCD_DATA} = 10'b0_0_1000_0000; // starting point (LINE1_leftmost= 7'b000_0000(0)) // 3-shift (10'b0_0_1000_0011)
+            00 : {LCD_RS, LCD_RW, LCD_DATA} = 10'b0_0_1000_0000; // starting point (LINE1_leftmost = 7'b100_0000(0))
             01 : {LCD_RS, LCD_RW, LCD_DATA} = 10'b1_0_0010_0000; // blank
             02 : {LCD_RS, LCD_RW, LCD_DATA} = 10'b1_0_0100_1000; // H
             03 : {LCD_RS, LCD_RW, LCD_DATA} = 10'b1_0_0100_0101; // E
@@ -146,7 +146,7 @@ begin
         LINE2 :
         begin
             case(cnt)
-            00 : {LCD_RS, LCD_RW, LCD_DATA} = 10'b0_0_1100_0000; // starting point (LINE2_leftmost = 7'b100_0000(64)) // 3-shift (10'b0_0_1100_0011)
+            00 : {LCD_RS, LCD_RW, LCD_DATA} = 10'b0_0_1100_0000; // starting point (LINE2_leftmost = 7'b100_0000(64))
             01 : {LCD_RS, LCD_RW, LCD_DATA} = 10'b1_0_0011_0010; // 2
             02 : {LCD_RS, LCD_RW, LCD_DATA} = 10'b1_0_0011_0000; // 0
             03 : {LCD_RS, LCD_RW, LCD_DATA} = 10'b1_0_0011_0010; // 2
@@ -170,9 +170,18 @@ begin
         DELAY_T :
         {LCD_RS, LCD_RW, LCD_DATA} = 10'b0_0_0000_0010;
 
-        CLEAR_DISP : // delete everyting, cursor to home and address counter DD-RAM address -> 0 
-        {LCD_RS, LCD_RW, LCD_DATA} = 10'b0_0_0000_0001;
-
+        SHIFT :
+        begin
+            if(can_shift >= 250) begin
+                {LCD_RS, LCD_RW, LCD_DATA} = 10'b0_0_0001_1000;
+                can_shift = 0;
+            end
+            else begin
+                {LCD_RS, LCD_RW, LCD_DATA} = 10'b1_1_0001_1000;
+                can_shift=can_shift+1;
+            end
+        end               
+        
         default :
         {LCD_RS, LCD_RW, LCD_DATA} = 10'b1_1_0000_0000;
         endcase
@@ -180,5 +189,4 @@ begin
 end
 
 assign LCD_E = clk;
-
 endmodule
