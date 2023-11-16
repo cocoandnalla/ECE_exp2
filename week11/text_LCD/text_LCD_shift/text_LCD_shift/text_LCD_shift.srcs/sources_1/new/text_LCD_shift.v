@@ -111,7 +111,7 @@ begin
     else begin
         case(state)
         FUNCTION_SET :
-        {LCD_RS, LCD_RW, LCD_DATA} = 10'b0_0_0011_1100; 
+        {LCD_RS, LCD_RW, LCD_DATA} = 10'b0_0_0011_1000; 
 
         DISP_ONOFF : 
         {LCD_RS, LCD_RW, LCD_DATA} = 10'b0_0_0000_1100;
@@ -123,19 +123,19 @@ begin
         begin
             case(cnt)
             00 : {LCD_RS, LCD_RW, LCD_DATA} = 10'b0_0_1000_0000; // starting point (LINE1_leftmost = 7'b100_0000(0))
-            01 : {LCD_RS, LCD_RW, LCD_DATA} = 10'b1_0_0010_0000; // blank
-            02 : {LCD_RS, LCD_RW, LCD_DATA} = 10'b1_0_0100_1000; // H
-            03 : {LCD_RS, LCD_RW, LCD_DATA} = 10'b1_0_0100_0101; // E
+            01 : {LCD_RS, LCD_RW, LCD_DATA} = 10'b1_0_0100_1000; // H
+            02 : {LCD_RS, LCD_RW, LCD_DATA} = 10'b1_0_0100_0101; // E
+            03 : {LCD_RS, LCD_RW, LCD_DATA} = 10'b1_0_0100_1100; // L
             04 : {LCD_RS, LCD_RW, LCD_DATA} = 10'b1_0_0100_1100; // L
-            05 : {LCD_RS, LCD_RW, LCD_DATA} = 10'b1_0_0100_1100; // L
-            06 : {LCD_RS, LCD_RW, LCD_DATA} = 10'b1_0_0100_1111; // O
-            07 : {LCD_RS, LCD_RW, LCD_DATA} = 10'b1_0_0010_0000; // blank
-            08 : {LCD_RS, LCD_RW, LCD_DATA} = 10'b1_0_0101_0111; // W
-            09 : {LCD_RS, LCD_RW, LCD_DATA} = 10'b1_0_0100_1111; // O
-            10 : {LCD_RS, LCD_RW, LCD_DATA} = 10'b1_0_0101_0010; // R
-            11 : {LCD_RS, LCD_RW, LCD_DATA} = 10'b1_0_0100_1100; // L
-            12 : {LCD_RS, LCD_RW, LCD_DATA} = 10'b1_0_0100_0100; // D
-            13 : {LCD_RS, LCD_RW, LCD_DATA} = 10'b1_0_0010_0001; // !
+            05 : {LCD_RS, LCD_RW, LCD_DATA} = 10'b1_0_0100_1111; // O
+            06 : {LCD_RS, LCD_RW, LCD_DATA} = 10'b1_0_0010_0000; // blank
+            07 : {LCD_RS, LCD_RW, LCD_DATA} = 10'b1_0_0101_0111; // W
+            08 : {LCD_RS, LCD_RW, LCD_DATA} = 10'b1_0_0100_1111; // O
+            09 : {LCD_RS, LCD_RW, LCD_DATA} = 10'b1_0_0101_0010; // R
+            10 : {LCD_RS, LCD_RW, LCD_DATA} = 10'b1_0_0100_1100; // L
+            11 : {LCD_RS, LCD_RW, LCD_DATA} = 10'b1_0_0100_0100; // D
+            12 : {LCD_RS, LCD_RW, LCD_DATA} = 10'b1_0_0010_0001; // !
+            13 : {LCD_RS, LCD_RW, LCD_DATA} = 10'b1_0_0010_0000; // blank
             14 : {LCD_RS, LCD_RW, LCD_DATA} = 10'b1_0_0010_0000; // blank
             15 : {LCD_RS, LCD_RW, LCD_DATA} = 10'b1_0_0010_0000; // blank
             16 : {LCD_RS, LCD_RW, LCD_DATA} = 10'b1_0_0010_0000; // blank

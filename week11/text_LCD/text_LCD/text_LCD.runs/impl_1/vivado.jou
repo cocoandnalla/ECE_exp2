@@ -3,8 +3,8 @@
 # SW Build 3865809 on Sun May  7 15:05:29 MDT 2023
 # IP Build 3864474 on Sun May  7 20:36:21 MDT 2023
 # SharedData Build 3865790 on Sun May 07 13:33:03 MDT 2023
-# Start of session at: Fri Nov 10 23:33:22 2023
-# Process ID: 1144
+# Start of session at: Mon Nov 13 12:36:48 2023
+# Process ID: 13424
 # Current directory: C:/Users/82106/Documents/GitHub/ECE_exp2/week11/text_LCD/text_LCD/text_LCD.runs/impl_1
 # Command line: vivado.exe -log text_LCD_basic.vdi -applog -product Vivado -messageDb vivado.pb -mode batch -source text_LCD_basic.tcl -notrace
 # Log file: C:/Users/82106/Documents/GitHub/ECE_exp2/week11/text_LCD/text_LCD/text_LCD.runs/impl_1/text_LCD_basic.vdi

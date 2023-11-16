@@ -71,7 +71,10 @@ proc create_report { reportName command } {
 }
 OPTRACE "synth_1" START { ROLLUP_AUTO }
 set_param checkpoint.writeSynthRtdsInDcp 1
-set_param synth.incrementalSynthesisCache C:/Users/82106/Documents/GitHub/ECE_exp2/week11/text_LCD/text_LCD/.Xil/Vivado-14556-BAYERNchampions/incrSyn
+set_param chipscope.maxJobs 2
+set_param synth.incrementalSynthesisCache C:/Users/82106/Documents/GitHub/ECE_exp2/week11/text_LCD/text_LCD/.Xil/Vivado-14256-BAYERNchampions/incrSyn
+set_param xicom.use_bs_reader 1
+set_msg_config -id {Common 17-41} -limit 10000000
 set_msg_config -id {Synth 8-256} -limit 10000
 set_msg_config -id {Synth 8-638} -limit 10000
 OPTRACE "Creating in-memory project" START { }
@@ -102,6 +105,8 @@ read_xdc C:/Users/82106/Documents/GitHub/ECE_exp2/week11/text_LCD/text_LCD/text_
 set_property used_in_implementation false [get_files C:/Users/82106/Documents/GitHub/ECE_exp2/week11/text_LCD/text_LCD/text_LCD.srcs/constrs_1/new/text_LCD.xdc]
 
 set_param ips.enableIPCacheLiteLoad 1
+
+read_checkpoint -auto_incremental -incremental C:/Users/82106/Documents/GitHub/ECE_exp2/week11/text_LCD/text_LCD/text_LCD.srcs/utils_1/imports/synth_1/text_LCD_basic.dcp
 close [open __synthesis_is_running__ w]
 
 OPTRACE "synth_design" START { }

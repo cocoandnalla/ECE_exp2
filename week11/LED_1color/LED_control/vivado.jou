@@ -3,10 +3,10 @@
 # SW Build 3865809 on Sun May  7 15:05:29 MDT 2023
 # IP Build 3864474 on Sun May  7 20:36:21 MDT 2023
 # SharedData Build 3865790 on Sun May 07 13:33:03 MDT 2023
-# Start of session at: Fri Nov 10 23:42:51 2023
-# Process ID: 12596
+# Start of session at: Mon Nov 13 09:09:44 2023
+# Process ID: 3228
 # Current directory: C:/Users/82106/Documents/GitHub/ECE_exp2/week11/LED_1color/LED_control
-# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent12648 C:\Users\82106\Documents\GitHub\ECE_exp2\week11\LED_1color\LED_control\LED_control.xpr
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent15196 C:\Users\82106\Documents\GitHub\ECE_exp2\week11\LED_1color\LED_control\LED_control.xpr
 # Log file: C:/Users/82106/Documents/GitHub/ECE_exp2/week11/LED_1color/LED_control/vivado.log
 # Journal file: C:/Users/82106/Documents/GitHub/ECE_exp2/week11/LED_1color/LED_control\vivado.jou
 # Running On: BAYERNchampions, OS: Windows, CPU Frequency: 2496 MHz, CPU Physical cores: 4, Host memory: 16873 MB
@@ -14,18 +14,20 @@
 start_gui
 open_project C:/Users/82106/Documents/GitHub/ECE_exp2/week11/LED_1color/LED_control/LED_control.xpr
 update_compile_order -fileset sources_1
+open_hw_manager
+connect_hw_server -allow_non_jtag
+open_hw_target
+set_property PROGRAM.FILE {C:/Users/82106/Documents/GitHub/ECE_exp2/week11/LED_1color/LED_control/LED_control.runs/impl_1/LED_control.bit} [get_hw_devices xc7s75_0]
+current_hw_device [get_hw_devices xc7s75_0]
+refresh_hw_device -update_hw_probes false [lindex [get_hw_devices xc7s75_0] 0]
+set_property PROBES.FILE {} [get_hw_devices xc7s75_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7s75_0]
+set_property PROGRAM.FILE {C:/Users/82106/Documents/GitHub/ECE_exp2/week11/LED_1color/LED_control/LED_control.runs/impl_1/LED_control.bit} [get_hw_devices xc7s75_0]
+program_hw_devices [get_hw_devices xc7s75_0]
+refresh_hw_device [lindex [get_hw_devices xc7s75_0] 0]
 launch_simulation
 source control_tb.tcl
 relaunch_sim
-run 15355 us
-close_sim
-launch_simulation
-source control_tb.tcl
-relaunch_sim
-run 15355 us
-close_sim
-launch_simulation
-source control_tb.tcl
 relaunch_sim
 run 15355 us
 close_sim

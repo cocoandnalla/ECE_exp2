@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2023.1 (win64) Build 3865809 Sun May  7 15:05:29 MDT 2023
-| Date             : Sun Nov 12 16:15:33 2023
+| Date             : Mon Nov 13 11:44:18 2023
 | Host             : BAYERNchampions running 64-bit major release  (build 9200)
 | Command          : report_power -file text_LCD_shift_power_routed.rpt -pb text_LCD_shift_power_summary_routed.pb -rpx text_LCD_shift_power_routed.rpx
 | Design           : text_LCD_shift
@@ -30,10 +30,10 @@ Table of Contents
 ----------
 
 +--------------------------+--------------+
-| Total On-Chip Power (W)  | 3.729        |
+| Total On-Chip Power (W)  | 3.706        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
-| Dynamic (W)              | 3.618        |
+| Dynamic (W)              | 3.595        |
 | Device Static (W)        | 0.111        |
 | Effective TJA (C/W)      | 2.7          |
 | Max Ambient (C)          | 74.9         |
@@ -52,16 +52,16 @@ Table of Contents
 +----------------+-----------+----------+-----------+-----------------+
 | On-Chip        | Power (W) | Used     | Available | Utilization (%) |
 +----------------+-----------+----------+-----------+-----------------+
-| Slice Logic    |     1.212 |      417 |       --- |             --- |
-|   LUT as Logic |     1.116 |      181 |     48000 |            0.38 |
+| Slice Logic    |     1.190 |      416 |       --- |             --- |
+|   LUT as Logic |     1.094 |      181 |     48000 |            0.38 |
 |   CARRY4       |     0.067 |       36 |     16000 |            0.23 |
 |   Register     |     0.023 |       90 |     96000 |            0.09 |
 |   BUFG         |     0.006 |        1 |        32 |            3.13 |
 |   Others       |     0.000 |        2 |       --- |             --- |
-| Signals        |     0.709 |      219 |       --- |             --- |
+| Signals        |     0.707 |      219 |       --- |             --- |
 | I/O            |     1.698 |       21 |       338 |            6.21 |
 | Static Power   |     0.111 |          |           |                 |
-| Total          |     3.729 |          |           |                 |
+| Total          |     3.706 |          |           |                 |
 +----------------+-----------+----------+-----------+-----------------+
 
 
@@ -71,7 +71,7 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+-------------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) | Powerup (A) | Budget (A)  | Margin (A) |
 +-----------+-------------+-----------+-------------+------------+-------------+-------------+------------+
-| Vccint    |       1.000 |     1.946 |       1.925 |      0.021 |       NA    | Unspecified | NA         |
+| Vccint    |       1.000 |     1.922 |       1.902 |      0.021 |       NA    | Unspecified | NA         |
 | Vccaux    |       1.800 |     0.084 |       0.062 |      0.022 |       NA    | Unspecified | NA         |
 | Vcco33    |       3.300 |     0.483 |       0.479 |      0.004 |       NA    | Unspecified | NA         |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
@@ -136,7 +136,7 @@ Table of Contents
 +----------------+-----------+
 | Name           | Power (W) |
 +----------------+-----------+
-| text_LCD_shift |     3.618 |
+| text_LCD_shift |     3.595 |
 +----------------+-----------+
 
 
