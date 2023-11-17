@@ -4,82 +4,68 @@
   <File Type="PA-TCL" Name="text_LCD_2.tcl"/>
   <File Type="ROUTE-PWR-SUM" Name="text_LCD_2_power_summary_routed.pb"/>
   <File Type="REPORTS-TCL" Name="text_LCD_2_reports.tcl"/>
-  <File Type="OPT-RQA-PB" Name="text_LCD_2_rqa_opted.pb"/>
+  <File Type="BITSTR-MSK" Name="text_LCD_2.msk"/>
+  <File Type="ROUTE-CLK" Name="text_LCD_2_clock_utilization_routed.rpt"/>
+  <File Type="RDI-RDI" Name="text_LCD_2.vdi"/>
+  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW-PB" Name="text_LCD_2_bus_skew_postroute_physopted.pb"/>
+  <File Type="BG-BIT" Name="text_LCD_2.bit"/>
+  <File Type="BG-DRC" Name="text_LCD_2.drc"/>
+  <File Type="BG-BGN" Name="text_LCD_2.bgn"/>
+  <File Type="BG-BIN" Name="text_LCD_2.bin"/>
+  <File Type="BITSTR-RBT" Name="text_LCD_2.rbt"/>
+  <File Type="BITSTR-NKY" Name="text_LCD_2.nky"/>
+  <File Type="BITSTR-BMM" Name="text_LCD_2_bd.bmm"/>
   <File Type="BITSTR-MMI" Name="text_LCD_2.mmi"/>
-  <File Type="OPT-METHODOLOGY-DRC" Name="text_LCD_2_methodology_drc_opted.rpt"/>
-  <File Type="INIT-TIMING" Name="text_LCD_2_timing_summary_init.rpt"/>
-  <File Type="OPT-TIMING" Name="text_LCD_2_timing_summary_opted.rpt"/>
-  <File Type="OPT-DCP" Name="text_LCD_2_opt.dcp"/>
+  <File Type="ROUTE-METHODOLOGY-DRC" Name="text_LCD_2_methodology_drc_routed.rpt"/>
+  <File Type="BITSTR-SYSDEF" Name="text_LCD_2.sysdef"/>
+  <File Type="ROUTE-METHODOLOGY-DRC-PB" Name="text_LCD_2_methodology_drc_routed.pb"/>
+  <File Type="BITSTR-LTX" Name="debug_nets.ltx"/>
+  <File Type="BITSTR-LTX" Name="text_LCD_2.ltx"/>
+  <File Type="BOOT-PDI-FILE" Name="text_LCD_2_soc.pdi"/>
+  <File Type="WBT-USG" Name="usage_statistics_webtalk.html"/>
+  <File Type="NPI_FILE" Name="text_LCD_2.npi"/>
   <File Type="OPT-DRC" Name="text_LCD_2_drc_opted.rpt"/>
+  <File Type="RBD_FILE" Name="text_LCD_2.rbd"/>
   <File Type="OPT-HWDEF" Name="text_LCD_2.hwdef"/>
-  <File Type="PWROPT-DCP" Name="text_LCD_2_pwropt.dcp"/>
-  <File Type="PWROPT-DRC" Name="text_LCD_2_drc_pwropted.rpt"/>
-  <File Type="PWROPT-TIMING" Name="text_LCD_2_timing_summary_pwropted.rpt"/>
-  <File Type="PLACE-DCP" Name="text_LCD_2_placed.dcp"/>
   <File Type="PLACE-IO" Name="text_LCD_2_io_placed.rpt"/>
-  <File Type="PLACE-CLK" Name="text_LCD_2_clock_utilization_placed.rpt"/>
   <File Type="PLACE-UTIL" Name="text_LCD_2_utilization_placed.rpt"/>
   <File Type="PLACE-UTIL-PB" Name="text_LCD_2_utilization_placed.pb"/>
   <File Type="PLACE-CTRL" Name="text_LCD_2_control_sets_placed.rpt"/>
-  <File Type="PLACE-SIMILARITY" Name="text_LCD_2_incremental_reuse_placed.rpt"/>
   <File Type="PLACE-PRE-SIMILARITY" Name="text_LCD_2_incremental_reuse_pre_placed.rpt"/>
-  <File Type="BG-BIN" Name="text_LCD_2.bin"/>
-  <File Type="PLACE-TIMING" Name="text_LCD_2_timing_summary_placed.rpt"/>
-  <File Type="ROUTE-PWR-RPX" Name="text_LCD_2_power_routed.rpx"/>
-  <File Type="PLACE-RQA-PB" Name="text_LCD_2_rqa_placed.pb"/>
-  <File Type="POSTPLACE-PWROPT-DCP" Name="text_LCD_2_postplace_pwropt.dcp"/>
-  <File Type="BITSTR-MSK" Name="text_LCD_2.msk"/>
-  <File Type="POSTPLACE-PWROPT-TIMING" Name="text_LCD_2_timing_summary_postplace_pwropted.rpt"/>
-  <File Type="PHYSOPT-DCP" Name="text_LCD_2_physopt.dcp"/>
-  <File Type="PHYSOPT-DRC" Name="text_LCD_2_drc_physopted.rpt"/>
-  <File Type="BITSTR-RBT" Name="text_LCD_2.rbt"/>
-  <File Type="PHYSOPT-TIMING" Name="text_LCD_2_timing_summary_physopted.rpt"/>
-  <File Type="ROUTE-ERROR-DCP" Name="text_LCD_2_routed_error.dcp"/>
-  <File Type="ROUTE-DCP" Name="text_LCD_2_routed.dcp"/>
-  <File Type="ROUTE-BLACKBOX-DCP" Name="text_LCD_2_routed_bb.dcp"/>
   <File Type="ROUTE-DRC" Name="text_LCD_2_drc_routed.rpt"/>
   <File Type="ROUTE-DRC-PB" Name="text_LCD_2_drc_routed.pb"/>
-  <File Type="ROUTE-DRC-RPX" Name="text_LCD_2_drc_routed.rpx"/>
-  <File Type="ROUTE-METHODOLOGY-DRC" Name="text_LCD_2_methodology_drc_routed.rpt"/>
-  <File Type="ROUTE-METHODOLOGY-DRC-RPX" Name="text_LCD_2_methodology_drc_routed.rpx"/>
-  <File Type="ROUTE-METHODOLOGY-DRC-PB" Name="text_LCD_2_methodology_drc_routed.pb"/>
-  <File Type="ROUTE-RQS-PB" Name="text_LCD_2_rqs_routed.pb"/>
+  <File Type="ROUTE-PWR-RPX" Name="text_LCD_2_power_routed.rpx"/>
   <File Type="ROUTE-STATUS" Name="text_LCD_2_route_status.rpt"/>
   <File Type="ROUTE-STATUS-PB" Name="text_LCD_2_route_status.pb"/>
+  <File Type="ROUTE-DCP" Name="text_LCD_2_routed.dcp"/>
+  <File Type="ROUTE-ERROR-DCP" Name="text_LCD_2_routed_error.dcp"/>
+  <File Type="ROUTE-BLACKBOX-DCP" Name="text_LCD_2_routed_bb.dcp"/>
   <File Type="ROUTE-TIMINGSUMMARY" Name="text_LCD_2_timing_summary_routed.rpt"/>
   <File Type="ROUTE-TIMING-PB" Name="text_LCD_2_timing_summary_routed.pb"/>
   <File Type="ROUTE-TIMING-RPX" Name="text_LCD_2_timing_summary_routed.rpx"/>
   <File Type="ROUTE-SIMILARITY" Name="text_LCD_2_incremental_reuse_routed.rpt"/>
-  <File Type="ROUTE-CLK" Name="text_LCD_2_clock_utilization_routed.rpt"/>
   <File Type="ROUTE-BUS-SKEW" Name="text_LCD_2_bus_skew_routed.rpt"/>
   <File Type="ROUTE-BUS-SKEW-PB" Name="text_LCD_2_bus_skew_routed.pb"/>
   <File Type="ROUTE-BUS-SKEW-RPX" Name="text_LCD_2_bus_skew_routed.rpx"/>
+  <File Type="OPT-DCP" Name="text_LCD_2_opt.dcp"/>
+  <File Type="PLACE-DCP" Name="text_LCD_2_placed.dcp"/>
+  <File Type="PWROPT-DCP" Name="text_LCD_2_pwropt.dcp"/>
+  <File Type="POSTPLACE-PWROPT-DCP" Name="text_LCD_2_postplace_pwropt.dcp"/>
+  <File Type="PHYSOPT-DCP" Name="text_LCD_2_physopt.dcp"/>
   <File Type="POSTROUTE-PHYSOPT-DCP" Name="text_LCD_2_postroute_physopt.dcp"/>
   <File Type="POSTROUTE-PHYSOPT-BLACKBOX-DCP" Name="text_LCD_2_postroute_physopt_bb.dcp"/>
   <File Type="POSTROUTE-PHYSOPT-TIMING" Name="text_LCD_2_timing_summary_postroute_physopted.rpt"/>
   <File Type="POSTROUTE-PHYSOPT-TIMING-PB" Name="text_LCD_2_timing_summary_postroute_physopted.pb"/>
   <File Type="POSTROUTE-PHYSOPT-TIMING-RPX" Name="text_LCD_2_timing_summary_postroute_physopted.rpx"/>
   <File Type="POSTROUTE-PHYSOPT-BUS-SKEW" Name="text_LCD_2_bus_skew_postroute_physopted.rpt"/>
-  <File Type="BG-BIT" Name="text_LCD_2.bit"/>
-  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW-PB" Name="text_LCD_2_bus_skew_postroute_physopted.pb"/>
   <File Type="POSTROUTE-PHYSOPT-BUS-SKEW-RPX" Name="text_LCD_2_bus_skew_postroute_physopted.rpx"/>
-  <File Type="BITSTR-NKY" Name="text_LCD_2.nky"/>
-  <File Type="BITSTR-BMM" Name="text_LCD_2_bd.bmm"/>
+  <File Type="ROUTE-DRC-RPX" Name="text_LCD_2_drc_routed.rpx"/>
+  <File Type="ROUTE-METHODOLOGY-DRC-RPX" Name="text_LCD_2_methodology_drc_routed.rpx"/>
   <File Type="PDI-FILE" Name="text_LCD_2.pdi"/>
-  <File Type="BOOT-PDI-FILE" Name="text_LCD_2_soc.pdi"/>
   <File Type="PL-PDI-FILE" Name="text_LCD_2_pld.pdi"/>
   <File Type="RCFI_FILE" Name="text_LCD_2.rcfi"/>
   <File Type="CFI_FILE" Name="text_LCD_2.cfi"/>
   <File Type="RNPI_FILE" Name="text_LCD_2.rnpi"/>
-  <File Type="NPI_FILE" Name="text_LCD_2.npi"/>
-  <File Type="RBD_FILE" Name="text_LCD_2.rbd"/>
-  <File Type="BITSTR-LTX" Name="debug_nets.ltx"/>
-  <File Type="BITSTR-LTX" Name="text_LCD_2.ltx"/>
-  <File Type="BITSTR-SYSDEF" Name="text_LCD_2.sysdef"/>
-  <File Type="BG-BGN" Name="text_LCD_2.bgn"/>
-  <File Type="BG-DRC" Name="text_LCD_2.drc"/>
-  <File Type="RDI-RDI" Name="text_LCD_2.vdi"/>
-  <File Type="WBT-USG" Name="usage_statistics_webtalk.html"/>
   <File Type="ROUTE-RQS" Name="text_LCD_2_routed.rqs"/>
   <File Type="POSTROUTE-PHYSOPT-RQS" Name="text_LCD_2_postroute_physopted.rqs"/>
   <File Type="ROUTE-RQS-RPT" Name="route_report_qor_suggestions_0.rpt"/>
@@ -136,5 +122,6 @@
     <Step Id="route_design"/>
     <Step Id="post_route_phys_opt_design"/>
     <Step Id="write_bitstream"/>
+    <Step Id="write_device_image"/>
   </Strategy>
 </GenRun>

@@ -32,10 +32,11 @@ always @(negedge rst or posedge clk) begin
     if(!rst) begin
         btn_reg <= {WIDTH{1'b0}};
         btn_trig <= {WIDTH{1'b0}};
+    end
+    else begin
+        btn_reg <= btn;
+        btn_trig <= btn & ~btn_reg;
+    end
 end
-else begin
-    btn_reg <= btn;
-    btn_trig <= btn & ~btn_reg;
-end
-end
+
 endmodule
