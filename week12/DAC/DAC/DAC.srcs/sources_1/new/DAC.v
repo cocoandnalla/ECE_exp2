@@ -54,7 +54,7 @@ always @(posedge clk or negedge rst) begin
     end
 end
 
-always @(posedge clk or posedge rst) begin
+always @(posedge clk or negedge rst) begin
     if(!rst)
     cnt <= 8'b0000_0000;
     else begin
@@ -72,7 +72,7 @@ always @(posedge clk or posedge rst) begin
     end
 end
 
-always @(posedge clk or posedge rst) begin
+always @(posedge clk or negedge rst) begin
     if(!rst) begin
         dac_wrn <= 1;
     end
@@ -88,7 +88,7 @@ always @(posedge clk or posedge rst) begin
     end
 end
 
-always @(posedge clk or posedge rst) begin
+always @(posedge clk or negedge rst) begin
     if(!rst) begin
         dac_d_temp <= 8'b0000_0000;
         led_out <= 8'b0101_0101;

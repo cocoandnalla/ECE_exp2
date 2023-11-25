@@ -1,0 +1,11 @@
+# compile verilog/system verilog design source files
+verilog xil_defaultlib  \
+"../../../../text_LCD_2_more.srcs/sources_1/new/oneshot_universal.v" \
+"../../../../text_LCD_2_more.srcs/sources_1/new/text_LCD_2_more.v" \
+"../../../../text_LCD_2_more.srcs/sim_1/new/text_tb.v" \
+
+# compile glbl module
+verilog xil_defaultlib "glbl.v"
+
+# Do not sort compile order
+nosort

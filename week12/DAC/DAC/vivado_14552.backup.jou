@@ -1,0 +1,92 @@
+#-----------------------------------------------------------
+# Vivado v2023.1 (64-bit)
+# SW Build 3865809 on Sun May  7 15:05:29 MDT 2023
+# IP Build 3864474 on Sun May  7 20:36:21 MDT 2023
+# SharedData Build 3865790 on Sun May 07 13:33:03 MDT 2023
+# Start of session at: Fri Nov 17 15:15:04 2023
+# Process ID: 14552
+# Current directory: C:/Users/82106/Documents/GitHub/ECE_exp2/week12/DAC/DAC
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent6468 C:\Users\82106\Documents\GitHub\ECE_exp2\week12\DAC\DAC\DAC.xpr
+# Log file: C:/Users/82106/Documents/GitHub/ECE_exp2/week12/DAC/DAC/vivado.log
+# Journal file: C:/Users/82106/Documents/GitHub/ECE_exp2/week12/DAC/DAC\vivado.jou
+# Running On: BAYERNchampions, OS: Windows, CPU Frequency: 2496 MHz, CPU Physical cores: 4, Host memory: 16873 MB
+#-----------------------------------------------------------
+start_gui
+open_project C:/Users/82106/Documents/GitHub/ECE_exp2/week12/DAC/DAC/DAC.xpr
+update_compile_order -fileset sources_1
+synth_design -rtl -rtl_skip_mlo -name rtl_1
+synth_design -rtl -rtl_skip_mlo -name rtl_1
+set_property IOSTANDARD LVCMOS33 [get_ports [list add_sel]]
+set_property IOSTANDARD LVCMOS33 [get_ports [list add_sel]]
+set_property IOSTANDARD LVCMOS33 [get_ports [list clk]]
+set_property IOSTANDARD LVCMOS33 [get_ports [list dac_a_b]]
+set_property IOSTANDARD LVCMOS33 [get_ports [list dac_csn]]
+set_property IOSTANDARD LVCMOS33 [get_ports [list dac_ldacn]]
+set_property IOSTANDARD LVCMOS33 [get_ports [list dac_wrn]]
+set_property IOSTANDARD LVCMOS33 [get_ports [list rst]]
+set_property IOSTANDARD LVCMOS33 [get_ports [list {btn[5]}]]
+set_property IOSTANDARD LVCMOS33 [get_ports [list {btn[4]}]]
+set_property IOSTANDARD LVCMOS33 [get_ports [list {btn[3]}]]
+set_property IOSTANDARD LVCMOS33 [get_ports [list {btn[2]}]]
+set_property IOSTANDARD LVCMOS33 [get_ports [list {btn[1]}]]
+set_property IOSTANDARD LVCMOS33 [get_ports [list {btn[0]}]]
+set_property IOSTANDARD LVCMOS33 [get_ports [list {dac_d[7]}]]
+set_property IOSTANDARD LVCMOS33 [get_ports [list {dac_d[6]}]]
+set_property IOSTANDARD LVCMOS33 [get_ports [list {dac_d[4]}]]
+set_property IOSTANDARD LVCMOS33 [get_ports [list {dac_d[3]}]]
+set_property IOSTANDARD LVCMOS33 [get_ports [list {dac_d[5]}]]
+set_property IOSTANDARD LVCMOS33 [get_ports [list {dac_d[2]}]]
+set_property IOSTANDARD LVCMOS33 [get_ports [list {dac_d[1]}]]
+set_property IOSTANDARD LVCMOS33 [get_ports [list {dac_d[0]}]]
+set_property IOSTANDARD LVCMOS33 [get_ports [list {led_out[7]}]]
+set_property IOSTANDARD LVCMOS33 [get_ports [list {led_out[6]}]]
+set_property IOSTANDARD LVCMOS33 [get_ports [list {led_out[5]}]]
+set_property IOSTANDARD LVCMOS33 [get_ports [list {led_out[4]}]]
+set_property IOSTANDARD LVCMOS33 [get_ports [list {led_out[3]}]]
+set_property IOSTANDARD LVCMOS33 [get_ports [list {led_out[2]}]]
+set_property IOSTANDARD LVCMOS33 [get_ports [list {led_out[1]}]]
+set_property IOSTANDARD LVCMOS33 [get_ports [list {led_out[0]}]]
+set_property package_pin "" [get_ports [list  add_sel]]
+place_ports dac_a_b G2
+place_ports dac_csn E1
+place_ports dac_ldacn F4
+place_ports dac_wrn G4
+place_ports rst Y1
+place_ports clk B6
+place_ports {dac_d[7]} B3
+place_ports {dac_d[6]} B1
+place_ports {dac_d[5]} C4
+place_ports {dac_d[4]} C2
+place_ports {dac_d[3]} D5
+place_ports {dac_d[2]} D2
+place_ports {dac_d[1]} E5
+place_ports {dac_d[0]} E3
+place_ports {btn[5]} K4
+place_ports {btn[4]} N8
+place_ports {btn[3]} N4
+place_ports {btn[2]} N1
+place_ports {btn[1]} P6
+place_ports {btn[0]} N6
+place_ports add_sel W3
+place_ports {led_out[7]} L4
+place_ports {led_out[6]} M4
+place_ports {led_out[5]} M2
+place_ports {led_out[4]} N7
+place_ports {led_out[3]} M7
+place_ports {led_out[2]} M3
+place_ports {led_out[1]} M1
+place_ports {led_out[0]} N5
+file mkdir C:/Users/82106/Documents/GitHub/ECE_exp2/week12/DAC/DAC/DAC.srcs/constrs_1/new
+close [ open C:/Users/82106/Documents/GitHub/ECE_exp2/week12/DAC/DAC/DAC.srcs/constrs_1/new/dac.xdc w ]
+add_files -fileset constrs_1 C:/Users/82106/Documents/GitHub/ECE_exp2/week12/DAC/DAC/DAC.srcs/constrs_1/new/dac.xdc
+set_property target_constrs_file C:/Users/82106/Documents/GitHub/ECE_exp2/week12/DAC/DAC/DAC.srcs/constrs_1/new/dac.xdc [current_fileset -constrset]
+save_constraints -force
+launch_simulation
+source DAC_tb.tcl
+run 15355 us
+launch_runs impl_1 -jobs 4
+wait_on_run impl_1
+close_sim
+launch_simulation
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+wait_on_run impl_1

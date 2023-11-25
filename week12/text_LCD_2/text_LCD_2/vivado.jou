@@ -3,10 +3,10 @@
 # SW Build 3865809 on Sun May  7 15:05:29 MDT 2023
 # IP Build 3864474 on Sun May  7 20:36:21 MDT 2023
 # SharedData Build 3865790 on Sun May 07 13:33:03 MDT 2023
-# Start of session at: Fri Nov 17 12:58:10 2023
-# Process ID: 9524
+# Start of session at: Mon Nov 20 09:19:38 2023
+# Process ID: 7596
 # Current directory: C:/Users/82106/Documents/GitHub/ECE_exp2/week12/text_LCD_2/text_LCD_2
-# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent2716 C:\Users\82106\Documents\GitHub\ECE_exp2\week12\text_LCD_2\text_LCD_2\text_LCD_2.xpr
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent11592 C:\Users\82106\Documents\GitHub\ECE_exp2\week12\text_LCD_2\text_LCD_2\text_LCD_2.xpr
 # Log file: C:/Users/82106/Documents/GitHub/ECE_exp2/week12/text_LCD_2/text_LCD_2/vivado.log
 # Journal file: C:/Users/82106/Documents/GitHub/ECE_exp2/week12/text_LCD_2/text_LCD_2\vivado.jou
 # Running On: BAYERNchampions, OS: Windows, CPU Frequency: 2496 MHz, CPU Physical cores: 4, Host memory: 16873 MB
@@ -14,6 +14,36 @@
 start_gui
 open_project C:/Users/82106/Documents/GitHub/ECE_exp2/week12/text_LCD_2/text_LCD_2/text_LCD_2.xpr
 update_compile_order -fileset sources_1
+open_hw_manager
+connect_hw_server -allow_non_jtag
+open_hw_target
+set_property PROGRAM.FILE {C:/Users/82106/Documents/GitHub/ECE_exp2/week12/text_LCD_2/text_LCD_2/text_LCD_2.runs/impl_1/text_LCD_2.bit} [get_hw_devices xc7s75_0]
+current_hw_device [get_hw_devices xc7s75_0]
+refresh_hw_device -update_hw_probes false [lindex [get_hw_devices xc7s75_0] 0]
+set_property PROBES.FILE {} [get_hw_devices xc7s75_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7s75_0]
+set_property PROGRAM.FILE {C:/Users/82106/Documents/GitHub/ECE_exp2/week12/text_LCD_2/text_LCD_2/text_LCD_2.runs/impl_1/text_LCD_2.bit} [get_hw_devices xc7s75_0]
+program_hw_devices [get_hw_devices xc7s75_0]
+refresh_hw_device [lindex [get_hw_devices xc7s75_0] 0]
+close_hw_manager
+synth_design -rtl -rtl_skip_mlo -name rtl_1
+close_design
+reset_run synth_1
+launch_runs impl_1 -jobs 4
+wait_on_run impl_1
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+wait_on_run impl_1
+open_hw_manager
+connect_hw_server -allow_non_jtag
+open_hw_target
+set_property PROGRAM.FILE {C:/Users/82106/Documents/GitHub/ECE_exp2/week12/text_LCD_2/text_LCD_2/text_LCD_2.runs/impl_1/text_LCD_2.bit} [get_hw_devices xc7s75_0]
+current_hw_device [get_hw_devices xc7s75_0]
+refresh_hw_device -update_hw_probes false [lindex [get_hw_devices xc7s75_0] 0]
+set_property PROBES.FILE {} [get_hw_devices xc7s75_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7s75_0]
+set_property PROGRAM.FILE {C:/Users/82106/Documents/GitHub/ECE_exp2/week12/text_LCD_2/text_LCD_2/text_LCD_2.runs/impl_1/text_LCD_2.bit} [get_hw_devices xc7s75_0]
+program_hw_devices [get_hw_devices xc7s75_0]
+refresh_hw_device [lindex [get_hw_devices xc7s75_0] 0]
 launch_simulation
 source text_LCD_2_tb.tcl
 run 15355 us
@@ -21,24 +51,34 @@ close_sim
 launch_simulation
 source text_LCD_2_tb.tcl
 run 15355 us
-close_sim
-launch_simulation
-source text_LCD_2_tb.tcl
-run 15355 us
-close_sim
-launch_simulation
-source text_LCD_2_tb.tcl
-run 15355 us
-close_sim
-launch_simulation
-source text_LCD_2_tb.tcl
-run 15355 us
-close_sim
-launch_simulation
-source text_LCD_2_tb.tcl
-run 15355 us
-close_sim
-launch_simulation
-source text_LCD_2_tb.tcl
-run 15355 us
+synth_design -rtl -rtl_skip_mlo -name rtl_1
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+wait_on_run impl_1
+set_property PROBES.FILE {} [get_hw_devices xc7s75_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7s75_0]
+set_property PROGRAM.FILE {C:/Users/82106/Documents/GitHub/ECE_exp2/week12/text_LCD_2/text_LCD_2/text_LCD_2.runs/impl_1/text_LCD_2.bit} [get_hw_devices xc7s75_0]
+program_hw_devices [get_hw_devices xc7s75_0]
+refresh_hw_device [lindex [get_hw_devices xc7s75_0] 0]
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+wait_on_run impl_1
+set_property PROBES.FILE {} [get_hw_devices xc7s75_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7s75_0]
+set_property PROGRAM.FILE {C:/Users/82106/Documents/GitHub/ECE_exp2/week12/text_LCD_2/text_LCD_2/text_LCD_2.runs/impl_1/text_LCD_2.bit} [get_hw_devices xc7s75_0]
+program_hw_devices [get_hw_devices xc7s75_0]
+refresh_hw_device [lindex [get_hw_devices xc7s75_0] 0]
+set_property PROBES.FILE {} [get_hw_devices xc7s75_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7s75_0]
+set_property PROGRAM.FILE {C:/Users/82106/Documents/GitHub/ECE_exp2/week12/text_LCD_2/text_LCD_2/text_LCD_2.runs/impl_1/text_LCD_2.bit} [get_hw_devices xc7s75_0]
+program_hw_devices [get_hw_devices xc7s75_0]
+refresh_hw_device [lindex [get_hw_devices xc7s75_0] 0]
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+wait_on_run impl_1
+set_property PROBES.FILE {} [get_hw_devices xc7s75_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7s75_0]
+set_property PROGRAM.FILE {C:/Users/82106/Documents/GitHub/ECE_exp2/week12/text_LCD_2/text_LCD_2/text_LCD_2.runs/impl_1/text_LCD_2.bit} [get_hw_devices xc7s75_0]
+program_hw_devices [get_hw_devices xc7s75_0]
+refresh_hw_device [lindex [get_hw_devices xc7s75_0] 0]
 close_sim

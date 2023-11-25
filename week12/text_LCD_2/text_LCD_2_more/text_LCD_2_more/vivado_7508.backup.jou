@@ -1,0 +1,98 @@
+#-----------------------------------------------------------
+# Vivado v2023.1 (64-bit)
+# SW Build 3865809 on Sun May  7 15:05:29 MDT 2023
+# IP Build 3864474 on Sun May  7 20:36:21 MDT 2023
+# SharedData Build 3865790 on Sun May 07 13:33:03 MDT 2023
+# Start of session at: Fri Nov 17 15:05:41 2023
+# Process ID: 7508
+# Current directory: C:/Users/82106/Documents/GitHub/ECE_exp2/week12/text_LCD_2/text_LCD_2_more/text_LCD_2_more
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent9096 C:\Users\82106\Documents\GitHub\ECE_exp2\week12\text_LCD_2\text_LCD_2_more\text_LCD_2_more\text_LCD_2_more.xpr
+# Log file: C:/Users/82106/Documents/GitHub/ECE_exp2/week12/text_LCD_2/text_LCD_2_more/text_LCD_2_more/vivado.log
+# Journal file: C:/Users/82106/Documents/GitHub/ECE_exp2/week12/text_LCD_2/text_LCD_2_more/text_LCD_2_more\vivado.jou
+# Running On: BAYERNchampions, OS: Windows, CPU Frequency: 2496 MHz, CPU Physical cores: 4, Host memory: 16873 MB
+#-----------------------------------------------------------
+start_gui
+open_project C:/Users/82106/Documents/GitHub/ECE_exp2/week12/text_LCD_2/text_LCD_2_more/text_LCD_2_more/text_LCD_2_more.xpr
+update_compile_order -fileset sources_1
+synth_design -rtl -rtl_skip_mlo -name rtl_1
+set_property IOSTANDARD LVCMOS33 [get_ports [list LCD_E]]
+set_property IOSTANDARD LVCMOS33 [get_ports [list LCD_E]]
+set_property IOSTANDARD LVCMOS33 [get_ports [list LCD_RS]]
+set_property IOSTANDARD LVCMOS33 [get_ports [list LCD_RW]]
+set_property IOSTANDARD LVCMOS33 [get_ports [list clk]]
+set_property IOSTANDARD LVCMOS33 [get_ports [list rst]]
+set_property IOSTANDARD LVCMOS33 [get_ports [list switch]]
+set_property IOSTANDARD LVCMOS33 [get_ports [list {LCD_DATA[7]}]]
+set_property IOSTANDARD LVCMOS33 [get_ports [list {LCD_DATA[6]}]]
+set_property IOSTANDARD LVCMOS33 [get_ports [list {LCD_DATA[5]}]]
+set_property IOSTANDARD LVCMOS33 [get_ports [list {LCD_DATA[4]}]]
+set_property IOSTANDARD LVCMOS33 [get_ports [list {LCD_DATA[3]}]]
+set_property IOSTANDARD LVCMOS33 [get_ports [list {LCD_DATA[2]}]]
+set_property IOSTANDARD LVCMOS33 [get_ports [list {LCD_DATA[1]}]]
+set_property IOSTANDARD LVCMOS33 [get_ports [list {LCD_DATA[0]}]]
+set_property IOSTANDARD LVCMOS33 [get_ports [list {LED_out[7]}]]
+set_property IOSTANDARD LVCMOS33 [get_ports [list {LED_out[6]}]]
+set_property IOSTANDARD LVCMOS33 [get_ports [list {LED_out[5]}]]
+set_property IOSTANDARD LVCMOS33 [get_ports [list {LED_out[4]}]]
+set_property IOSTANDARD LVCMOS33 [get_ports [list {LED_out[3]}]]
+set_property IOSTANDARD LVCMOS33 [get_ports [list {LED_out[2]}]]
+set_property IOSTANDARD LVCMOS33 [get_ports [list {LED_out[1]}]]
+set_property IOSTANDARD LVCMOS33 [get_ports [list {LED_out[0]}]]
+set_property IOSTANDARD LVCMOS33 [get_ports [list {control_btn[1]}]]
+set_property IOSTANDARD LVCMOS33 [get_ports [list {control_btn[0]}]]
+set_property IOSTANDARD LVCMOS33 [get_ports [list {number_btn[9]}]]
+set_property IOSTANDARD LVCMOS33 [get_ports [list {number_btn[8]}]]
+set_property IOSTANDARD LVCMOS33 [get_ports [list {number_btn[7]}]]
+set_property IOSTANDARD LVCMOS33 [get_ports [list {number_btn[6]}]]
+set_property IOSTANDARD LVCMOS33 [get_ports [list {number_btn[5]}]]
+set_property IOSTANDARD LVCMOS33 [get_ports [list {number_btn[4]}]]
+set_property IOSTANDARD LVCMOS33 [get_ports [list {number_btn[3]}]]
+set_property IOSTANDARD LVCMOS33 [get_ports [list {number_btn[2]}]]
+set_property IOSTANDARD LVCMOS33 [get_ports [list {number_btn[1]}]]
+set_property IOSTANDARD LVCMOS33 [get_ports [list {number_btn[0]}]]
+place_ports {control_btn[1]} L7
+set_property package_pin "" [get_ports [list  {number_btn[9]}]]
+place_ports {control_btn[0]} K6
+place_ports {number_btn[9]} K4
+place_ports {number_btn[8]} N8
+place_ports {number_btn[7]} N4
+place_ports {number_btn[6]} N1
+place_ports {number_btn[5]} P6
+place_ports {number_btn[4]} N6
+place_ports {number_btn[3]} L5
+place_ports {number_btn[2]} J2
+place_ports {number_btn[1]} K2
+place_ports {number_btn[0]} L1
+place_ports {LED_out[7]} L4
+place_ports {LED_out[6]} M4
+place_ports {LED_out[5]} M2
+place_ports {LED_out[4]} N7
+set_property package_pin "" [get_ports [list  {LED_out[4]}]]
+place_ports {LED_out[4]} N7
+place_ports {LED_out[3]} M7
+place_ports {LED_out[2]} M3
+place_ports {LED_out[1]} M1
+place_ports {LED_out[0]} N5
+place_ports {LCD_DATA[7]} D1
+place_ports {LCD_DATA[6]} C1
+place_ports {LCD_DATA[5]} C5
+place_ports {LCD_DATA[4]} A2
+place_ports {LCD_DATA[3]} D4
+place_ports {LCD_DATA[2]} C3
+place_ports {LCD_DATA[1]} B2
+place_ports {LCD_DATA[0]} A4
+place_ports LCD_E A6
+place_ports LCD_RS G6
+place_ports LCD_RW D6
+place_ports clk B6
+place_ports rst Y1
+place_ports switch W3
+file mkdir C:/Users/82106/Documents/GitHub/ECE_exp2/week12/text_LCD_2/text_LCD_2_more/text_LCD_2_more/text_LCD_2_more.srcs/constrs_1/new
+close [ open C:/Users/82106/Documents/GitHub/ECE_exp2/week12/text_LCD_2/text_LCD_2_more/text_LCD_2_more/text_LCD_2_more.srcs/constrs_1/new/text.xdc w ]
+add_files -fileset constrs_1 C:/Users/82106/Documents/GitHub/ECE_exp2/week12/text_LCD_2/text_LCD_2_more/text_LCD_2_more/text_LCD_2_more.srcs/constrs_1/new/text.xdc
+set_property target_constrs_file C:/Users/82106/Documents/GitHub/ECE_exp2/week12/text_LCD_2/text_LCD_2_more/text_LCD_2_more/text_LCD_2_more.srcs/constrs_1/new/text.xdc [current_fileset -constrset]
+save_constraints -force
+launch_runs impl_1 -jobs 4
+wait_on_run impl_1
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+wait_on_run impl_1
