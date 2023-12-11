@@ -40,7 +40,7 @@ reg emergency = 0;
 
 reg [3:0] state_traffic;
 reg [3:0] state_save;
-// 신호등 스테이트 
+// traffic light state
 parameter  state_A_1     = 4'b0000; // 0
 parameter  state_A_2     = 4'b0001; // 1
 parameter  state_B       = 4'b0010; // 2
@@ -62,22 +62,19 @@ parameter LINE_1        = 3'b100; // 4
 parameter LINE_2        = 3'b101; // 5 
 parameter DELAY_T       = 3'b110; // 6
 
-integer limit = 9999; // 상한 한계선 기본 settin = 1Hz (1sec)
-integer cnt_clock; // basic clock의 counter
+integer limit = 9999; // upper limit of basic clock, make 1Hz (1sec)
+integer cnt_clock; // basic clock counter
 integer cnt_LCD; 
-integer cnt_flicker; // 깜빡깜빡
-integer cnt_traffic;
+integer cnt_flicker; // flicker counter
+integer cnt_traffic; // traffic counter
 
-oneshot_universal #(.WIDTH(2)) u0 (.clk(clk), .rst(rst), .btn({btn_1, btn_2}), .btn_trig({btn_1_t, btn_2_t})); // 원샷 트리거 
+oneshot_universal #(.WIDTH(2)) u0 (.clk(clk), .rst(rst), .btn({btn_1, btn_2}), .btn_trig({btn_1_t, btn_2_t})); 
  
 bin2bcd b1 (.clk(clk), .rst(rst), .bin(hour), .bcd(bcd_hour)); // bin to bcd (hour)
 bin2bcd b2 (.clk(clk), .rst(rst), .bin(min), .bcd(bcd_min)); // bin to bcd (min)
 bin2bcd b3 (.clk(clk), .rst(rst), .bin(sec), .bcd(bcd_sec)); // bin to bcd (sec)
 
 // basic clock
-
-// basic clock
-
 always @ (negedge rst or posedge clk) begin   
         if (!rst) begin
         cnt_clock   <= 0;
@@ -87,19 +84,16 @@ always @ (negedge rst or posedge clk) begin
         end
         else if (btn_1_t && hour < 23) // btn_1 -> hour + 1
             hour <= hour + 1;
-
         else if (btn_1_t && hour == 23) 
             hour <= 0;
-
         else if (cnt_clock < limit)  begin 
             cnt_clock <= cnt_clock + 1;
-            if (switch[2])      limit <= 999; // 10배 
-            else if (switch[1]) limit <= 99; // 100배 
-            else if (switch[0]) limit <= 49; // 200배 
+            if (switch[2])      limit <= 999; // swithc[2] -> X10 
+            else if (switch[1]) limit <= 99; // switch[1] -> X100
+            else if (switch[0]) limit <= 49; // switch[0] -> X200
             else begin limit <= 9999;
             end
             end
-
         else begin // cnt_clock == limit
            cnt_clock <= 0;
         if (sec < 59) 
@@ -118,11 +112,7 @@ always @ (negedge rst or posedge clk) begin
          end
       end              
   end 
-end
-
-//text LCD smae with text_LCD 교안
-
-              
+end              
           
 always @ (negedge rst or posedge clk)
 begin
@@ -187,7 +177,7 @@ begin
                 {LCD_RS, LCD_RW, LCD_DATA} <= 10'b0_0_0000_0110;   
             LINE_1 : begin
                 case (cnt_LCD)
-                    00 : {LCD_RS, LCD_RW, LCD_DATA} <= 10'b0_0_1000_0000; // 1째줄 주소
+                    00 : {LCD_RS, LCD_RW, LCD_DATA} <= 10'b0_0_1000_0000; // line1 address
                     01 : {LCD_RS, LCD_RW, LCD_DATA} <= 10'b1_0_0101_0100; // T
                     02 : {LCD_RS, LCD_RW, LCD_DATA} <= 10'b1_0_0110_1001; // i
                     03 : {LCD_RS, LCD_RW, LCD_DATA} <= 10'b1_0_0110_1101; // m
@@ -196,14 +186,14 @@ begin
                     06 : {LCD_RS, LCD_RW, LCD_DATA} <= 10'b1_0_0011_1010; // :
                     07 : {LCD_RS, LCD_RW, LCD_DATA} <= 10'b1_0_0010_0000; // blank     
                     08 : begin 
-                        case (bcd_hour[7:4])                                     //10의 자리 hour
+                        case (bcd_hour[7:4])                                     //10digit hour
                             0 : {LCD_RS, LCD_RW, LCD_DATA} <= 10'b1_0_0011_0000; // 0
                             1 : {LCD_RS, LCD_RW, LCD_DATA} <= 10'b1_0_0011_0001; // 1
                             2 : {LCD_RS, LCD_RW, LCD_DATA} <= 10'b1_0_0011_0010; // 2
                         endcase
                         end                  
                     09 : begin 
-                        case (bcd_hour[3:0])                                     //1의 자리 hour
+                        case (bcd_hour[3:0])                                     //1digit hour
                             0 : {LCD_RS, LCD_RW, LCD_DATA} <= 10'b1_0_0011_0000; // 0
                             1 : {LCD_RS, LCD_RW, LCD_DATA} <= 10'b1_0_0011_0001; // 1
                             2 : {LCD_RS, LCD_RW, LCD_DATA} <= 10'b1_0_0011_0010; // 2
@@ -218,7 +208,7 @@ begin
                         end 
                     10 : {LCD_RS, LCD_RW, LCD_DATA} <= 10'b1_0_0011_1010;        // :                    
                     11 :begin 
-                        case (bcd_min[7:4]) //10의 자리 min
+                        case (bcd_min[7:4])                                      //10digit min
                             0 : {LCD_RS, LCD_RW, LCD_DATA} <= 10'b1_0_0011_0000; // 0
                             1 : {LCD_RS, LCD_RW, LCD_DATA} <= 10'b1_0_0011_0001; // 1
                             2 : {LCD_RS, LCD_RW, LCD_DATA} <= 10'b1_0_0011_0010; // 2
@@ -228,7 +218,7 @@ begin
                         endcase
                         end
                     12 :begin 
-                        case (bcd_min[3:0]) //1의 자리 min
+                        case (bcd_min[3:0])                                      //1digit min
                             0 : {LCD_RS, LCD_RW, LCD_DATA} <= 10'b1_0_0011_0000; // 0
                             1 : {LCD_RS, LCD_RW, LCD_DATA} <= 10'b1_0_0011_0001; // 1
                             2 : {LCD_RS, LCD_RW, LCD_DATA} <= 10'b1_0_0011_0010; // 2
@@ -243,7 +233,7 @@ begin
                         end     
                     13 : {LCD_RS, LCD_RW, LCD_DATA} <= 10'b1_0_0011_1010;        // :      
                     14 : begin 
-                        case(bcd_sec[7:4]) //10의 자리 sec
+                        case(bcd_sec[7:4])                                       //10digit sec
                             0 : {LCD_RS, LCD_RW, LCD_DATA} <= 10'b1_0_0011_0000; // 0
                             1 : {LCD_RS, LCD_RW, LCD_DATA} <= 10'b1_0_0011_0001; // 1
                             2 : {LCD_RS, LCD_RW, LCD_DATA} <= 10'b1_0_0011_0010; // 2
@@ -253,7 +243,7 @@ begin
                         endcase
                         end          
                     15 :begin 
-                        case (bcd_sec[3:0]) //1의 자리 sec
+                        case (bcd_sec[3:0])                                      //1digit sec
                             0 : {LCD_RS, LCD_RW, LCD_DATA} <= 10'b1_0_0011_0000; // 0
                             1 : {LCD_RS, LCD_RW, LCD_DATA} <= 10'b1_0_0011_0001; // 1
                             2 : {LCD_RS, LCD_RW, LCD_DATA} <= 10'b1_0_0011_0010; // 2
@@ -272,7 +262,7 @@ begin
                 LINE_2 : begin
                 if (emergency == 1) begin
                 case (cnt_LCD)
-                    00 : {LCD_RS, LCD_RW, LCD_DATA} <= 10'b0_0_1100_0000; // 2째줄 주소 
+                    00 : {LCD_RS, LCD_RW, LCD_DATA} <= 10'b0_0_1100_0000; // line2 address
                     01 : {LCD_RS, LCD_RW, LCD_DATA} <= 10'b1_0_0101_0011; // S
                     02 : {LCD_RS, LCD_RW, LCD_DATA} <= 10'b1_0_0111_0100; // t
                     03 : {LCD_RS, LCD_RW, LCD_DATA} <= 10'b1_0_0110_0001; // a
@@ -294,7 +284,7 @@ begin
                  end
                  else begin
                  case (cnt_LCD)
-                    00 : {LCD_RS, LCD_RW, LCD_DATA} <= 10'b0_0_1100_0000; // 2째줄 주소 
+                    00 : {LCD_RS, LCD_RW, LCD_DATA} <= 10'b0_0_1100_0000; // line2 address
                     01 : {LCD_RS, LCD_RW, LCD_DATA} <= 10'b1_0_0101_0011; // S
                     02 : {LCD_RS, LCD_RW, LCD_DATA} <= 10'b1_0_0111_0100; // t
                     03 : {LCD_RS, LCD_RW, LCD_DATA} <= 10'b1_0_0110_0001; // a
@@ -304,7 +294,7 @@ begin
                     07 : {LCD_RS, LCD_RW, LCD_DATA} <= 10'b1_0_0011_1010; // :  
                     08 : {LCD_RS, LCD_RW, LCD_DATA} <= 10'b1_0_0010_0000; // blank
                     09 : begin 
-                        case (state_traffic) // state입력
+                        case (state_traffic) 
                             state_A_1 : {LCD_RS, LCD_RW, LCD_DATA} <= 10'b1_0_0100_0001; // A
                             state_A_2 : {LCD_RS, LCD_RW, LCD_DATA} <= 10'b1_0_0100_0001; // A
                             state_B   : {LCD_RS, LCD_RW, LCD_DATA} <= 10'b1_0_0100_0010; // B
@@ -344,7 +334,7 @@ begin
                 {LCD_RS, LCD_RW, LCD_DATA} <= 10'b0_0_0000_0110;   
             LINE_1 : begin
                 case (cnt_LCD)
-                    00 : {LCD_RS, LCD_RW, LCD_DATA} <= 10'b0_0_1000_0000; // 1째줄 주소
+                    00 : {LCD_RS, LCD_RW, LCD_DATA} <= 10'b0_0_1000_0000; // line 1 address
                     01 : {LCD_RS, LCD_RW, LCD_DATA} <= 10'b1_0_0101_0100; // T
                     02 : {LCD_RS, LCD_RW, LCD_DATA} <= 10'b1_0_0110_1001; // i
                     03 : {LCD_RS, LCD_RW, LCD_DATA} <= 10'b1_0_0110_1101; // m
@@ -353,14 +343,14 @@ begin
                     06 : {LCD_RS, LCD_RW, LCD_DATA} <= 10'b1_0_0011_1010; // :
                     07 : {LCD_RS, LCD_RW, LCD_DATA} <= 10'b1_0_0010_0000; // blank    
                     08 : begin 
-                        case (bcd_hour[7:4])                                     //10의 자리 hour
+                        case (bcd_hour[7:4])                                     //10digit hour
                             0 : {LCD_RS, LCD_RW, LCD_DATA} <= 10'b1_0_0011_0000; // 0
                             1 : {LCD_RS, LCD_RW, LCD_DATA} <= 10'b1_0_0011_0001; // 1
                             2 : {LCD_RS, LCD_RW, LCD_DATA} <= 10'b1_0_0011_0010; // 2
                         endcase
                         end                  
                     09 : begin 
-                        case (bcd_hour[3:0])                                     //1의 자리 hour
+                        case (bcd_hour[3:0])                                     //1digit hour
                             0 : {LCD_RS, LCD_RW, LCD_DATA} <= 10'b1_0_0011_0000; // 0
                             1 : {LCD_RS, LCD_RW, LCD_DATA} <= 10'b1_0_0011_0001; // 1
                             2 : {LCD_RS, LCD_RW, LCD_DATA} <= 10'b1_0_0011_0010; // 2
@@ -375,7 +365,7 @@ begin
                         end 
                     10 : {LCD_RS, LCD_RW, LCD_DATA} <= 10'b1_0_0011_1010;        // :                    
                     11 :begin 
-                        case (bcd_min[7:4]) //10의 자리 min
+                        case (bcd_min[7:4])                                      //10digit min
                             0 : {LCD_RS, LCD_RW, LCD_DATA} <= 10'b1_0_0011_0000; // 0
                             1 : {LCD_RS, LCD_RW, LCD_DATA} <= 10'b1_0_0011_0001; // 1
                             2 : {LCD_RS, LCD_RW, LCD_DATA} <= 10'b1_0_0011_0010; // 2
@@ -385,7 +375,7 @@ begin
                         endcase
                         end
                     12 :begin 
-                        case (bcd_min[3:0]) //1의 자리 min
+                        case (bcd_min[3:0])                                      //1digit min
                             0 : {LCD_RS, LCD_RW, LCD_DATA} <= 10'b1_0_0011_0000; // 0
                             1 : {LCD_RS, LCD_RW, LCD_DATA} <= 10'b1_0_0011_0001; // 1
                             2 : {LCD_RS, LCD_RW, LCD_DATA} <= 10'b1_0_0011_0010; // 2
@@ -400,7 +390,7 @@ begin
                         end     
                     13 : {LCD_RS, LCD_RW, LCD_DATA} <= 10'b1_0_0011_1010;        // :      
                     14 : begin 
-                        case(bcd_sec[7:4]) //10의 자리 sec
+                        case(bcd_sec[7:4])                                       //10digit sec
                             0 : {LCD_RS, LCD_RW, LCD_DATA} <= 10'b1_0_0011_0000; // 0
                             1 : {LCD_RS, LCD_RW, LCD_DATA} <= 10'b1_0_0011_0001; // 1
                             2 : {LCD_RS, LCD_RW, LCD_DATA} <= 10'b1_0_0011_0010; // 2
@@ -410,7 +400,7 @@ begin
                         endcase
                         end          
                     15 :begin 
-                        case (bcd_sec[3:0]) //1의 자리 sec
+                        case (bcd_sec[3:0])                                      //1digit sec
                             0 : {LCD_RS, LCD_RW, LCD_DATA} <= 10'b1_0_0011_0000; // 0
                             1 : {LCD_RS, LCD_RW, LCD_DATA} <= 10'b1_0_0011_0001; // 1
                             2 : {LCD_RS, LCD_RW, LCD_DATA} <= 10'b1_0_0011_0010; // 2
@@ -429,7 +419,7 @@ begin
                 LINE_2 : begin
                 if (emergency == 1) begin
                 case (cnt_LCD)
-                    00 : {LCD_RS, LCD_RW, LCD_DATA} <= 10'b0_0_1100_0000; // 2째줄 주소 
+                    00 : {LCD_RS, LCD_RW, LCD_DATA} <= 10'b0_0_1100_0000; // line2 address 
                     01 : {LCD_RS, LCD_RW, LCD_DATA} <= 10'b1_0_0101_0011; // S
                     02 : {LCD_RS, LCD_RW, LCD_DATA} <= 10'b1_0_0111_0100; // t
                     03 : {LCD_RS, LCD_RW, LCD_DATA} <= 10'b1_0_0110_0001; // a
@@ -451,7 +441,7 @@ begin
                  end
                  else begin
                  case (cnt_LCD)
-                    00 : {LCD_RS, LCD_RW, LCD_DATA} <= 10'b0_0_1100_0000; // 2째줄 주소 
+                    00 : {LCD_RS, LCD_RW, LCD_DATA} <= 10'b0_0_1100_0000; // line2 address
                     01 : {LCD_RS, LCD_RW, LCD_DATA} <= 10'b1_0_0101_0011; // S
                     02 : {LCD_RS, LCD_RW, LCD_DATA} <= 10'b1_0_0111_0100; // t
                     03 : {LCD_RS, LCD_RW, LCD_DATA} <= 10'b1_0_0110_0001; // a
@@ -461,7 +451,7 @@ begin
                     07 : {LCD_RS, LCD_RW, LCD_DATA} <= 10'b1_0_0011_1010; // :  
                     08 : {LCD_RS, LCD_RW, LCD_DATA} <= 10'b1_0_0010_0000; // blank
                     09 : begin 
-                        case (state_traffic) // state입력
+                        case (state_traffic)
                             state_A_1 : {LCD_RS, LCD_RW, LCD_DATA} <= 10'b1_0_0100_0001; // A
                             state_A_2 : {LCD_RS, LCD_RW, LCD_DATA} <= 10'b1_0_0100_0001; // A
                             state_B   : {LCD_RS, LCD_RW, LCD_DATA} <= 10'b1_0_0100_0010; // B
@@ -496,7 +486,7 @@ begin
 assign LCD_E = clk;
 
 
-// 깜빡 깜빡 코드 
+// flicker
 always @ (negedge rst or posedge clk) begin
     if (!rst) 
         cnt_flicker <= 0;
@@ -506,10 +496,10 @@ always @ (negedge rst or posedge clk) begin
         cnt_flicker <= cnt_flicker + 1;
 end
 
-assign flicker = (cnt_flicker >= 4999) ? 0 : 1; // 절반이 지나면 0(OFF), 절반이 안지나면 1(ON)
+assign flicker = (cnt_flicker >= 4999) ? 0 : 1; // half time
 
 // emergency and state_change
-reg [31:0] time_on = 0; // state_traffic이 ON 되어있는 시간 이걸 기준으로 절반 이하 절반 이상 구현 
+reg [31:0] time_on = 0; // time that traffic_state is on
 
 
 always @(negedge rst or posedge clk) begin
@@ -517,12 +507,12 @@ always @(negedge rst or posedge clk) begin
         state_traffic <= state_B;
         cnt_traffic <= 0; // real time
         end
-    else if (btn_2_t || emergency) begin // 수동조작
+    else if (btn_2_t || emergency) begin // btn_2 -> emergency 
         time_on <= 150000;
         if(cnt_traffic >= 150000)  cnt_traffic <=0;
         else cnt_traffic <= (emergency != 0) ? cnt_traffic + 1 : 0;
-        state_traffic <= (cnt_traffic >= 150000) ? state_save : ((cnt_traffic >= 10000 && emergency == 1) ? state_A_1 : state_save );  // 0.5초후 A 전환 // 15초후 원래 스테이트로 돌아감 
-        emergency <= (cnt_traffic >= 150000) ? 0 : 1;   // btn_2_t in -> emergency = 1, 수동조작 상태 ON. 15sec later, 수동조작 상태 OFF, 원래상태로 BACK.
+        state_traffic <= (cnt_traffic >= 150000) ? state_save : ((cnt_traffic >= 10000 && emergency == 1) ? state_A_1 : state_save );  
+        emergency <= (cnt_traffic >= 150000) ? 0 : 1; 
         end
     else if(hour >= 8 && hour < 23) begin // daytime 5sec
         time_on <= 50000; // 5sec
@@ -601,13 +591,6 @@ always @(negedge rst or posedge clk) begin
       end
 end
 
-// state_traffic_set
-// cnt_traffic <= time_on/2 -> 기본 setting
-// cnt_traffic > time_on/2 -> flicker and led_yellow 
-// cnt_traffic > time_on/2 -> flicker -> led_W_G가 1인 부분을 flicker로 설정 
-// cnt_traffic > time_on/2 ->  led_yellow  -> ( led_G, led_W_G ) all OFF and let them set as yellow light
-
-// S N W E
 always @(negedge rst or posedge clk) begin
     if (!rst) begin
         {led_G, led_R, led_Y, led_W_G, led_W_R} <= 5'b0_0000;
