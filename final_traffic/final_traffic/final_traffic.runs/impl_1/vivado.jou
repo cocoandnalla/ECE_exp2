@@ -3,8 +3,8 @@
 # SW Build 3865809 on Sun May  7 15:05:29 MDT 2023
 # IP Build 3864474 on Sun May  7 20:36:21 MDT 2023
 # SharedData Build 3865790 on Sun May 07 13:33:03 MDT 2023
-# Start of session at: Wed Dec  6 17:19:16 2023
-# Process ID: 11480
+# Start of session at: Mon Dec 11 09:40:38 2023
+# Process ID: 9372
 # Current directory: C:/Users/82106/Documents/GitHub/ECE_exp2/final_traffic/final_traffic/final_traffic.runs/impl_1
 # Command line: vivado.exe -log leemujin.vdi -applog -product Vivado -messageDb vivado.pb -mode batch -source leemujin.tcl -notrace
 # Log file: C:/Users/82106/Documents/GitHub/ECE_exp2/final_traffic/final_traffic/final_traffic.runs/impl_1/leemujin.vdi

@@ -287,7 +287,7 @@ begin
                     12 : {LCD_RS, LCD_RW, LCD_DATA} <= 10'b1_0_0110_0101; // e 
                     13 : {LCD_RS, LCD_RW, LCD_DATA} <= 10'b1_0_0110_1110; // n   
                     14 : {LCD_RS, LCD_RW, LCD_DATA} <= 10'b1_0_0110_0011; // c    
-                    15 : {LCD_RS, LCD_RW, LCD_DATA} <= 10'b1_0_1000_1000; // y
+                    15 : {LCD_RS, LCD_RW, LCD_DATA} <= 10'b1_0_0111_1001; // y
                     16 : {LCD_RS, LCD_RW, LCD_DATA} <= 10'b1_0_0010_0000; // blank                        
                     default : {LCD_RS, LCD_RW, LCD_DATA} <=10'b1_0_0010_0000; // blank
                  endcase
@@ -436,15 +436,15 @@ begin
                     04 : {LCD_RS, LCD_RW, LCD_DATA} <= 10'b1_0_0111_0100; // t
                     05 : {LCD_RS, LCD_RW, LCD_DATA} <= 10'b1_0_0110_0101; // e
                     06 : {LCD_RS, LCD_RW, LCD_DATA} <= 10'b1_0_0011_1010; // :
-                    07 : {LCD_RS, LCD_RW, LCD_DATA} <= 10'b1_0_0110_0101; // e //  
-                    08 : {LCD_RS, LCD_RW, LCD_DATA} <= 10'b1_0_0110_1101; // m //
-                    09 : {LCD_RS, LCD_RW, LCD_DATA} <= 10'b1_0_0110_0101; // e //
-                    10 : {LCD_RS, LCD_RW, LCD_DATA} <= 10'b1_0_0111_0010; // r /                
-                    11 : {LCD_RS, LCD_RW, LCD_DATA} <= 10'b1_0_0110_0111; // g //
-                    12 : {LCD_RS, LCD_RW, LCD_DATA} <= 10'b1_0_0110_0101; // e //
-                    13 : {LCD_RS, LCD_RW, LCD_DATA} <= 10'b1_0_0110_1110; // n    // 
+                    07 : {LCD_RS, LCD_RW, LCD_DATA} <= 10'b1_0_0110_0101; // e   
+                    08 : {LCD_RS, LCD_RW, LCD_DATA} <= 10'b1_0_0110_1101; // m 
+                    09 : {LCD_RS, LCD_RW, LCD_DATA} <= 10'b1_0_0110_0101; // e 
+                    10 : {LCD_RS, LCD_RW, LCD_DATA} <= 10'b1_0_0111_0010; // r                 
+                    11 : {LCD_RS, LCD_RW, LCD_DATA} <= 10'b1_0_0110_0111; // g 
+                    12 : {LCD_RS, LCD_RW, LCD_DATA} <= 10'b1_0_0110_0101; // e 
+                    13 : {LCD_RS, LCD_RW, LCD_DATA} <= 10'b1_0_0110_1110; // n   
                     14 : {LCD_RS, LCD_RW, LCD_DATA} <= 10'b1_0_0110_0011; // c    
-                    15 : {LCD_RS, LCD_RW, LCD_DATA} <= 10'b1_0_1000_1000; // y
+                    15 : {LCD_RS, LCD_RW, LCD_DATA} <= 10'b1_0_0111_1001; // y
                     16 : {LCD_RS, LCD_RW, LCD_DATA} <= 10'b1_0_0010_0000; // blank                        
                     default : {LCD_RS, LCD_RW, LCD_DATA} <=10'b1_0_0010_0000; // blank
                  endcase
@@ -475,12 +475,12 @@ begin
                         endcase
                         end                  
                     10 : {LCD_RS, LCD_RW, LCD_DATA} <= 10'b1_0_0010_1000; // (                   
-                    11 : {LCD_RS, LCD_RW, LCD_DATA} <= 10'b1_0_0110_0100; // d
-                    12 : {LCD_RS, LCD_RW, LCD_DATA} <= 10'b1_0_0110_0001; // a
-                    13 : {LCD_RS, LCD_RW, LCD_DATA} <= 10'b1_0_0111_1001; // y     
-                    14 : {LCD_RS, LCD_RW, LCD_DATA} <= 10'b1_0_0010_1001; // )    
-                    15 : {LCD_RS, LCD_RW, LCD_DATA} <= 10'b1_0_0010_0000; // blank
-                    16 : {LCD_RS, LCD_RW, LCD_DATA} <= 10'b1_0_0010_0000; // blank                        
+                    11 : {LCD_RS, LCD_RW, LCD_DATA} <= 10'b1_0_0110_1110; // n
+                    12 : {LCD_RS, LCD_RW, LCD_DATA} <= 10'b1_0_0110_1001; // i
+                    13 : {LCD_RS, LCD_RW, LCD_DATA} <= 10'b1_0_0110_0111; // g     
+                    14 : {LCD_RS, LCD_RW, LCD_DATA} <= 10'b1_0_0110_1000; // h    
+                    15 : {LCD_RS, LCD_RW, LCD_DATA} <= 10'b1_0_0111_0100; // t
+                    16 : {LCD_RS, LCD_RW, LCD_DATA} <= 10'b1_0_0010_1001; // )                        
                     default : {LCD_RS, LCD_RW, LCD_DATA} <=10'b1_0_0010_0000; // blank
                  endcase
                  end

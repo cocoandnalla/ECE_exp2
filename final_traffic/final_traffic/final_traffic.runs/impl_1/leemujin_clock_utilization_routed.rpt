@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2023.1 (win64) Build 3865809 Sun May  7 15:05:29 MDT 2023
-| Date         : Wed Dec  6 17:20:23 2023
+| Date         : Mon Dec 11 09:41:43 2023
 | Host         : BAYERNchampions running 64-bit major release  (build 9200)
 | Command      : report_clock_utilization -file leemujin_clock_utilization_routed.rpt
 | Design       : leemujin
@@ -20,8 +20,9 @@ Table of Contents
 4. Clock Regions: Key Resource Utilization
 5. Clock Regions : Global Clock Summary
 6. Device Cell Placement Summary for Global Clock g0
-7. Clock Region Cell Placement per Global Clock: Region X0Y3
-8. Clock Region Cell Placement per Global Clock: Region X1Y3
+7. Clock Region Cell Placement per Global Clock: Region X1Y2
+8. Clock Region Cell Placement per Global Clock: Region X0Y3
+9. Clock Region Cell Placement per Global Clock: Region X1Y3
 
 1. Clock Primitive Utilization
 ------------------------------
@@ -45,7 +46,7 @@ Table of Contents
 +-----------+-----------+-----------------+------------+----------------+--------------+-------------------+-------------+-----------------+--------------+-------+------------------------+-----------------+
 | Global Id | Source Id | Driver Type/Pin | Constraint | Site           | Clock Region | Load Clock Region | Clock Loads | Non-Clock Loads | Clock Period | Clock | Driver Pin             | Net             |
 +-----------+-----------+-----------------+------------+----------------+--------------+-------------------+-------------+-----------------+--------------+-------+------------------------+-----------------+
-| g0        | src0      | BUFG/O          | None       | BUFGCTRL_X0Y16 | n/a          |                 2 |         239 |               1 |              |       | LCD_E_OBUF_BUFG_inst/O | LCD_E_OBUF_BUFG |
+| g0        | src0      | BUFG/O          | None       | BUFGCTRL_X0Y16 | n/a          |                 3 |         239 |               1 |              |       | LCD_E_OBUF_BUFG_inst/O | LCD_E_OBUF_BUFG |
 +-----------+-----------+-----------------+------------+----------------+--------------+-------------------+-------------+-----------------+--------------+-------+------------------------+-----------------+
 * Clock Loads column represents cell count of net connects that connect to a clock pin. Internal cell leaf pins are not considered
 ** Non-Clock Loads column represents cell count of non-clock pin loads
@@ -76,9 +77,9 @@ Table of Contents
 | X0Y1              |    0 |    12 |    0 |     4 |    0 |     2 |    0 |     4 |    0 |     1 |    0 |     1 |    0 |     0 |    0 |     0 |    0 |    50 |    0 |    50 |    0 |  1800 |    0 |   550 |    0 |    20 |    0 |    10 |    0 |    20 |
 | X1Y1              |    0 |    12 |    0 |     4 |    0 |     2 |    0 |     4 |    0 |     1 |    0 |     1 |    0 |     0 |    0 |     0 |    0 |    50 |    0 |    50 |    0 |  1900 |    0 |   550 |    0 |    40 |    0 |    20 |    0 |    20 |
 | X0Y2              |    0 |    12 |    0 |     4 |    0 |     2 |    0 |     4 |    0 |     1 |    0 |     1 |    0 |     0 |    0 |     0 |    0 |    50 |    0 |    50 |    0 |  1800 |    0 |   550 |    0 |    20 |    0 |    10 |    0 |    20 |
-| X1Y2              |    0 |    12 |    0 |     4 |    0 |     2 |    0 |     4 |    0 |     1 |    0 |     1 |    0 |     0 |    0 |     0 |    0 |    50 |    0 |    50 |    0 |  1900 |    0 |   550 |    0 |    40 |    0 |    20 |    0 |    20 |
-| X0Y3              |    1 |    12 |    0 |     4 |    0 |     2 |    0 |     4 |    0 |     1 |    0 |     1 |    0 |     0 |    0 |     0 |    0 |    50 |    0 |    50 |   56 |  2400 |    0 |   550 |    0 |    20 |    0 |    10 |    0 |    20 |
-| X1Y3              |    1 |    12 |    0 |     4 |    0 |     2 |    0 |     4 |    0 |     1 |    0 |     1 |    0 |     0 |    0 |     0 |    0 |    50 |    0 |    50 |  183 |  1900 |   41 |   550 |    0 |    40 |    0 |    20 |    0 |    20 |
+| X1Y2              |    1 |    12 |    0 |     4 |    0 |     2 |    0 |     4 |    0 |     1 |    0 |     1 |    0 |     0 |    0 |     0 |    0 |    50 |    0 |    50 |   67 |  1900 |   14 |   550 |    0 |    40 |    0 |    20 |    0 |    20 |
+| X0Y3              |    1 |    12 |    0 |     4 |    0 |     2 |    0 |     4 |    0 |     1 |    0 |     1 |    0 |     0 |    0 |     0 |    0 |    50 |    0 |    50 |   56 |  2400 |   32 |   550 |    0 |    20 |    0 |    10 |    0 |    20 |
+| X1Y3              |    1 |    12 |    0 |     4 |    0 |     2 |    0 |     4 |    0 |     1 |    0 |     1 |    0 |     0 |    0 |     0 |    0 |    50 |    0 |    50 |  116 |  1900 |   52 |   550 |    0 |    40 |    0 |    20 |    0 |    20 |
 +-------------------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+
 * Global Clock column represents track count; while other columns represents cell counts
 
@@ -114,14 +115,27 @@ All Modules
 +----+-----+------+-----------------------+
 |    | X0  | X1   | HORIZONTAL PROG DELAY |
 +----+-----+------+-----------------------+
-| Y3 |  56 |  184 |                     0 |
-| Y2 |   0 |    0 |                     - |
+| Y3 |  56 |  117 |                     0 |
+| Y2 |   0 |   67 |                     0 |
 | Y1 |   0 |    0 |                     - |
 | Y0 |   0 |    0 |                     - |
 +----+-----+------+-----------------------+
 
 
-7. Clock Region Cell Placement per Global Clock: Region X0Y3
+7. Clock Region Cell Placement per Global Clock: Region X1Y2
+------------------------------------------------------------
+
++-----------+-------+-----------------+------------+-------------+-----------------+----+-------------+------+-----+----+------+-----+---------+-----------------+
+| Global Id | Track | Driver Type/Pin | Constraint | Clock Loads | Non-Clock Loads | FF | Memory LUTs | RAMB | DSP | GT | MMCM | PLL | Hard IP | Net             |
++-----------+-------+-----------------+------------+-------------+-----------------+----+-------------+------+-----+----+------+-----+---------+-----------------+
+| g0        | n/a   | BUFG/O          | None       |          67 |               0 | 67 |           0 |    0 |   0 |  0 |    0 |   0 |       0 | LCD_E_OBUF_BUFG |
++-----------+-------+-----------------+------------+-------------+-----------------+----+-------------+------+-----+----+------+-----+---------+-----------------+
+* Clock Loads column represents cell count of net connects that connect to a clock pin. Internal cell leaf pins are not considered
+** Non-Clock Loads column represents cell count of non-clock pin loads
+*** Columns FF, LUTRAM, RAMB through 'Hard IP' represents load cell counts
+
+
+8. Clock Region Cell Placement per Global Clock: Region X0Y3
 ------------------------------------------------------------
 
 +-----------+-------+-----------------+------------+-------------+-----------------+----+-------------+------+-----+----+------+-----+---------+-----------------+
@@ -134,13 +148,13 @@ All Modules
 *** Columns FF, LUTRAM, RAMB through 'Hard IP' represents load cell counts
 
 
-8. Clock Region Cell Placement per Global Clock: Region X1Y3
+9. Clock Region Cell Placement per Global Clock: Region X1Y3
 ------------------------------------------------------------
 
 +-----------+-------+-----------------+------------+-------------+-----------------+-----+-------------+------+-----+----+------+-----+---------+-----------------+
 | Global Id | Track | Driver Type/Pin | Constraint | Clock Loads | Non-Clock Loads | FF  | Memory LUTs | RAMB | DSP | GT | MMCM | PLL | Hard IP | Net             |
 +-----------+-------+-----------------+------------+-------------+-----------------+-----+-------------+------+-----+----+------+-----+---------+-----------------+
-| g0        | n/a   | BUFG/O          | None       |         183 |               1 | 183 |           0 |    0 |   0 |  0 |    0 |   0 |       0 | LCD_E_OBUF_BUFG |
+| g0        | n/a   | BUFG/O          | None       |         116 |               1 | 116 |           0 |    0 |   0 |  0 |    0 |   0 |       0 | LCD_E_OBUF_BUFG |
 +-----------+-------+-----------------+------------+-------------+-----------------+-----+-------------+------+-----+----+------+-----+---------+-----------------+
 * Clock Loads column represents cell count of net connects that connect to a clock pin. Internal cell leaf pins are not considered
 ** Non-Clock Loads column represents cell count of non-clock pin loads
@@ -161,5 +175,5 @@ set_property LOC IOB_X1Y174 [get_ports clk]
 #startgroup
 create_pblock {CLKAG_LCD_E_OBUF_BUFG}
 add_cells_to_pblock [get_pblocks  {CLKAG_LCD_E_OBUF_BUFG}] [get_cells -filter { PRIMITIVE_GROUP != I/O && IS_PRIMITIVE==1 && PRIMITIVE_LEVEL !=INTERNAL && NAME!=LCD_E_OBUF_inst} -of_object [get_pins -leaf -filter {DIRECTION==IN} -of_objects [get_nets {LCD_E_OBUF_BUFG}]]]
-resize_pblock [get_pblocks {CLKAG_LCD_E_OBUF_BUFG}] -add {CLOCKREGION_X0Y3:CLOCKREGION_X0Y3 CLOCKREGION_X1Y3:CLOCKREGION_X1Y3}
+resize_pblock [get_pblocks {CLKAG_LCD_E_OBUF_BUFG}] -add {CLOCKREGION_X0Y3:CLOCKREGION_X0Y3 CLOCKREGION_X1Y2:CLOCKREGION_X1Y2 CLOCKREGION_X1Y3:CLOCKREGION_X1Y3}
 #endgroup
